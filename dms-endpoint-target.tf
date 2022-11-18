@@ -1,15 +1,18 @@
 resource "aws_dms_endpoint" "omni-wt-rt-updates-target-endpoint" {
-  certificate_arn             = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012"
-  database_name               = "test"
   endpoint_id                 = "omni-wt-rt-updates-target-endpoint-${var.env}"
   endpoint_type               = "target"
-  engine_name                 = "aurora"
-  extra_connection_attributes = ""
-  kms_key_arn                 = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
-  password                    = "test"
-  port                        = 3306
-  server_name                 = "test"
+  engine_name                 = "s3"
   ssl_mode                    = "none"
+  extra_connection_attributes = ""
+  s3_settings = {
+    bucket_name = aws_s3_bucket.omni-wt-rt-updates-s3-bucket.bucket_name
+    data_format = "parquet"
+    compression_type = "NONE"
+    csv_delimiter = ","
+    date_partition_delimiter = "DASH"
+    date_partition_enabled = false
+    date_partition_sequence = "YYYYMMDDHH"
+  }
 
   tags = {
    Application = "Real Time Updates"
@@ -17,6 +20,4 @@ resource "aws_dms_endpoint" "omni-wt-rt-updates-target-endpoint" {
    Environment = var.env
    STAGE = var.env
   }
-
-  username = "test"
 }
