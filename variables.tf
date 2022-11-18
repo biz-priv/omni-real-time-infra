@@ -21,3 +21,13 @@ variable "dms_vpc_security_group_id" {
    type = string
   Nullable = false
 }
+
+variable "kms_key_arn_for_dms_source" {
+    type = string
+  Nullable = false
+}
+
+variable "server_name_for_dms_source" {
+  type = string
+  Nullable = false
+}

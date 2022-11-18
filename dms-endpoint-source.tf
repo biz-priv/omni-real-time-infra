@@ -1,13 +1,10 @@
 resource "aws_dms_endpoint" "omni-wt-rt-updates-source-endpoint" {
-  certificate_arn             = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012"
-  database_name               = "test"
+  database_name               = "AIRTRAK"
   endpoint_id                 = "omni-wt-rt-updates-source-endpoint-${var.env}"
   endpoint_type               = "source"
-  engine_name                 = "aurora"
-  extra_connection_attributes = ""
-  kms_key_arn                 = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
-  password                    = "test"
-  port                        = 3306
+  engine_name                 = "mysql"
+  kms_key_arn                 = var.kms_key_arn_for_dms_source
+  port                        = 14034
   server_name                 = "test"
   ssl_mode                    = "none"
 
@@ -18,5 +15,5 @@ resource "aws_dms_endpoint" "omni-wt-rt-updates-source-endpoint" {
     STAGE = var.env
   }
 
-  username = "test"
+  username = "bizcloud"
 }
