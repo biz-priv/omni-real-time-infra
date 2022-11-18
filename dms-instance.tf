@@ -41,18 +41,18 @@ resource "aws_iam_role_policy_attachment" "dms-vpc-role-AmazonDMSVPCManagementRo
 
 # Create a new replication instance
 resource "aws_dms_replication_instance" "omni-wt-rt-updates-dms-instance" {
-  allocated_storage            = 50
+  allocated_storage            = 100
   apply_immediately            = true
   auto_minor_version_upgrade   = true
-  availability_zone            = "us-east-1a"
-  engine_version               = "3.1.4"
-  kms_key_arn                  = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
+  availability_zone            = "${var.region}a"
+  engine_version               = "3.4.6"
+  kms_key_arn                  = var.kms_key_arn_for_dms
   multi_az                     = false
   preferred_maintenance_window = "sun:10:30-sun:14:30"
   publicly_accessible          = true
   replication_instance_class   = "dms.c5.2xlarge"
   replication_instance_id      = "omni-wt-rt-updates-${var.env}"
-  replication_subnet_group_id  = aws_dms_replication_subnet_group.test-dms-replication-subnet-group-tf.id
+  replication_subnet_group_id  = var.replication_subnet_group_id
 
   tags = {
     Application = "Real Time Updates"
@@ -62,7 +62,7 @@ resource "aws_dms_replication_instance" "omni-wt-rt-updates-dms-instance" {
   }
 
   vpc_security_group_ids = [
-    "",
+    "sg-f2b56796",
   ]
 
   depends_on = [
