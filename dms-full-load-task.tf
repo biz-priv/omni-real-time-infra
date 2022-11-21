@@ -6,7 +6,7 @@ resource "aws_dms_replication_task" "omni-wt-rt-header-fullload-dms-task" {
   replication_task_settings = "..."
   source_endpoint_arn       = aws_dms_endpoint.omni-wt-rt-updates-source-endpoint.endpoint_arn
   table_mappings            = "{\"rules\":[{\"rule-type\":\"selection\",\"rule-id\":\"1\",\"rule-name\":\"1\",\"object-locator\":{\"schema-name\":\"dbo\",\"table-name\":\"tbl_ShipmentHeader\"},\"rule-action\":\"include\"}]}"
-
+ target_endpoint_arn = aws_dms_endpoint.omni-wt-rt-updates-target-endpoint.endpoint_arn
   tags = {
     Application = "Real Time Updates"
     CreatedBy = "BizCloudExperts"
@@ -14,5 +14,5 @@ resource "aws_dms_replication_task" "omni-wt-rt-header-fullload-dms-task" {
     STAGE = var.env
   }
 
-  target_endpoint_arn = aws_dms_endpoint.omni-wt-rt-updates-target-endpoint.endpoint_arn
+ 
 }
