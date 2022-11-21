@@ -1,5 +1,4 @@
 resource "aws_dms_replication_task" "omni-wt-rt-header-fullload-dms-task" {
-  cdc_start_time            = 1484346880
   migration_type            = "full-load"
   replication_instance_arn  = aws_dms_replication_instance.omni-wt-rt-updates-dms-instance.replication_instance_arn
   replication_task_id       = "omni-wt-rt-header-fullload-${var.env}"
