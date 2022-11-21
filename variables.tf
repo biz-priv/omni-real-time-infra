@@ -31,3 +31,18 @@ variable "server_name_for_dms_source" {
   type = string
   Nullable = false
 }
+
+variable "dms_instance_storage" {
+  type = string
+  Nullable = false
+}
+
+variable "dms_instance_class" {
+  type = string
+  Nullable = false
+}
+
+variable "dms_security_group" {
+  type = string
+  Nullable = false
+}

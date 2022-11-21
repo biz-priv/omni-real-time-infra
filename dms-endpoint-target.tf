@@ -6,12 +6,16 @@ resource "aws_dms_endpoint" "omni-wt-rt-updates-target-endpoint" {
   extra_connection_attributes = ""
   s3_settings = {
     bucket_name = aws_s3_bucket.omni-wt-rt-updates-s3-bucket.bucket_name
+    bucket_folder = "fullLoad"
     data_format = "parquet"
     compression_type = "NONE"
     csv_delimiter = ","
     date_partition_delimiter = "DASH"
     date_partition_enabled = false
     date_partition_sequence = "YYYYMMDDHH"
+    timestamp_column_name = "DMS_TS"
+    enable_statistics = true
+    csv_row_delimiter = "\n"
   }
 
   tags = {
