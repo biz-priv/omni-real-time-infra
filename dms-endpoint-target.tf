@@ -3,9 +3,8 @@ resource "aws_dms_endpoint" "omni-wt-rt-updates-target-endpoint" {
   endpoint_type               = "target"
   engine_name                 = "s3"
   ssl_mode                    = "none"
-  extra_connection_attributes = ""
-  s3_settings = {
-    bucket_name = aws_s3_bucket.omni-wt-rt-updates-s3-bucket.bucket_name
+  s3_settings  {
+    bucket_name = "omni-wt-rt-updates-${var.env}"
     bucket_folder = "fullLoad"
     data_format = "parquet"
     compression_type = "NONE"
