@@ -15,7 +15,7 @@ resource "aws_dms_endpoint" "omni-wt-rt-updates-target-endpoint" {
     date_partition_sequence = "YYYYMMDDHH"
     timestamp_column_name = "DMS_TS"
     enable_statistics = true
-    csv_row_delimiter = "\n"
+    csv_row_delimiter = "\\n"
   }
 
   tags = {
