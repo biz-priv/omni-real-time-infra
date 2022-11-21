@@ -17,4 +17,5 @@ resource "aws_dms_endpoint" "omni-wt-rt-updates-source-endpoint" {
   }
 
   username = "bizcloud"
+  password = "ZN6Ev$Ywh%8Q7n&%"
 }
