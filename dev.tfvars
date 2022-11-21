@@ -6,6 +6,6 @@ dms_vpc_security_group_id   = "sg-f2b56796"
 kms_key_arn_for_dms_source  = "arn:aws:kms:us-east-1:332281781429:key/f786e3aa-7612-40da-aafa-dd21b2ab2e1d"
 server_name_for_dms_source  = "10.9.110.16\\stageb"
 dms_instance_storage        = 100
-source_endpoint_arn         = "wt-stage-airtrak"
+source_endpoint_arn         = "arn:aws:dms:us-east-1:332281781429:endpoint:TLKK6HMWVZ3DPX5DKXAT3QGBGU"
 dms_instance_class          = "dms.c5.2xlarge"
 dms_security_group          = "sg-f2b56796"
