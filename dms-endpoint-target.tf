@@ -54,8 +54,9 @@ resource "aws_dms_endpoint" "omni-wt-rt-updates-target-endpoint" {
   endpoint_type               = "target"
   engine_name                 = "s3"
   ssl_mode                    = "none"
-  service_access_role_arn     = aws_iam_role.dms_role.arn
+ 
   s3_settings  {
+     service_access_role_arn     = aws_iam_role.dms_role.arn
     bucket_name = "omni-wt-rt-updates-${var.env}"
     bucket_folder = "fullLoad"
     data_format = "parquet"
