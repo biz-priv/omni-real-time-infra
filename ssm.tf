@@ -270,3 +270,62 @@ resource "aws_ssm_parameter" "apar-failure-streamArn" {
     STAGE = var.env
   }
 }
+
+
+resource "aws_ssm_parameter" "sqs_queue_arn" {
+  count       = length(var.sqs_queue_arn_ssm_name)
+  name        = element(var.sqs_queue_arn_ssm_name, count.index)
+  type        = "SecureString"
+  value       = aws_sqs_queue.omni_wt_rt_queue[count.index].arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "sqs_queue_url" {
+  count       = length(var.sqs_queue_url_ssm_name)
+  name        = element(var.sqs_queue_url_ssm_name, count.index)
+  type        = "SecureString"
+  value       = aws_sqs_queue.omni_wt_rt_queue[count.index].sqs_queue_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "sqs_dlq_arn" {
+  count       = length(var.sqs_deadletter_queue_arn_ssm_name)
+  name        = element(var.sqs_deadletter_queue_arn_ssm_name, count.index)
+  type        = "SecureString"
+  value       = aws_sqs_queue.omni_wt_rt_queue_deadletter[count.index].arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "sqs_dlq_url" {
+  count       = length(var.sqs_deadletter_queue_url_ssm_name)
+  name        = element(var.sqs_deadletter_queue_url_ssm_name, count.index)
+  type        = "SecureString"
+  value       = aws_sqs_queue.omni_wt_rt_queue_deadletter[count.index].sqs_queue_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+
