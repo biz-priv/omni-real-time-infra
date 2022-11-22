@@ -290,7 +290,7 @@ resource "aws_ssm_parameter" "sqs_queue_url" {
   count       = length(var.sqs_queue_url_ssm_name)
   name        = element(var.sqs_queue_url_ssm_name, count.index)
   type        = "SecureString"
-  value       = aws_sqs_queue.omni_wt_rt_queue[count.index].sqs_queue_url
+  value       = aws_sqs_queue.omni_wt_rt_queue[count.index].url
 
   tags = {
     Application = "Real Time Updates"
@@ -318,7 +318,7 @@ resource "aws_ssm_parameter" "sqs_dlq_url" {
   count       = length(var.sqs_deadletter_queue_url_ssm_name)
   name        = element(var.sqs_deadletter_queue_url_ssm_name, count.index)
   type        = "SecureString"
-  value       = aws_sqs_queue.omni_wt_rt_queue_deadletter[count.index].sqs_queue_url
+  value       = aws_sqs_queue.omni_wt_rt_queue_deadletter[count.index].url
 
   tags = {
     Application = "Real Time Updates"
