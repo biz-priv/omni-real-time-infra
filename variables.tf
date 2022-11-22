@@ -52,3 +52,32 @@ variable "source_endpoint_arn" {
   nullable = false
 }
 
+variable "sqs_queue_name" {
+  type     = list
+  nullable = false
+}
+
+variable "sqs_deadletter_queue_name" {
+  type     = list
+  nullable = false
+}
+
+variable "sqs_queue_arn_ssm_name" {
+  type     = list
+  nullable = false
+}
+
+variable "sqs_deadletter_queue_arn_ssm_name" {
+  type     = list
+  nullable = false
+}
+
+variable "sqs_queue_url_ssm_name" {
+  type     = list
+  nullable = false
+}
+
+variable "sqs_deadletter_queue_url_ssm_name" {
+  type     = list
+  nullable = false
+}
