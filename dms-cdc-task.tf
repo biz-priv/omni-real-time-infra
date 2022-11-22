@@ -84,8 +84,8 @@ resource "aws_dms_replication_task" "omni-wt-rt-cdc" {
                 "Id": "FILE_TRANSFER"
             }
         ],
-        "CloudWatchLogGroup": "${aws_cloudwatch_log_group.omni-wt-rt-loggroup.name}",
-        "CloudWatchLogStream": "${aws_cloudwatch_log_stream.omni-wt-rt-loggroup-stream.name}"
+        "CloudWatchLogGroup": "omni-wt-rt-cdc-log-group",
+        "CloudWatchLogStream": "omni-wt-rt-cdc-log-group-stream"
     },
     "StreamBufferSettings": {
         "StreamBufferCount": 3,
