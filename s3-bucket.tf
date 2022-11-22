@@ -19,9 +19,45 @@ resource "aws_s3_bucket_notification" "omni-wt-rt-updates-s3-bucket-notification
   count  = length(var.sqs_queue_name)
 
   queue {
-    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[count.index].arn
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[0].arn
     events        = ["s3:ObjectCreated:*"]
     filter_suffix = ".parquet"
-    filter_prefix = "dbo/${var.s3_notification_table_name[count.index]}"
+    filter_prefix = "dbo/${var.s3_notification_table_name[0]}"
+  }
+  queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[1].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".parquet"
+    filter_prefix = "dbo/${var.s3_notification_table_name[1]}"
+  }
+  queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[2].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".parquet"
+    filter_prefix = "dbo/${var.s3_notification_table_name[2]}"
+  }
+  queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[3].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".parquet"
+    filter_prefix = "dbo/${var.s3_notification_table_name[3]}"
+  }
+  queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[4].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".parquet"
+    filter_prefix = "dbo/${var.s3_notification_table_name[4]}"
+  }
+  queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[5].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".parquet"
+    filter_prefix = "dbo/${var.s3_notification_table_name[5]}"
+  }
+  queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[6].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".parquet"
+    filter_prefix = "dbo/${var.s3_notification_table_name[6]}"
   }
 }
