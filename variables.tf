@@ -86,3 +86,8 @@ variable "sqs_deadletter_queue_url_ssm_name" {
   type     = list
   nullable = false
 }
+
+variable "s3_notification_table_name" {
+  type     = list
+  nullable = false
+}
