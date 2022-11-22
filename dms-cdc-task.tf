@@ -1,7 +1,7 @@
 resource "aws_dms_replication_task" "omni-wt-rt-cdc" {
   migration_type            = "cdc"
   replication_instance_arn  = aws_dms_replication_instance.omni-wt-rt-updates-dms-instance.replication_instance_arn
-  replication_task_id       = "omni-wt-rt-${var.env}"
+  replication_task_id       = "omni-wt-rt-updates-${var.env}"
   replication_task_settings = jsonencode(
     {
     "Logging": {
