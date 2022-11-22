@@ -8,6 +8,11 @@ variable "region" {
   nullable = false
 }
 
+variable "aws_account_number" {
+  type     = string
+  nullable = false
+}
+
 variable "kms_key_arn_for_dms" {
   type     = string
   nullable = false
