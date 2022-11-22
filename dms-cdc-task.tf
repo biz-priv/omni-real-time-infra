@@ -83,9 +83,7 @@ resource "aws_dms_replication_task" "omni-wt-rt-cdc" {
                 "Severity": "LOGGER_SEVERITY_DEFAULT",
                 "Id": "FILE_TRANSFER"
             }
-        ],
-        "CloudWatchLogGroup": "omni-wt-rt-cdc-log-group",
-        "CloudWatchLogStream": "omni-wt-rt-cdc-log-group-stream"
+        ]
     },
     "StreamBufferSettings": {
         "StreamBufferCount": 3,
