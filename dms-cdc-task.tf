@@ -179,6 +179,11 @@ resource "aws_dms_replication_task" "omni-wt-rt-cdc" {
     "PostProcessingRules": null
 }
   )
+  lifecycle {
+	  ignore_changes = [
+      replication_task_settings,
+     ]
+  }
   source_endpoint_arn       = var.source_endpoint_arn
   target_endpoint_arn       = aws_dms_endpoint.omni-wt-rt-updates-target-endpoint-cdc.endpoint_arn
   table_mappings            = jsonencode(
