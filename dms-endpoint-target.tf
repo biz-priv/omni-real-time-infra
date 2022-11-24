@@ -56,10 +56,11 @@ resource "aws_dms_endpoint" "omni-wt-rt-updates-target-endpoint" {
   ssl_mode                    = "none"
  
   s3_settings  {
+    add_column_name = true
      service_access_role_arn     = aws_iam_role.dms_role.arn
     bucket_name = "omni-wt-rt-updates-${var.env}"
     bucket_folder = "fullLoad"
-    data_format = "parquet"
+    data_format = "csv"
     compression_type = "NONE"
     csv_delimiter = ","
     date_partition_delimiter = "DASH"
@@ -85,9 +86,10 @@ resource "aws_dms_endpoint" "omni-wt-rt-updates-target-endpoint-cdc" {
   ssl_mode                    = "none"
  
   s3_settings  {
+    add_column_name = true
     service_access_role_arn     = aws_iam_role.dms_role.arn
     bucket_name = "omni-wt-rt-updates-${var.env}"
-    data_format = "parquet"
+    data_format = "csv"
     compression_type = "NONE"
     csv_delimiter = ","
     date_partition_delimiter = "DASH"
