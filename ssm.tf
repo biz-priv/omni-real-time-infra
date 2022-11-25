@@ -328,4 +328,15 @@ resource "aws_ssm_parameter" "sqs_dlq_url" {
   }
 }
 
+resource "aws_ssm_parameter" "omni-wt-rt-updates-s3-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/s3.omni_wr_rt_bucket_arn"
+  type        = "SecureString"
+  value       = aws_s3_bucket.omni-wt-rt-updates-s3-bucket.arn
 
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
