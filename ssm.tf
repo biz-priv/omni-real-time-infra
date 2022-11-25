@@ -343,7 +343,7 @@ resource "aws_ssm_parameter" "omni-wt-rt-updates-s3-arn-ssm" {
 
 resource "aws_ssm_parameter" "omni-default-sg-id" {
   name        = "/omni-default/${var.env}/sgId"
-  type        = "SecureString"
+  type        = "String"
   value       = var.security_group_id
 
   tags = {
@@ -356,7 +356,7 @@ resource "aws_ssm_parameter" "omni-default-sg-id" {
 
 resource "aws_ssm_parameter" "omni-default-subnet-a" {
   name        = "/omni-default/${var.env}/subnetA"
-  type        = "SecureString"
+  type        = "String"
   value       = var.subnet_A_id
 
   tags = {
@@ -369,7 +369,7 @@ resource "aws_ssm_parameter" "omni-default-subnet-a" {
 
 resource "aws_ssm_parameter" "omni-default-subnet-b" {
   name        = "/omni-default/${var.env}/subnetB"
-  type        = "SecureString"
+  type        = "String"
   value       = var.subnet_B_id
 
   tags = {
