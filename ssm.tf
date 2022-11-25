@@ -341,7 +341,7 @@ resource "aws_ssm_parameter" "omni-wt-rt-updates-s3-arn-ssm" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-wt-rt-updates-security-group-id" {
+resource "aws_ssm_parameter" "omni-default-sg-id" {
   name        = "/omni-default/${var.env}/sgId"
   type        = "SecureString"
   value       = var.security_group_id
@@ -354,7 +354,7 @@ resource "aws_ssm_parameter" "omni-wt-rt-updates-security-group-id" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-wt-rt-updates-subnet-a-id" {
+resource "aws_ssm_parameter" "omni-default-subnet-a" {
   name        = "/omni-default/${var.env}/subnetA"
   type        = "SecureString"
   value       = var.subnet_A_id
@@ -367,7 +367,7 @@ resource "aws_ssm_parameter" "omni-wt-rt-updates-subnet-a-id" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-wt-rt-updates-subnet-b-id" {
+resource "aws_ssm_parameter" "omni-default-subnet-b" {
   name        = "/omni-default/${var.env}/subnetB"
   type        = "SecureString"
   value       = var.subnet_B_id
