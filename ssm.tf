@@ -340,3 +340,44 @@ resource "aws_ssm_parameter" "omni-wt-rt-updates-s3-arn-ssm" {
     STAGE = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-wt-rt-updates-security-group-id" {
+  name        = "/omni-default/${var.env}/sgId"
+  type        = "SecureString"
+  value       = var.security_group_id
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-wt-rt-updates-subnet-a-id" {
+  name        = "/omni-default/${var.env}/subnetA"
+  type        = "SecureString"
+  value       = var.subnet_A_id
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-wt-rt-updates-subnet-b-id" {
+  name        = "/omni-default/${var.env}/subnetB"
+  type        = "SecureString"
+  value       = var.subnet_B_id
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+

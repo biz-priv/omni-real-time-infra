@@ -17,3 +17,6 @@ sqs_deadletter_queue_arn_ssm_name = ["/omni-wt-rt-updates/prod/shipment-header/D
 sqs_queue_url_ssm_name          = ["/omni-wt-rt-updates/prod/shipment-header/queue.url","/omni-wt-rt-updates/prod/shipment-apar/queue.url","/omni-wt-rt-updates/prod/references/queue.url","/omni-wt-rt-updates/prod/shipper/queue.url","/omni-wt-rt-updates/prod/consignee/queue.url","/omni-wt-rt-updates/prod/shipment-milestone/queue.url","/omni-wt-rt-updates/prod/apar-failure/queue.url"]
 sqs_deadletter_queue_url_ssm_name = ["/omni-wt-rt-updates/prod/shipment-header/DLQ.url","/omni-wt-rt-updates/prod/shipment-apar/DLQ.url","/omni-wt-rt-updates/prod/references/DLQ.url","/omni-wt-rt-updates/prod/shipper/DLQ.url","/omni-wt-rt-updates/prod/consignee/DLQ.url","/omni-wt-rt-updates/prod/shipment-milestone/DLQ.url","/omni-wt-rt-updates/prod/apar-failure/DLQ.url"]
 s3_notification_table_name   = ["tbl_Shipper","tbl_Consignee","tbl_ShipmentMilestone","tbl_ShipmentAPAR","tbl_References","tbl_ShipmentHeader","tbl_APARFailure"]
+security_group_id  = ""
+subnet_A_id = ""
+subnet_B_id  = ""
