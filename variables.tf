@@ -91,3 +91,17 @@ variable "s3_notification_table_name" {
   type     = list
   nullable = false
 }
+
+variable "security_group_id" {
+  type     = string
+  nullable = false
+}
+
+variable "subnet_A_id" {
+  type     = string
+  nullable = false
+}
+variable "subnet_B_id" {
+  type     = string
+  nullable = false
+}
