@@ -381,8 +381,8 @@ resource "aws_ssm_parameter" "omni-default-subnet-b" {
 }
 
 resource "aws_ssm_parameter" "omni-shipment-header-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/shipment-header/sns.arn~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/shipment-header/sns.arn"
+  type        = "SecureString"
   value       = var.omni_shipment_header_arn
 
   tags = {
@@ -395,8 +395,8 @@ resource "aws_ssm_parameter" "omni-shipment-header-arn" {
 
 
 resource "aws_ssm_parameter" "omni-references-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/references/sns.arn~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/references/sns.arn"
+  type        = "SecureString"
   value       = var.omni_references_arn
 
   tags = {
@@ -408,8 +408,8 @@ resource "aws_ssm_parameter" "omni-references-arn" {
 }
 
 resource "aws_ssm_parameter" "omni-shipper-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/shipper/sns.arn~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/shipper/sns.arn"
+  type        = "SecureString"
   value       = var.omni_shipper_arn
 
   tags = {
@@ -421,8 +421,8 @@ resource "aws_ssm_parameter" "omni-shipper-arn" {
 }
 
 resource "aws_ssm_parameter" "omni-consignee-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/consignee/sns.arn~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/consignee/sns.arn"
+  type        = "SecureString"
   value       = var.omni_consignee_arn
 
   tags = {
@@ -434,8 +434,8 @@ resource "aws_ssm_parameter" "omni-consignee-arn" {
 }
 
 resource "aws_ssm_parameter" "omni-shipment-milestone-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/shipment-milestone/sns.arn~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/shipment-milestone/sns.arn"
+  type        = "SecureString"
   value       = var.omni_shipment_milestone_arn
 
   tags = {
@@ -447,8 +447,8 @@ resource "aws_ssm_parameter" "omni-shipment-milestone-arn" {
 }
 
 resource "aws_ssm_parameter" "omni-shipment-apar-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/shipment-apar/sns.arn~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/shipment-apar/sns.arn"
+  type        = "SecureString"
   value       = var.omni_shipment_apar_arn
 
   tags = {
@@ -460,8 +460,8 @@ resource "aws_ssm_parameter" "omni-shipment-apar-arn" {
 }
 
 resource "aws_ssm_parameter" "omni-apar-failure-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/apar-failure/sns.arn~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/apar-failure/sns.arn"
+  type        = "SecureString"
   value       = var.omni_apar_failure_arn
 
   tags = {
@@ -473,8 +473,8 @@ resource "aws_ssm_parameter" "omni-apar-failure-arn" {
 }
 
 resource "aws_ssm_parameter" "omni-toyota-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/toyota/sqs.arn~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/toyota/sqs.arn"
+  type        = "SecureString"
   value       = var.omni_toyota_arn
 
   tags = {
@@ -486,8 +486,8 @@ resource "aws_ssm_parameter" "omni-toyota-arn" {
 }
 
 resource "aws_ssm_parameter" "omni-toyota-url" {
-  name        = "/omni-wt-rt-updates/${var.env}/toyota/sqs.url~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/toyota/sqs.url"
+  type        = "SecureString"
   value       = var.omni_toyota_url
 
   tags = {
@@ -500,8 +500,8 @@ resource "aws_ssm_parameter" "omni-toyota-url" {
 
 
 resource "aws_ssm_parameter" "omni-toyota-dlq-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.arn~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.arn"
+  type        = "SecureString"
   value       = var.omni_toyota_dlq_arn
 
   tags = {
@@ -513,8 +513,8 @@ resource "aws_ssm_parameter" "omni-toyota-dlq-arn" {
 }
 
 resource "aws_ssm_parameter" "omni-toyota-dlq-url" {
-  name        = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.url~true"
-  type        = "String"
+  name        = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.url"
+  type        = "SecureString"
   value       = var.omni_toyota_dlq_url
 
   tags = {
