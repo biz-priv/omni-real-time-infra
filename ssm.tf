@@ -380,4 +380,150 @@ resource "aws_ssm_parameter" "omni-default-subnet-b" {
   }
 }
 
+resource "aws_ssm_parameter" "omni-shipment-header-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/shipment-header/sns.arn~true"
+  type        = "String"
+  value       = var.omni_shipment_header_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+
+resource "aws_ssm_parameter" "omni-references-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/references/sns.arn~true"
+  type        = "String"
+  value       = var.omni_references_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-shipper-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/shipper/sns.arn~true"
+  type        = "String"
+  value       = var.omni_shipper_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-consignee-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/consignee/sns.arn~true"
+  type        = "String"
+  value       = var.omni_consignee_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-shipment-milestone-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/shipment-milestone/sns.arn~true"
+  type        = "String"
+  value       = var.omni_shipment_milestone_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-shipment-apar-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/shipment-apar/sns.arn~true"
+  type        = "String"
+  value       = var.omni_shipment_apar_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-apar-failure-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/apar-failure/sns.arn~true"
+  type        = "String"
+  value       = var.omni_apar_failure_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-toyota-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/toyota/sqs.arn~true"
+  type        = "String"
+  value       = var.omni_toyota_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-toyota-url-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/toyota/sqs.url~true"
+  type        = "String"
+  value       = var.omni_toyota_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+
+resource "aws_ssm_parameter" "omni-toyota-dlq-arn-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.arn~true"
+  type        = "String"
+  value       = var.omni_toyota_dlq_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-toyota-dlq-url-ssm" {
+  name        = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.url~true"
+  type        = "String"
+  value       = var.omni_toyota_dlq_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+} 
+
+
 
