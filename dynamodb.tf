@@ -169,7 +169,7 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-desc" {
   name           = "omni-wt-rt-shipment-desc-${var.env}"
   billing_mode   = "PAY_PER_REQUEST"
   hash_key       = "FK_OrderNo"
-  range_key      = "FK_SeqNo"
+  range_key      = "SeqNo"
   stream_enabled = true
   stream_view_type = "NEW_AND_OLD_IMAGES"
 
@@ -178,7 +178,7 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-desc" {
     type = "S"
   }
   attribute {
-    name = "FK_SeqNo"
+    name = "SeqNo"
     type = "S"
   }
 
