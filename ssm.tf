@@ -380,7 +380,7 @@ resource "aws_ssm_parameter" "omni-default-subnet-b" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-shipment-header-arn-ssm" {
+resource "aws_ssm_parameter" "omni-shipment-header-arn" {
   name        = "/omni-wt-rt-updates/${var.env}/shipment-header/sns.arn~true"
   type        = "String"
   value       = var.omni_shipment_header_arn
@@ -394,7 +394,7 @@ resource "aws_ssm_parameter" "omni-shipment-header-arn-ssm" {
 }
 
 
-resource "aws_ssm_parameter" "omni-references-arn-ssm" {
+resource "aws_ssm_parameter" "omni-references-arn" {
   name        = "/omni-wt-rt-updates/${var.env}/references/sns.arn~true"
   type        = "String"
   value       = var.omni_references_arn
@@ -407,7 +407,7 @@ resource "aws_ssm_parameter" "omni-references-arn-ssm" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-shipper-arn-ssm" {
+resource "aws_ssm_parameter" "omni-shipper-arn" {
   name        = "/omni-wt-rt-updates/${var.env}/shipper/sns.arn~true"
   type        = "String"
   value       = var.omni_shipper_arn
@@ -420,7 +420,7 @@ resource "aws_ssm_parameter" "omni-shipper-arn-ssm" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-consignee-arn-ssm" {
+resource "aws_ssm_parameter" "omni-consignee-arn" {
   name        = "/omni-wt-rt-updates/${var.env}/consignee/sns.arn~true"
   type        = "String"
   value       = var.omni_consignee_arn
@@ -433,7 +433,7 @@ resource "aws_ssm_parameter" "omni-consignee-arn-ssm" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-shipment-milestone-arn-ssm" {
+resource "aws_ssm_parameter" "omni-shipment-milestone-arn" {
   name        = "/omni-wt-rt-updates/${var.env}/shipment-milestone/sns.arn~true"
   type        = "String"
   value       = var.omni_shipment_milestone_arn
@@ -446,7 +446,7 @@ resource "aws_ssm_parameter" "omni-shipment-milestone-arn-ssm" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-shipment-apar-arn-ssm" {
+resource "aws_ssm_parameter" "omni-shipment-apar-arn" {
   name        = "/omni-wt-rt-updates/${var.env}/shipment-apar/sns.arn~true"
   type        = "String"
   value       = var.omni_shipment_apar_arn
@@ -459,7 +459,7 @@ resource "aws_ssm_parameter" "omni-shipment-apar-arn-ssm" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-apar-failure-arn-ssm" {
+resource "aws_ssm_parameter" "omni-apar-failure-arn" {
   name        = "/omni-wt-rt-updates/${var.env}/apar-failure/sns.arn~true"
   type        = "String"
   value       = var.omni_apar_failure_arn
@@ -472,7 +472,7 @@ resource "aws_ssm_parameter" "omni-apar-failure-arn-ssm" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-toyota-arn-ssm" {
+resource "aws_ssm_parameter" "omni-toyota-arn" {
   name        = "/omni-wt-rt-updates/${var.env}/toyota/sqs.arn~true"
   type        = "String"
   value       = var.omni_toyota_arn
@@ -485,7 +485,7 @@ resource "aws_ssm_parameter" "omni-toyota-arn-ssm" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-toyota-url-ssm" {
+resource "aws_ssm_parameter" "omni-toyota-url" {
   name        = "/omni-wt-rt-updates/${var.env}/toyota/sqs.url~true"
   type        = "String"
   value       = var.omni_toyota_url
@@ -499,7 +499,7 @@ resource "aws_ssm_parameter" "omni-toyota-url-ssm" {
 }
 
 
-resource "aws_ssm_parameter" "omni-toyota-dlq-arn-ssm" {
+resource "aws_ssm_parameter" "omni-toyota-dlq-arn" {
   name        = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.arn~true"
   type        = "String"
   value       = var.omni_toyota_dlq_arn
@@ -512,7 +512,7 @@ resource "aws_ssm_parameter" "omni-toyota-dlq-arn-ssm" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-toyota-dlq-url-ssm" {
+resource "aws_ssm_parameter" "omni-toyota-dlq-url" {
   name        = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.url~true"
   type        = "String"
   value       = var.omni_toyota_dlq_url
