@@ -105,3 +105,58 @@ variable "subnet_B_id" {
   type     = string
   nullable = false
 }
+
+variable "omni_shipment_header_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_references_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_shipper_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_consignee_arn" {
+   type     = string
+  nullable = false
+}
+
+variable "omni_shipment_milestone_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_shipment_apar_arn" {
+   type     = string
+  nullable = false
+}
+
+variable "omni_apar_failure_arn" {
+    type     = string
+  nullable = false
+}
+
+variable "omni_toyota_arn" {
+   type     = string
+  nullable = false
+}
+
+variable "omni_toyota_url" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_toyota_dlq_arn" {
+   type     = string
+  nullable = false
+}
+
+variable "omni_toyota_dlq_url" {
+  type     = string
+  nullable = false
+}
