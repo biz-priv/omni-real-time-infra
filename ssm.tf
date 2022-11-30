@@ -526,4 +526,44 @@ resource "aws_ssm_parameter" "omni-toyota-dlq-url" {
 } 
 
 
+resource "aws_ssm_parameter" "shipment-desc-arn" {
+  name        = "/omni-wt-rt-updates/${var.env}/shipment-desc/ddb.arn"
+  type        = "SecureString"
+  value       = aws_dynamodb_table.omni-wt-rt-shipment-desc.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shipment-desc-name" {
+  name        = "/omni-wt-rt-updates/${var.env}/shipment-desc/ddb.tableName"
+  type        = "SecureString"
+  value       = aws_dynamodb_table.omni-wt-rt-shipment-desc.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shipment-desc-streamArn" {
+  name        = "/omni-wt-rt-updates/${var.env}/shipment-desc/ddb.streamArn"
+  type        = "SecureString"
+  value       = aws_dynamodb_table.omni-wt-rt-shipment-desc.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy = "BizCloudExperts"
+    Environment = var.env
+    STAGE = var.env
+  }
+}
+
+
 
