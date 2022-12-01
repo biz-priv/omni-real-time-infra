@@ -160,3 +160,13 @@ variable "omni_toyota_dlq_url" {
   type     = string
   nullable = false
 }
+
+variable "shipment_desc_sns_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "instructions_sns_arn" {
+   type     = string
+  nullable = false
+}
