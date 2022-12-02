@@ -630,3 +630,30 @@ resource "aws_ssm_parameter" "instructions-streamArn" {
   }
 }
 
+resource "aws_ssm_parameter" "ref-orderNo-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/references/ddb.orderNoIndex"
+  type  = "String"
+  value = var.ref_orderNo_index
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "instructions-orderNo-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/instructions/ddb.orderNoIndex"
+  type  = "String"
+  value = var.instructions_orderNo_index
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+
