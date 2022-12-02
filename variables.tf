@@ -170,3 +170,12 @@ variable "instructions_sns_arn" {
    type     = string
   nullable = false
 }
+
+variable "ref_orderNo_index" {
+     type     = string
+  nullable = false
+}
+variable "instructions_orderNo_index" {
+  type     = string
+  nullable = false
+}

@@ -33,3 +33,5 @@ omni_toyota_dlq_arn  =  "arn:aws:sqs:us-east-1:332281781429:omni-rt-toyota-DLQ-d
 omni_toyota_dlq_url = "https://sqs.us-east-1.amazonaws.com/332281781429/omni-rt-toyota-DLQ-dev"
 shipment_desc_sns_arn  = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-desc-dev"
 instructions_sns_arn = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-instructions-dev"
+ref_orderNo_index = "omni-wt-rt-ref-orderNo-index-dev"
+instructions_orderNo_index = "omni-wt-instructions-orderNo-index-dev"
