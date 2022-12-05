@@ -179,3 +179,33 @@ variable "instructions_orderNo_index" {
   type     = string
   nullable = false
 }
+
+variable "omni_ivia_ddb_name" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_ivia_createShipment_url" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_ivia_createShipment_token" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_ivia_createShipment_xmlUpdate_url" {
+   type     = string
+  nullable = false
+}
+
+variable "omni_ivia_createShipment_xmlUpdate_userId" {
+   type     = string
+  nullable = false
+}
+
+variable "omni_ivia_createShipment_xmlUpdate_password" {
+   type     = string
+  nullable = false
+}
