@@ -656,4 +656,80 @@ resource "aws_ssm_parameter" "instructions-orderNo-index" {
   }
 }
 
+resource "aws_ssm_parameter" "toyota_authApi_clientId" {
+  name  = "/omni-rt-toyota/${var.env}/authApi.clientId"
+  type  = "SecureString"
+  value = var.toyota_authApi_clientId
 
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "toyota_authApi_url" {
+  name  = "/omni-rt-toyota/${var.env}/authApi.url"
+  type  = "SecureString"
+  value = var.toyota_authApi_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "toyota_api_url" {
+  name  = "/omni-rt-toyota/${var.env}/toyotaApi.url"
+  type  = "SecureString"
+  value = var.toyota_api_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni_toyota_ddb_tablename" {
+  name  = "/omni-rt-toyota/${var.env}/ddb.tableName"
+  type  = "SecureString"
+  value = var.omni_toyota_ddb_tablename
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni_toyota_ddb_streamArn" {
+  name  = "/omni-rt-toyota/${var.env}/ddb.streamArn"
+  type  = "SecureString"
+  value = var.omni_toyota_ddb_streamArn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni_toyota_response_ddb_tableName" {
+  name  = "/omni-rt-toyota/${var.env}/response/ddb.tableName"
+  type  = "SecureString"
+  value = var.omni_toyota_response_ddb_tableName
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

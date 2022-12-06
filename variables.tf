@@ -209,3 +209,32 @@ variable "omni_ivia_createShipment_xmlUpdate_password" {
    type     = string
   nullable = false
 }
+
+variable "toyota_authApi_clientId" {
+   type     = string
+  nullable = false
+}
+
+variable "toyota_authApi_url" {
+  type     = string
+  nullable = false
+}
+variable "toyota_api_url" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_toyota_ddb_tablename" {
+   type     = string
+  nullable = false
+}
+
+variable "omni_toyota_ddb_streamArn" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_toyota_response_ddb_tableName" {
+   type     = string
+  nullable = false
+}
