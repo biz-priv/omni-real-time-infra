@@ -238,3 +238,17 @@ variable "omni_toyota_response_ddb_tableName" {
    type     = string
   nullable = false
 }
+variable "omni_wt_rt_updates_ivia_sqs_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_rt_toyota_iviaresponse_ddb_name" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_rt_toyota_ivia_ddb_streamarn" {
+   type     = string
+  nullable = false
+}
