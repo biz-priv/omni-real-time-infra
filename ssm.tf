@@ -733,3 +733,42 @@ resource "aws_ssm_parameter" "omni_toyota_response_ddb_tableName" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni_wt_rt_updates_ivia_sqs_arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/ivia/sqs.arn"
+  type  = "String"
+  value = var.omni_wt_rt_updates_ivia_sqs_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni_rt_toyota_iviaresponse_ddb_name" {
+  name  = "/omni-rt-toyota/${var.env}/iviaResponse/ddb.tableName"
+  type  = "String"
+  value = var.omni_rt_toyota_iviaresponse_ddb_name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni_rt_toyota_ivia_ddb_streamarn" {
+  name  = "/omni-rt-toyota/${var.env}/ivia/ddb.streamArn"
+  type  = "String"
+  value = var.omni_rt_toyota_ivia_ddb_streamarn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
