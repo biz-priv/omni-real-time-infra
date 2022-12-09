@@ -53,7 +53,12 @@ pipeline{
         }
       }
 	stage('Waiting for Approvals') {
-
+		when {
+                anyOf {
+					equals(actual: "${env.ENVIRONMENT}", expected: "dev")
+					equals(actual: "${env.ENVIRONMENT}", expected: "prod")
+                }
+            }
       steps{
           input('Plan Validated? Please approve to apply changes in AWS?')
 			  }
