@@ -252,3 +252,13 @@ variable "omni_rt_toyota_ivia_ddb_streamarn" {
    type     = string
   nullable = false
 }
+
+variable "shipment_header_filter_billno" {
+  type     = string
+  nullable = false
+}
+
+variable "shipmentApar_filter_Vendor_Id" {
+  type     = string
+  nullable = false
+}

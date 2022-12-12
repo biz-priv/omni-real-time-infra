@@ -772,3 +772,29 @@ resource "aws_ssm_parameter" "omni_rt_toyota_ivia_ddb_streamarn" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "shipment_header_filter_billno" {
+  name  = "/omni-wt-rt-updates/${var.env}/toyota/shipmentHeader/filterBillNo"
+  type  = "SecureString"
+  value = var.shipment_header_filter_billno
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shipmentApar_filter_Vendor_Id" {
+  name  = "/omni-wt-rt-updates/${var.env}/ivia/shipmentApar/filterVendorId"
+  type  = "SecureString"
+  value = var.shipmentApar_filter_Vendor_Id
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
