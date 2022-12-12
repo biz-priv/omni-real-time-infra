@@ -75,3 +75,16 @@ resource "aws_ssm_parameter" "omni-ivia-createShipment-xmlUpdate-password" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-ivia-createShipment-carrierId" {
+  name  = "/omni-ivia/${var.env}/createShipment/carrierId"
+  type  = "String"
+  value = var.omni_ivia_createShipment_carrierId
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
