@@ -88,3 +88,42 @@ resource "aws_ssm_parameter" "omni-ivia-createShipment-carrierId" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-ivia-add-milestone-url" {
+  name  = "/omni-ivia/${var.env}/addMilestone/url"
+  type  = "String"
+  value = var.omni_ivia_addMilestone_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-rt-ivia-response-ddb-name" {
+  name  = "/omni-ivia/${var.env}/iviaResponse/ddb.tableName"
+  type  = "String"
+  value = var.omni_iviaresponse_ddb_name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-rt-ivia-ddb-streamarn" {
+  name  = "/omni-ivia/${var.env}/ivia/ddb.streamArn"
+  type  = "String"
+  value = var.omni_ivia_ddb_streamarn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

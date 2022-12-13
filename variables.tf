@@ -215,6 +215,10 @@ variable "omni_ivia_createShipment_carrierId" {
   nullable = false
 }
 
+variable "omni_ivia_addMilestone_url" {
+  type     = string
+  nullable = false
+}
 
 variable "toyota_authApi_clientId" {
   type     = string
@@ -249,12 +253,12 @@ variable "omni_wt_rt_updates_ivia_sqs_arn" {
   nullable = false
 }
 
-variable "omni_rt_toyota_iviaresponse_ddb_name" {
+variable "omni_iviaresponse_ddb_name" {
   type     = string
   nullable = false
 }
 
-variable "omni_rt_toyota_ivia_ddb_streamarn" {
+variable "omni_ivia_ddb_streamarn" {
   type     = string
   nullable = false
 }

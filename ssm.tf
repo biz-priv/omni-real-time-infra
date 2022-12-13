@@ -566,28 +566,28 @@ resource "aws_ssm_parameter" "shipment-desc-streamArn" {
 }
 
 resource "aws_ssm_parameter" "shipment-desc-sns-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/shipment-desc/sns.arn"
-  type        = "SecureString"
-  value       = var.shipment_desc_sns_arn
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-desc/sns.arn"
+  type  = "SecureString"
+  value = var.shipment_desc_sns_arn
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy = "BizCloudExperts"
+    CreatedBy   = "BizCloudExperts"
     Environment = var.env
-    STAGE = var.env
+    STAGE       = var.env
   }
 }
 
 resource "aws_ssm_parameter" "instructions-sns-arn" {
-  name        = "/omni-wt-rt-updates/${var.env}/instructions/sns.arn"
-  type        = "SecureString"
-  value       = var.instructions_sns_arn
+  name  = "/omni-wt-rt-updates/${var.env}/instructions/sns.arn"
+  type  = "SecureString"
+  value = var.instructions_sns_arn
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy = "BizCloudExperts"
+    CreatedBy   = "BizCloudExperts"
     Environment = var.env
-    STAGE = var.env
+    STAGE       = var.env
   }
 }
 
@@ -738,32 +738,6 @@ resource "aws_ssm_parameter" "omni_wt_rt_updates_ivia_sqs_arn" {
   name  = "/omni-wt-rt-updates/${var.env}/ivia/sqs.arn"
   type  = "String"
   value = var.omni_wt_rt_updates_ivia_sqs_arn
-
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
-
-resource "aws_ssm_parameter" "omni_rt_toyota_iviaresponse_ddb_name" {
-  name  = "/omni-ivia/${var.env}/iviaResponse/ddb.tableName"
-  type  = "String"
-  value = var.omni_rt_toyota_iviaresponse_ddb_name
-
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
-
-resource "aws_ssm_parameter" "omni_rt_toyota_ivia_ddb_streamarn" {
-  name  = "/omni-ivia/${var.env}/ivia/ddb.streamArn"
-  type  = "String"
-  value = var.omni_rt_toyota_ivia_ddb_streamarn
 
   tags = {
     Application = "Real Time Updates"
