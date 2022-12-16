@@ -708,18 +708,18 @@ resource "aws_ssm_parameter" "omni_toyota_ddb_tablename" {
   }
 }
 
-resource "aws_ssm_parameter" "omni_toyota_ddb_streamArn" {
-  name  = "/omni-rt-toyota/${var.env}/ddb.streamArn"
-  type  = "SecureString"
-  value = var.omni_toyota_ddb_streamArn
+# resource "aws_ssm_parameter" "omni_toyota_ddb_streamArn" {
+#   name  = "/omni-rt-toyota/${var.env}/ddb.streamArn"
+#   type  = "SecureString"
+#   value = var.omni_toyota_ddb_streamArn
 
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
+#   tags = {
+#     Application = "Real Time Updates"
+#     CreatedBy   = "BizCloudExperts"
+#     Environment = var.env
+#     STAGE       = var.env
+#   }
+# }
 
 resource "aws_ssm_parameter" "omni_toyota_response_ddb_tableName" {
   name  = "/omni-rt-toyota/${var.env}/response/ddb.tableName"
@@ -747,28 +747,28 @@ resource "aws_ssm_parameter" "omni_wt_rt_updates_ivia_sqs_arn" {
   }
 }
 
-resource "aws_ssm_parameter" "shipment_header_filter_billno" {
-  name  = "/omni-wt-rt-updates/${var.env}/toyota/shipmentHeader/filterBillNo"
-  type  = "SecureString"
-  value = var.shipment_header_filter_billno
+# resource "aws_ssm_parameter" "shipment_header_filter_billno" {
+#   name  = "/omni-wt-rt-updates/${var.env}/toyota/shipmentHeader/filterBillNo"
+#   type  = "SecureString"
+#   value = var.shipment_header_filter_billno
 
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
+#   tags = {
+#     Application = "Real Time Updates"
+#     CreatedBy   = "BizCloudExperts"
+#     Environment = var.env
+#     STAGE       = var.env
+#   }
+# }
 
-resource "aws_ssm_parameter" "shipmentApar_filter_Vendor_Id" {
-  name  = "/omni-wt-rt-updates/${var.env}/ivia/shipmentApar/filterVendorId"
-  type  = "SecureString"
-  value = var.shipmentApar_filter_Vendor_Id
+# resource "aws_ssm_parameter" "shipmentApar_filter_Vendor_Id" {
+#   name  = "/omni-wt-rt-updates/${var.env}/ivia/shipmentApar/filterVendorId"
+#   type  = "SecureString"
+#   value = var.shipmentApar_filter_Vendor_Id
 
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
+#   tags = {
+#     Application = "Real Time Updates"
+#     CreatedBy   = "BizCloudExperts"
+#     Environment = var.env
+#     STAGE       = var.env
+#   }
+# }
