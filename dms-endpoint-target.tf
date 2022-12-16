@@ -11,7 +11,7 @@ data "aws_iam_policy_document" "dms_assume_role_policy_document" {
 
 resource "aws_iam_role" "dms_role" {
   assume_role_policy = data.aws_iam_policy_document.dms_assume_role_policy_document.json
-  name = "dms_role"
+  name = "dms_role_toyota_${var.env}"
 }
 
 data "aws_iam_policy_document" "dms_s3_access_document" {
@@ -39,7 +39,7 @@ data "aws_iam_policy_document" "dms_s3_access_document" {
 }
 
 resource "aws_iam_policy" "dms_s3_access" {
-  name = "dms_s3_access"
+  name = "dms_s3_accesstoyota_${var.env}"
   policy = data.aws_iam_policy_document.dms_s3_access_document.json
 }
 
