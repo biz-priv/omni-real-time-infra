@@ -51,5 +51,5 @@ omni_toyota_response_ddb_tableName = "omni-rt-toyota-response-prod"
 omni_wt_rt_updates_ivia_sqs_arn = "arn:aws:sqs:us-east-1:332281781429:omni-rt-ivia-prod"
 omni_iviaresponse_ddb_name = "omni-rt-ivia-response-prod"
 #omni_ivia_ddb_streamarn = "arn:aws:dynamodb:us-east-1:332281781429:table/omni-rt-ivia-prod/stream/2022-12-06T19:05:20.641" //TODO - get this after Kazi deploys omni-ivia-updates to prod
-#shipment_header_filter_billno = "22531" //TODO - get from Kiran V
-#shipmentApar_filter_Vendor_Id = "T19262" //TODO - get from Kiran V
+shipment_header_filter_billno = "22531" 
+shipmentApar_filter_Vendor_Id = "T19262" 

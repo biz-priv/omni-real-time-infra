@@ -263,12 +263,12 @@ variable "omni_iviaresponse_ddb_name" {
 #   nullable = false
 # }
 
-# variable "shipment_header_filter_billno" {
-#   type     = string
-#   nullable = false
-# }
+variable "shipment_header_filter_billno" {
+  type     = string
+  nullable = false
+}
 
-# variable "shipmentApar_filter_Vendor_Id" {
-#   type     = string
-#   nullable = false
-# }
+variable "shipmentApar_filter_Vendor_Id" {
+  type     = string
+  nullable = false
+}
