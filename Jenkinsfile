@@ -17,6 +17,7 @@ pipeline{
                 }
             }
         }
+		}
 		stage('Terraform init'){
 			steps{
 				script{
@@ -100,5 +101,4 @@ pipeline{
 			}
 	}
 
-  }
-    
+	}
