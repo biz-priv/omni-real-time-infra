@@ -32,11 +32,6 @@ variable "kms_key_arn_for_dms_source" {
   nullable = false
 }
 
-variable "server_name_for_dms_source" {
-  type     = string
-  nullable = false
-}
-
 variable "dms_instance_storage" {
   type     = string
   nullable = false
