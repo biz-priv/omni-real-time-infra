@@ -196,7 +196,7 @@ variable "instructions_orderNo_index" {
   nullable = false
 }
 
-variable "iconfirmation_cost_orderNo_index" {
+variable "confirmation_cost_orderNo_index" {
   type     = string
   nullable = false
 }
