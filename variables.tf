@@ -171,11 +171,32 @@ variable "instructions_sns_arn" {
   nullable = false
 }
 
+variable "consol_stop_items_sns_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "consol_stop_headers_sns_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "confirmation_cost_sns_arn" {
+  type     = string
+  nullable = false
+}
+
 variable "ref_orderNo_index" {
   type     = string
   nullable = false
 }
+
 variable "instructions_orderNo_index" {
+  type     = string
+  nullable = false
+}
+
+variable "iconfirmation_cost_orderNo_index" {
   type     = string
   nullable = false
 }
@@ -272,3 +293,4 @@ variable "shipmentApar_filter_Vendor_Id" {
   type     = string
   nullable = false
 }
+

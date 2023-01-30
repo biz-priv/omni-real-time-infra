@@ -219,3 +219,81 @@ resource "aws_dynamodb_table" "omni-wt-rt-instructions" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wt-rt-consol-stop-items" {
+  name             = "omni-wt-rt-consol-stop-items-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  range_key        = "FK_ConsolStopId"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+  attribute {
+    name = "FK_ConsolStopId"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+
+resource "aws_dynamodb_table" "omni-wt-rt-consol-stop-headers" {
+  name             = "omni-wt-rt-consol-stop-headers-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_ConsolStopId"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_ConsolStopId"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+
+resource "aws_dynamodb_table" "omni-wt-rt-confirmation-cost" {
+  name             = "omni-wt-rt-confirmation-cost-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_ConfirmationNo"
+  range_key        = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+  attribute {
+    name = "PK_ConfirmationNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-wt-confirmation-cost-orderNo-index-${var.env}"
+    hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

@@ -772,3 +772,173 @@ resource "aws_ssm_parameter" "shipmentApar_filter_Vendor_Id" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "consol-stop-items-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-items/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-items.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-items-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-items/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-items.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-items-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-items/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-items.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-items-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-items/sns.arn"
+  type  = "SecureString"
+  value = var.consol_stop_items_sns_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+
+resource "aws_ssm_parameter" "consol-stop-headers-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-headers.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-headers-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-headers.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-headers-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-headers.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-headers-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/sns.arn"
+  type  = "SecureString"
+  value = var.consol_stop_headers_sns_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-confirmation-cost.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-confirmation-cost.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-confirmation-cost.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/sns.arn"
+  type  = "SecureString"
+  value = var.confirmation_cost_sns_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-orderNo-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/ddb.orderNoIndex"
+  type  = "String"
+  value = var.confirmation_cost_orderNo_index
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
