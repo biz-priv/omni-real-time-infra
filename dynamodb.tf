@@ -205,10 +205,20 @@ resource "aws_dynamodb_table" "omni-wt-rt-instructions" {
     name = "FK_OrderNo"
     type = "S"
   }
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
 
   global_secondary_index {
     name            = "omni-wt-instructions-orderNo-index-${var.env}"
     hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-ConsolNo-index"
+    hash_key        = "ConsolNo"
     projection_type = "ALL"
   }
 
@@ -257,6 +267,17 @@ resource "aws_dynamodb_table" "omni-wt-rt-consol-stop-headers" {
     name = "PK_ConsolStopId"
     type = "S"
   }
+  attribute {
+    name = "FK_ConsolNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-FK_ConsolNo-index"
+    hash_key        = "FK_ConsolNo"
+    projection_type = "ALL"
+  }
+
 
   tags = {
     Application = "Real Time Updates"
@@ -283,10 +304,20 @@ resource "aws_dynamodb_table" "omni-wt-rt-confirmation-cost" {
     name = "PK_ConfirmationNo"
     type = "S"
   }
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
 
   global_secondary_index {
     name            = "omni-wt-confirmation-cost-orderNo-index-${var.env}"
     hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-ConsolNo-index"
+    hash_key        = "ConsolNo"
     projection_type = "ALL"
   }
 
