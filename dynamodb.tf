@@ -79,6 +79,16 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-apar" {
     name = "SeqNo"
     type = "S"
   }
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-ConsolNo-index"
+    hash_key        = "ConsolNo"
+    projection_type = "ALL"
+  }
 
   tags = {
     Application = "Real Time Updates"
@@ -182,6 +192,17 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-desc" {
     type = "S"
   }
 
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-ConsolNo-index"
+    hash_key        = "ConsolNo"
+    projection_type = "ALL"
+  }
+
   tags = {
     Application = "Real Time Updates"
     CreatedBy   = "BizCloudExperts"
@@ -246,7 +267,11 @@ resource "aws_dynamodb_table" "omni-wt-rt-consol-stop-items" {
     name = "FK_ConsolStopId"
     type = "S"
   }
-
+  global_secondary_index {
+    name            = "FK_ConsolStopId-index"
+    hash_key        = "FK_ConsolStopId"
+    projection_type = "ALL"
+  }
   tags = {
     Application = "Real Time Updates"
     CreatedBy   = "BizCloudExperts"
