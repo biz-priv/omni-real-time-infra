@@ -85,7 +85,7 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-apar" {
   }
 
   global_secondary_index {
-    name            = "omni-ivia-ConsolNo-index"
+    name            = "omni-ivia-ConsolNo-index-${var.env}"
     hash_key        = "ConsolNo"
     projection_type = "ALL"
   }
@@ -198,7 +198,7 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-desc" {
   }
 
   global_secondary_index {
-    name            = "omni-ivia-ConsolNo-index"
+    name            = "omni-ivia-ConsolNo-index-${var.env}"
     hash_key        = "ConsolNo"
     projection_type = "ALL"
   }
@@ -238,7 +238,7 @@ resource "aws_dynamodb_table" "omni-wt-rt-instructions" {
   }
 
   global_secondary_index {
-    name            = "omni-ivia-ConsolNo-index"
+    name            = "omni-ivia-ConsolNo-index-${var.env}"
     hash_key        = "ConsolNo"
     projection_type = "ALL"
   }
@@ -298,7 +298,7 @@ resource "aws_dynamodb_table" "omni-wt-rt-consol-stop-headers" {
   }
 
   global_secondary_index {
-    name            = "omni-ivia-FK_ConsolNo-index"
+    name            = "omni-ivia-FK_ConsolNo-index-${var.env}"
     hash_key        = "FK_ConsolNo"
     projection_type = "ALL"
   }
@@ -341,7 +341,7 @@ resource "aws_dynamodb_table" "omni-wt-rt-confirmation-cost" {
   }
 
   global_secondary_index {
-    name            = "omni-ivia-ConsolNo-index"
+    name            = "omni-ivia-ConsolNo-index-${var.env}"
     hash_key        = "ConsolNo"
     projection_type = "ALL"
   }
