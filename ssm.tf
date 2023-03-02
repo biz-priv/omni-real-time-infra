@@ -942,3 +942,121 @@ resource "aws_ssm_parameter" "confirmation-cost-orderNo-index" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "zip-codes-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/zip-codes/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-zip-codes.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "zip-codes-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/zip-codes/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-zip-codes.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "zip-codes-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/zip-codes/sns.arn"
+  type  = "SecureString"
+  value = var.zip_codes_sns_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-master-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-master/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-master.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-master-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-master/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-master.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-master-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-master/sns.arn"
+  type  = "SecureString"
+  value = var.timezone_master_sns_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-zip-cr-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-zip-cr.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-zip-cr-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-zip-cr.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-zip-cr-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/sns.arn"
+  type  = "SecureString"
+  value = var.timezone_zip_cr_sns_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+

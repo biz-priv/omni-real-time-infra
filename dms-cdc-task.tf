@@ -421,9 +421,42 @@ resource "aws_dms_replication_task" "omni-wt-rt-cdc" {
           "filters" : []
         },
         {
-          "rule-type" : "transformation",
+          "rule-type" : "selection",
           "rule-id" : "22",
           "rule-name" : "22",
+          "object-locator" : {
+            "schema-name" : "dbo",
+            "table-name" : "tbl_ZipCodes"
+          },
+          "rule-action" : "include",
+          "filters" : []
+        },
+        {
+          "rule-type" : "selection",
+          "rule-id" : "23",
+          "rule-name" : "23",
+          "object-locator" : {
+            "schema-name" : "dbo",
+            "table-name" : "tbl_TimeZoneMaster"
+          },
+          "rule-action" : "include",
+          "filters" : []
+        },
+        {
+          "rule-type" : "selection",
+          "rule-id" : "24",
+          "rule-name" : "24",
+          "object-locator" : {
+            "schema-name" : "dbo",
+            "table-name" : "tbl_TimeZoneZipCR"
+          },
+          "rule-action" : "include",
+          "filters" : []
+        },
+        {
+          "rule-type" : "transformation",
+          "rule-id" : "25",
+          "rule-name" : "25",
           "rule-target" : "column",
           "object-locator" : {
             "schema-name" : "%",
