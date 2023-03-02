@@ -142,6 +142,18 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-header" {
     type = "S"
   }
 
+  attribute {
+    name = "Housebill"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Housebill-index"
+    hash_key        = "Housebill"
+    projection_type = "ALL"
+  }
+
+
   tags = {
     Application = "Real Time Updates"
     CreatedBy   = "BizCloudExperts"
