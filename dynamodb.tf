@@ -353,3 +353,73 @@ resource "aws_dynamodb_table" "omni-wt-rt-confirmation-cost" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wt-rt-zip-codes" {
+  name             = "omni-wt-rt-zip-codes-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_SeqNo"
+  range_key        = "FK_AirportId"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_SeqNo"
+    type = "S"
+  }
+  attribute {
+    name = "FK_AirportId"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-timezone-master" {
+  name             = "omni-wt-rt-timezone-master-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_TimeZoneCode"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_TimeZoneCode"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-timezone-zip-cr" {
+  name             = "omni-wt-rt-timezone-zip-cr-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "ZipCode"
+  range_key        = "FK_TimeZoneCode"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "ZipCode"
+    type = "S"
+  }
+  attribute {
+    name = "FK_TimeZoneCode"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

@@ -294,3 +294,17 @@ variable "shipmentApar_filter_Vendor_Id" {
   nullable = false
 }
 
+variable "zip_codes_sns_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "timezone_master_sns_arn" {
+  type     = string
+  nullable = false
+}
+
+variable "timezone_zip_cr_sns_arn" {
+  type     = string
+  nullable = false
+}
