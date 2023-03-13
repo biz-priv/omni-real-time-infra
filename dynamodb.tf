@@ -378,9 +378,21 @@ resource "aws_dynamodb_table" "omni-wt-rt-zip-codes" {
     name = "PK_SeqNo"
     type = "S"
   }
+
   attribute {
     name = "FK_AirportId"
     type = "S"
+  }
+
+  attribute {
+    name = "Zip"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Zip-index"
+    hash_key        = "Zip"
+    projection_type = "ALL"
   }
 
   tags = {
@@ -390,6 +402,7 @@ resource "aws_dynamodb_table" "omni-wt-rt-zip-codes" {
     STAGE       = var.env
   }
 }
+
 
 resource "aws_dynamodb_table" "omni-wt-rt-timezone-master" {
   name             = "omni-wt-rt-timezone-master-${var.env}"
