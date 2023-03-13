@@ -435,3 +435,21 @@ resource "aws_dynamodb_table" "omni-wt-rt-timezone-zip-cr" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-add-document-logs" {
+  name         = "omni-add-document-logs-${var.env}"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "Id"
+
+  attribute {
+    name = "Id"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
