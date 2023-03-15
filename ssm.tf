@@ -1060,10 +1060,11 @@ resource "aws_ssm_parameter" "timezone-zip-cr-sns-arn" {
   }
 }
 
-resource "aws_ssm_parameter" "tadd-document-ddb-table-name" {
-  name  = "/omni-dw/${var.env}/addDocumentLog/table"
-  type  = "SecureString"
-  value = aws_dynamodb_table.omni-add-document-logs.name
+resource "aws_ssm_parameter" "add-document-ddb-table-name" {
+  name      = "/omni-dw/${var.env}/addDocumentLog/table"
+  type      = "SecureString"
+  value     = aws_dynamodb_table.omni-add-document-logs.name
+  overwrite = true
 
   tags = {
     Application = "Real Time Updates"
