@@ -1060,6 +1060,20 @@ resource "aws_ssm_parameter" "timezone-zip-cr-sns-arn" {
   }
 }
 
+resource "aws_ssm_parameter" "add-document-ddb-table-name" {
+  name      = "/omni-dw/${var.env}/addDocumentLog/table"
+  type      = "SecureString"
+  value     = aws_dynamodb_table.omni-add-document-logs.name
+  overwrite = true
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "tracking-notes-name" {
   name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.tableName"
   type  = "SecureString"

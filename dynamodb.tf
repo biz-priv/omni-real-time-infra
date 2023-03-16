@@ -378,9 +378,21 @@ resource "aws_dynamodb_table" "omni-wt-rt-zip-codes" {
     name = "PK_SeqNo"
     type = "S"
   }
+
   attribute {
     name = "FK_AirportId"
     type = "S"
+  }
+
+  attribute {
+    name = "Zip"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Zip-index"
+    hash_key        = "Zip"
+    projection_type = "ALL"
   }
 
   tags = {
@@ -390,6 +402,7 @@ resource "aws_dynamodb_table" "omni-wt-rt-zip-codes" {
     STAGE       = var.env
   }
 }
+
 
 resource "aws_dynamodb_table" "omni-wt-rt-timezone-master" {
   name             = "omni-wt-rt-timezone-master-${var.env}"
@@ -436,6 +449,24 @@ resource "aws_dynamodb_table" "omni-wt-rt-timezone-zip-cr" {
   }
 }
 
+resource "aws_dynamodb_table" "omni-add-document-logs" {
+  name         = "omni-add-document-logs-${var.env}"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "Id"
+
+  attribute {
+    name = "Id"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_dynamodb_table" "omni-wt-tracking-notes" {
   name             = "omni-wt-rt-tracking-notes-${var.env}"
   billing_mode     = "PAY_PER_REQUEST"
@@ -466,4 +497,3 @@ resource "aws_dynamodb_table" "omni-wt-tracking-notes" {
     STAGE       = var.env
   }
 }
-
