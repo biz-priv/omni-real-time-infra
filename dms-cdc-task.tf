@@ -454,9 +454,20 @@ resource "aws_dms_replication_task" "omni-wt-rt-cdc" {
           "filters" : []
         },
         {
-          "rule-type" : "transformation",
+          "rule-type" : "selection",
           "rule-id" : "25",
           "rule-name" : "25",
+          "object-locator" : {
+            "schema-name" : "dbo",
+            "table-name" : "tbl_TrackingNotes"
+          },
+          "rule-action" : "include",
+          "filters" : []
+        },
+        {
+          "rule-type" : "transformation",
+          "rule-id" : "26",
+          "rule-name" : "26",
           "rule-target" : "column",
           "object-locator" : {
             "schema-name" : "%",

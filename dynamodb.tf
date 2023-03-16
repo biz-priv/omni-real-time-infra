@@ -435,3 +435,35 @@ resource "aws_dynamodb_table" "omni-wt-rt-timezone-zip-cr" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wt-tracking-notes" {
+  name             = "omni-wt-rt-tracking-notes-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_NoteNo"
+  range_key        = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_NoteNo"
+    type = "S"
+  }
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-tracking-notes-orderNo-index-${var.env}"
+    hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+

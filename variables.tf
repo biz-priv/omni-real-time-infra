@@ -308,3 +308,8 @@ variable "timezone_zip_cr_sns_arn" {
   type     = string
   nullable = false
 }
+
+variable "tracking_notes_sns_arn" {
+  type     = string
+  nullable = false
+}

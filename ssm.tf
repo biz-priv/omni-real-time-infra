@@ -1060,3 +1060,41 @@ resource "aws_ssm_parameter" "timezone-zip-cr-sns-arn" {
   }
 }
 
+resource "aws_ssm_parameter" "tracking-notes-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-tracking-notes.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "tracking-notes-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-tracking-notes.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "tracking-notes-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/sns.arn"
+  type  = "SecureString"
+  value = var.tracking_notes_sns_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
