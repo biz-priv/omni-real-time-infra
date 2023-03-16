@@ -467,7 +467,7 @@ resource "aws_dynamodb_table" "omni-add-document-logs" {
   }
 }
 
-resource "aws_dynamodb_table" "omni-wt-tracking-notes" {
+resource "aws_dynamodb_table" "omni-wt-rt-tracking-notes" {
   name             = "omni-wt-rt-tracking-notes-${var.env}"
   billing_mode     = "PAY_PER_REQUEST"
   hash_key         = "PK_NoteNo"
