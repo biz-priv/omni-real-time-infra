@@ -1,7 +1,7 @@
 resource "aws_sqs_queue" "omni_wt_rt_queue" {
-  count                     = length(var.sqs_queue_name)
-  name                      = element(var.sqs_queue_name, count.index)
-  visibility_timeout_seconds = 90
+  count                      = length(var.sqs_queue_name)
+  name                       = element(var.sqs_queue_name, count.index)
+  visibility_timeout_seconds = 300
   redrive_policy = jsonencode({
     deadLetterTargetArn = aws_sqs_queue.omni_wt_rt_queue_deadletter[count.index].arn
     maxReceiveCount     = 3
@@ -9,14 +9,14 @@ resource "aws_sqs_queue" "omni_wt_rt_queue" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy = "BizCloudExperts"
+    CreatedBy   = "BizCloudExperts"
     Environment = var.env
-    STAGE = var.env
+    STAGE       = var.env
   }
 }
 
 resource "aws_sqs_queue_policy" "omni_wt_rt_queue" {
-   count    = length(var.sqs_queue_name)
+  count     = length(var.sqs_queue_name)
   queue_url = aws_sqs_queue.omni_wt_rt_queue[count.index].id
 
   policy = <<POLICY
@@ -48,13 +48,13 @@ POLICY
 
 
 resource "aws_sqs_queue" "omni_wt_rt_queue_deadletter" {
-  count                   = length(var.sqs_deadletter_queue_name)
-  name                    = element(var.sqs_deadletter_queue_name, count.index)
-  visibility_timeout_seconds = 90
-   tags = {
+  count                      = length(var.sqs_deadletter_queue_name)
+  name                       = element(var.sqs_deadletter_queue_name, count.index)
+  visibility_timeout_seconds = 300
+  tags = {
     Application = "Real Time Updates"
-    CreatedBy = "BizCloudExperts"
+    CreatedBy   = "BizCloudExperts"
     Environment = var.env
-    STAGE = var.env
+    STAGE       = var.env
   }
 }

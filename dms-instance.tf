@@ -1,44 +1,3 @@
-# data "aws_iam_policy_document" "dms_assume_role" {
-#   statement {
-#     actions = ["sts:AssumeRole"]
-
-#     principals {
-#       identifiers = ["dms.amazonaws.com"]
-#       type        = "Service"
-#     }
-#   }
-# }
-
-# resource "aws_iam_role" "dms-access-for-endpoint" {
-#   assume_role_policy = data.aws_iam_policy_document.dms_assume_role.json
-#   name               = "dms-access-for-endpoint"
-# }
-
-# resource "aws_iam_role_policy_attachment" "dms-access-for-endpoint-AmazonDMSRedshiftS3Role" {
-#   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonDMSRedshiftS3Role"
-#   role       = aws_iam_role.dms-access-for-endpoint.name
-# }
-
-# resource "aws_iam_role" "dms-cloudwatch-logs-role" {
-#   assume_role_policy = data.aws_iam_policy_document.dms_assume_role.json
-#   name               = "dms-cloudwatch-logs-role"
-# }
-
-# resource "aws_iam_role_policy_attachment" "dms-cloudwatch-logs-role-AmazonDMSCloudWatchLogsRole" {
-#   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonDMSCloudWatchLogsRole"
-#   role       = aws_iam_role.dms-cloudwatch-logs-role.name
-# }
-
-# resource "aws_iam_role" "dms-vpc-role" {
-#   assume_role_policy = data.aws_iam_policy_document.dms_assume_role.json
-#   name               = "dms-vpc-role"
-# }
-
-# resource "aws_iam_role_policy_attachment" "dms-vpc-role-AmazonDMSVPCManagementRole" {
-#   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonDMSVPCManagementRole"
-#   role       = aws_iam_role.dms-vpc-role.name
-# }
-
 # Create a new replication instance
 resource "aws_dms_replication_instance" "omni-wt-rt-updates-dms-instance" {
   allocated_storage            = var.dms_instance_storage
@@ -54,20 +13,23 @@ resource "aws_dms_replication_instance" "omni-wt-rt-updates-dms-instance" {
   replication_instance_id      = "omni-wt-rt-updates-${var.env}"
   replication_subnet_group_id  = var.replication_subnet_group_id
 
+  lifecycle {
+    ignore_changes = [
+      replication_instance_class,
+      allocated_storage,
+      engine_version,
+    ]
+  }
+
   tags = {
     Application = "Real Time Updates"
-    CreatedBy = "BizCloudExperts"
+    CreatedBy   = "BizCloudExperts"
     Environment = var.env
-    STAGE = var.env
+    STAGE       = var.env
   }
 
   vpc_security_group_ids = [
     var.dms_security_group,
   ]
 
-  # depends_on = [
-  #   aws_iam_role_policy_attachment.dms-access-for-endpoint-AmazonDMSRedshiftS3Role,
-  #   aws_iam_role_policy_attachment.dms-cloudwatch-logs-role-AmazonDMSCloudWatchLogsRole,
-  #   aws_iam_role_policy_attachment.dms-vpc-role-AmazonDMSVPCManagementRole
-  # ]
 }
