@@ -956,6 +956,19 @@ resource "aws_ssm_parameter" "zip-codes-name" {
   }
 }
 
+resource "aws_ssm_parameter" "zip-codes-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/zip-codes/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-zip-codes.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "zip-codes-streamArn" {
   name  = "/omni-wt-rt-updates/${var.env}/zip-codes/ddb.streamArn"
   type  = "SecureString"
@@ -995,6 +1008,19 @@ resource "aws_ssm_parameter" "timezone-master-name" {
   }
 }
 
+resource "aws_ssm_parameter" "timezone-master-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-master/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-master.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "timezone-master-streamArn" {
   name  = "/omni-wt-rt-updates/${var.env}/timezone-master/ddb.streamArn"
   type  = "SecureString"
@@ -1025,6 +1051,19 @@ resource "aws_ssm_parameter" "timezone-zip-cr-name" {
   name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/ddb.tableName"
   type  = "SecureString"
   value = aws_dynamodb_table.omni-wt-rt-timezone-zip-cr.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-zip-cr-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-zip-cr.arn
 
   tags = {
     Application = "Real Time Updates"
@@ -1078,6 +1117,19 @@ resource "aws_ssm_parameter" "tracking-notes-name" {
   name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.tableName"
   type  = "SecureString"
   value = aws_dynamodb_table.omni-wt-rt-tracking-notes.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "tracking-notes-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-tracking-notes.arn
 
   tags = {
     Application = "Real Time Updates"
