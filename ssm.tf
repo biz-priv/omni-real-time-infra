@@ -568,7 +568,7 @@ resource "aws_ssm_parameter" "shipment-desc-streamArn" {
 resource "aws_ssm_parameter" "shipment-desc-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-desc/sns.arn"
   type  = "SecureString"
-  value = var.shipment_desc_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-desc-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
