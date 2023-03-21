@@ -62,4 +62,4 @@ omni_iviaresponse_ddb_name                  = "omni-rt-ivia-response-dev"
 omni_ivia_ddb_streamarn                     = "arn:aws:dynamodb:us-east-1:332281781429:table/omni-rt-ivia-dev/stream/2022-12-06T19:05:20.641"
 shipment_header_filter_billno               = "23190"
 shipmentApar_filter_Vendor_Id               = "T19262"
-p44_mckesson_cust_nbrs                      = "22209, 22210, 21719"
+p44_mckesson_cust_nbrs                      = ["22209", "22210", "21719"]

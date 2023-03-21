@@ -1180,8 +1180,8 @@ resource "aws_ssm_parameter" "p44-milestones-logs-table-name" {
 
 resource "aws_ssm_parameter" "p44-mckesson-cust-nbrs" {
   name  = "/omni-p44-rt-updates/${var.env}/mckesson-customer/numbers"
-  type  = "String"
-  value = var.p44_mckesson_cust_nbrs
+  type  = "StringList"
+  value = join(",", var.p44_mckesson_cust_nbrs)
 
   tags = {
     Application = "Real Time Updates"
