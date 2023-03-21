@@ -383,7 +383,7 @@ resource "aws_ssm_parameter" "omni-default-subnet-b" {
 resource "aws_ssm_parameter" "omni-shipment-header-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-header/sns.arn"
   type  = "SecureString"
-  value = var.omni_shipment_header_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-header-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -397,7 +397,7 @@ resource "aws_ssm_parameter" "omni-shipment-header-arn" {
 resource "aws_ssm_parameter" "omni-references-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/references/sns.arn"
   type  = "SecureString"
-  value = var.omni_references_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-references-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -410,7 +410,7 @@ resource "aws_ssm_parameter" "omni-references-arn" {
 resource "aws_ssm_parameter" "omni-shipper-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipper/sns.arn"
   type  = "SecureString"
-  value = var.omni_shipper_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipper-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -423,7 +423,7 @@ resource "aws_ssm_parameter" "omni-shipper-arn" {
 resource "aws_ssm_parameter" "omni-consignee-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/consignee/sns.arn"
   type  = "SecureString"
-  value = var.omni_consignee_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-consignee-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -436,7 +436,7 @@ resource "aws_ssm_parameter" "omni-consignee-arn" {
 resource "aws_ssm_parameter" "omni-shipment-milestone-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-milestone/sns.arn"
   type  = "SecureString"
-  value = var.omni_shipment_milestone_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-milestone-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -449,7 +449,7 @@ resource "aws_ssm_parameter" "omni-shipment-milestone-arn" {
 resource "aws_ssm_parameter" "omni-shipment-apar-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-apar/sns.arn"
   type  = "SecureString"
-  value = var.omni_shipment_apar_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-apar-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -462,7 +462,7 @@ resource "aws_ssm_parameter" "omni-shipment-apar-arn" {
 resource "aws_ssm_parameter" "omni-apar-failure-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/apar-failure/sns.arn"
   type  = "SecureString"
-  value = var.omni_apar_failure_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-apar-failure-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -475,7 +475,7 @@ resource "aws_ssm_parameter" "omni-apar-failure-arn" {
 resource "aws_ssm_parameter" "omni-toyota-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/toyota/sqs.arn"
   type  = "SecureString"
-  value = var.omni_toyota_arn
+  value = "arn:aws:sqs:us-east-1:332281781429:omni-rt-toyota-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -488,7 +488,7 @@ resource "aws_ssm_parameter" "omni-toyota-arn" {
 resource "aws_ssm_parameter" "omni-toyota-url" {
   name  = "/omni-wt-rt-updates/${var.env}/toyota/sqs.url"
   type  = "SecureString"
-  value = var.omni_toyota_url
+  value = "https://sqs.us-east-1.amazonaws.com/332281781429/omni-rt-toyota-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -502,7 +502,7 @@ resource "aws_ssm_parameter" "omni-toyota-url" {
 resource "aws_ssm_parameter" "omni-toyota-dlq-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.arn"
   type  = "SecureString"
-  value = var.omni_toyota_dlq_arn
+  value = "arn:aws:sqs:us-east-1:332281781429:omni-rt-toyota-DLQ-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -515,7 +515,7 @@ resource "aws_ssm_parameter" "omni-toyota-dlq-arn" {
 resource "aws_ssm_parameter" "omni-toyota-dlq-url" {
   name  = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.url"
   type  = "SecureString"
-  value = var.omni_toyota_dlq_url
+  value = "https://sqs.us-east-1.amazonaws.com/332281781429/omni-rt-toyota-DLQ-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -581,7 +581,7 @@ resource "aws_ssm_parameter" "shipment-desc-sns-arn" {
 resource "aws_ssm_parameter" "instructions-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/instructions/sns.arn"
   type  = "SecureString"
-  value = var.instructions_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-instructions-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -633,7 +633,7 @@ resource "aws_ssm_parameter" "instructions-streamArn" {
 resource "aws_ssm_parameter" "ref-orderNo-index" {
   name  = "/omni-wt-rt-updates/${var.env}/references/ddb.orderNoIndex"
   type  = "String"
-  value = var.ref_orderNo_index
+  value = "omni-wt-rt-ref-orderNo-index-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -646,7 +646,7 @@ resource "aws_ssm_parameter" "ref-orderNo-index" {
 resource "aws_ssm_parameter" "instructions-orderNo-index" {
   name  = "/omni-wt-rt-updates/${var.env}/instructions/ddb.orderNoIndex"
   type  = "String"
-  value = var.instructions_orderNo_index
+  value = "omni-wt-instructions-orderNo-index-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -698,7 +698,7 @@ resource "aws_ssm_parameter" "toyota_api_url" {
 resource "aws_ssm_parameter" "omni_toyota_ddb_tablename" {
   name  = "/omni-rt-toyota/${var.env}/ddb.tableName"
   type  = "SecureString"
-  value = var.omni_toyota_ddb_tablename
+  value = "omni-rt-toyota-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -724,7 +724,7 @@ resource "aws_ssm_parameter" "omni_toyota_ddb_streamArn" {
 resource "aws_ssm_parameter" "omni_toyota_response_ddb_tableName" {
   name  = "/omni-rt-toyota/${var.env}/response/ddb.tableName"
   type  = "SecureString"
-  value = var.omni_toyota_response_ddb_tableName
+  value = "omni-rt-toyota-response-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -815,7 +815,7 @@ resource "aws_ssm_parameter" "consol-stop-items-streamArn" {
 resource "aws_ssm_parameter" "consol-stop-items-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/consol-stop-items/sns.arn"
   type  = "SecureString"
-  value = var.consol_stop_items_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-consol-stop-items-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -868,7 +868,7 @@ resource "aws_ssm_parameter" "consol-stop-headers-streamArn" {
 resource "aws_ssm_parameter" "consol-stop-headers-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/sns.arn"
   type  = "SecureString"
-  value = var.consol_stop_headers_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-consol-stop-headers-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -920,7 +920,7 @@ resource "aws_ssm_parameter" "confirmation-cost-streamArn" {
 resource "aws_ssm_parameter" "confirmation-cost-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/sns.arn"
   type  = "SecureString"
-  value = var.confirmation_cost_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-confirmation-cost-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -933,7 +933,7 @@ resource "aws_ssm_parameter" "confirmation-cost-sns-arn" {
 resource "aws_ssm_parameter" "confirmation-cost-orderNo-index" {
   name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/ddb.orderNoIndex"
   type  = "String"
-  value = var.confirmation_cost_orderNo_index
+  value = "omni-wt-confirmation-cost-orderNo-index-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -985,7 +985,7 @@ resource "aws_ssm_parameter" "zip-codes-streamArn" {
 resource "aws_ssm_parameter" "zip-codes-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/zip-codes/sns.arn"
   type  = "SecureString"
-  value = var.zip_codes_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-zip-codes-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -1037,7 +1037,7 @@ resource "aws_ssm_parameter" "timezone-master-streamArn" {
 resource "aws_ssm_parameter" "timezone-master-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/timezone-master/sns.arn"
   type  = "SecureString"
-  value = var.timezone_master_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-timezone-master-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -1089,7 +1089,7 @@ resource "aws_ssm_parameter" "timezone-zip-cr-streamArn" {
 resource "aws_ssm_parameter" "timezone-zip-cr-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/sns.arn"
   type  = "SecureString"
-  value = var.timezone_zip_cr_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-timezone-zip-cr-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -1155,7 +1155,20 @@ resource "aws_ssm_parameter" "tracking-notes-streamArn" {
 resource "aws_ssm_parameter" "tracking-notes-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/sns.arn"
   type  = "SecureString"
-  value = var.tracking_notes_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-tracking-notes-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "tracking-notes-orderNo-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.orderNoIndex"
+  type  = "String"
+  value = "omni-tracking-notes-orderNo-index-${var.env}"
 
   tags = {
     Application = "Real Time Updates"

@@ -106,101 +106,6 @@ variable "subnet_B_id" {
   nullable = false
 }
 
-variable "omni_shipment_header_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_references_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_shipper_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_consignee_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_shipment_milestone_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_shipment_apar_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_apar_failure_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_toyota_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_toyota_url" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_toyota_dlq_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_toyota_dlq_url" {
-  type     = string
-  nullable = false
-}
-
-variable "shipment_desc_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "instructions_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "consol_stop_items_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "consol_stop_headers_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "confirmation_cost_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "ref_orderNo_index" {
-  type     = string
-  nullable = false
-}
-
-variable "instructions_orderNo_index" {
-  type     = string
-  nullable = false
-}
-
-variable "confirmation_cost_orderNo_index" {
-  type     = string
-  nullable = false
-}
-
 variable "omni_ivia_ddb_name" {
   type     = string
   nullable = false
@@ -255,20 +160,11 @@ variable "toyota_api_url" {
   nullable = false
 }
 
-variable "omni_toyota_ddb_tablename" {
-  type     = string
-  nullable = false
-}
-
 variable "omni_toyota_ddb_streamArn" {
   type     = string
   nullable = false
 }
 
-variable "omni_toyota_response_ddb_tableName" {
-  type     = string
-  nullable = false
-}
 variable "omni_wt_rt_updates_ivia_sqs_arn" {
   type     = string
   nullable = false
@@ -290,26 +186,6 @@ variable "shipment_header_filter_billno" {
 }
 
 variable "shipmentApar_filter_Vendor_Id" {
-  type     = string
-  nullable = false
-}
-
-variable "zip_codes_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "timezone_master_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "timezone_zip_cr_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "tracking_notes_sns_arn" {
   type     = string
   nullable = false
 }
