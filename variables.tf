@@ -313,3 +313,9 @@ variable "tracking_notes_sns_arn" {
   type     = string
   nullable = false
 }
+
+
+variable "p44_mckesson_cust_nbrs" {
+  type     = string
+  nullable = false
+}

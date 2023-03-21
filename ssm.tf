@@ -1164,3 +1164,29 @@ resource "aws_ssm_parameter" "tracking-notes-sns-arn" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "p44-milestones-logs-table-name" {
+  name  = "/omni-p44-rt-updates/${var.env}/milestone-update/ddb.tableName"
+  type  = "SecureString"
+  value = "omni-dw-p44-tl-update-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "p44-mckesson-cust-nbrs" {
+  name  = "/omni-p44-rt-updates/${var.env}/mckesson-customer/numbers"
+  type  = "String"
+  value = var.p44_mckesson_cust_nbrs
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
