@@ -462,9 +462,20 @@ resource "aws_dms_replication_task" "omni-wt-rt-header-fullload-dms-task" {
           "filters" : []
         },
         {
-          "rule-type" : "transformation",
+          "rule-type" : "selection",
           "rule-id" : "26",
           "rule-name" : "26",
+          "object-locator" : {
+            "schema-name" : "dbo",
+            "table-name" : "tbl_Equipment"
+          },
+          "rule-action" : "include",
+          "filters" : []
+        },
+        {
+          "rule-type" : "transformation",
+          "rule-id" : "27",
+          "rule-name" : "27",
           "rule-target" : "column",
           "object-locator" : {
             "schema-name" : "%",

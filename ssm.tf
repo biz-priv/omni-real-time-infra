@@ -1203,3 +1203,56 @@ resource "aws_ssm_parameter" "p44-mckesson-cust-nbrs" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "equipment-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/equipment/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-equipment.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "equipment-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/equipment/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-equipment.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "equipment-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/equipment/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-equipment.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "equipment-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/equipment/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-equipment-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
