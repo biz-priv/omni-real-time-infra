@@ -155,10 +155,10 @@ variable "toyota_api_url" {
   nullable = false
 }
 
-variable "omni_toyota_ddb_streamArn" {
-  type     = string
-  nullable = false
-}
+# variable "omni_toyota_ddb_streamArn" {
+#   type     = string
+#   nullable = false
+# }
 
 variable "omni_wt_rt_updates_ivia_sqs_arn" {
   type     = string
@@ -170,10 +170,10 @@ variable "omni_iviaresponse_ddb_name" {
   nullable = false
 }
 
-variable "omni_ivia_ddb_streamarn" {
-  type     = string
-  nullable = false
-}
+# variable "omni_ivia_ddb_streamarn" {
+#   type     = string
+#   nullable = false
+# }
 
 variable "shipment_header_filter_billno" {
   type     = string
