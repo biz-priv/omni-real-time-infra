@@ -115,18 +115,18 @@ resource "aws_ssm_parameter" "omni-rt-ivia-response-ddb-name" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-rt-ivia-ddb-streamarn" {
-  name  = "/omni-ivia/${var.env}/ivia/ddb.streamArn"
-  type  = "String"
-  value = var.omni_ivia_ddb_streamarn
+# resource "aws_ssm_parameter" "omni-rt-ivia-ddb-streamarn" {
+#   name  = "/omni-ivia/${var.env}/ivia/ddb.streamArn"
+#   type  = "String"
+#   value = var.omni_ivia_ddb_streamarn
 
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
+#   tags = {
+#     Application = "Real Time Updates"
+#     CreatedBy   = "BizCloudExperts"
+#     Environment = var.env
+#     STAGE       = var.env
+#   }
+# }
 
 resource "aws_ssm_parameter" "omni-rt-ivia-address-mapping-ddb-table-name" {
   name  = "/omni-ivia/${var.env}/address-mapping/ddb.tableName"

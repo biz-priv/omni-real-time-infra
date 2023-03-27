@@ -4,7 +4,6 @@ aws_account_number                          = "332281781429"
 kms_key_arn_for_dms                         = "arn:aws:kms:us-east-1:332281781429:key/f786e3aa-7612-40da-aafa-dd21b2ab2e1d"
 replication_subnet_group_id                 = "default-vpc-ed4b2288"
 dms_vpc_security_group_id                   = "sg-f2b56796"
-kms_key_arn_for_dms_source                  = "arn:aws:kms:us-east-1:332281781429:key/f786e3aa-7612-40da-aafa-dd21b2ab2e1d"
 dms_instance_storage                        = 100
 source_endpoint_arn                         = "arn:aws:dms:us-east-1:332281781429:endpoint:TLKK6HMWVZ3DPX5DKXAT3QGBGU"
 dms_instance_class                          = "dms.c4.xlarge"
