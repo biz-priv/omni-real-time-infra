@@ -708,18 +708,18 @@ resource "aws_ssm_parameter" "omni_toyota_ddb_tablename" {
   }
 }
 
-resource "aws_ssm_parameter" "omni_toyota_ddb_streamArn" {
-  name  = "/omni-rt-toyota/${var.env}/ddb.streamArn"
-  type  = "SecureString"
-  value = var.omni_toyota_ddb_streamArn
+# resource "aws_ssm_parameter" "omni_toyota_ddb_streamArn" {
+#   name  = "/omni-rt-toyota/${var.env}/ddb.streamArn"
+#   type  = "SecureString"
+#   value = var.omni_toyota_ddb_streamArn
 
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
+#   tags = {
+#     Application = "Real Time Updates"
+#     CreatedBy   = "BizCloudExperts"
+#     Environment = var.env
+#     STAGE       = var.env
+#   }
+# }
 
 resource "aws_ssm_parameter" "omni_toyota_response_ddb_tableName" {
   name  = "/omni-rt-toyota/${var.env}/response/ddb.tableName"

@@ -32,4 +32,6 @@ resource "aws_dms_replication_instance" "omni-wt-rt-updates-dms-instance" {
     var.dms_security_group,
   ]
 
+
 }
+

@@ -12,10 +12,12 @@ pipeline{
                         env.ENVIRONMENT="dev"
                     } else if ("${GIT_BRANCH}".contains("master")){
                         env.ENVIRONMENT="prod"
-                    }
+                    } else if ("${GIT_BRANCH}".contains("stage")){
+                        env.ENVIRONMENT="stg"
                 }
             }
         }
+		}
 		stage('Terraform init'){
 			steps{
 				script{
@@ -27,6 +29,11 @@ pipeline{
 				else if("${env.ENVIRONMENT}".contains("prod")){
 					withAWS(credentials: 'omni-aws-creds'){
 					sh "terraform init -backend-config 'bucket=omni-toyota-terraform-state-prod' -backend-config 'region=us-east-1' -backend-config 'key=state/terraform.tfstate' -migrate-state"
+				} 
+				}
+				else if("${env.ENVIRONMENT}".contains("stg")){
+					withAWS(credentials: 'omni-aws-creds'){
+					sh "terraform init -backend-config 'bucket=omni-toyota-terraform-state-dev' -backend-config 'region=us-east-1' -backend-config 'key=staging/terraform.tfstate' -migrate-state"
 				} 
 				}
 	
@@ -47,6 +54,11 @@ pipeline{
 					sh "terraform plan -no-color -var-file='prod.tfvars'"
 					}
 				}
+				else if("${env.ENVIRONMENT}".contains("stg")){
+					withAWS(credentials: 'omni-aws-creds'){
+					sh "terraform plan -no-color -var-file='stg.tfvars'"
+					}
+				}
                     
                }
 			
@@ -57,6 +69,7 @@ pipeline{
                 anyOf {
 					equals(actual: "${env.ENVIRONMENT}", expected: "dev")
 					equals(actual: "${env.ENVIRONMENT}", expected: "prod")
+					equals(actual: "${env.ENVIRONMENT}", expected: "stg")
                 }
             }
       steps{
@@ -78,10 +91,14 @@ pipeline{
 					sh "terraform apply -no-color -var-file='prod.tfvars' --auto-approve"
 					}
 				}
+				else if("${env.ENVIRONMENT}".contains("stg")){
+					withAWS(credentials: 'omni-aws-creds'){
+					sh "terraform apply -no-color -var-file='stg.tfvars' --auto-approve"
+					}
+				}
 			}
 		}
 			}
 	}
 
-  }
-    
+	}
