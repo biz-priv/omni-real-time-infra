@@ -27,11 +27,6 @@ variable "dms_vpc_security_group_id" {
   nullable = false
 }
 
-variable "server_name_for_dms_source" {
-  type     = string
-  nullable = false
-}
-
 variable "dms_instance_storage" {
   type     = string
   nullable = false
