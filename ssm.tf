@@ -383,7 +383,7 @@ resource "aws_ssm_parameter" "omni-default-subnet-b" {
 resource "aws_ssm_parameter" "omni-shipment-header-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-header/sns.arn"
   type  = "SecureString"
-  value = var.omni_shipment_header_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-header-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -397,7 +397,7 @@ resource "aws_ssm_parameter" "omni-shipment-header-arn" {
 resource "aws_ssm_parameter" "omni-references-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/references/sns.arn"
   type  = "SecureString"
-  value = var.omni_references_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-references-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -410,7 +410,7 @@ resource "aws_ssm_parameter" "omni-references-arn" {
 resource "aws_ssm_parameter" "omni-shipper-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipper/sns.arn"
   type  = "SecureString"
-  value = var.omni_shipper_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipper-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -423,7 +423,7 @@ resource "aws_ssm_parameter" "omni-shipper-arn" {
 resource "aws_ssm_parameter" "omni-consignee-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/consignee/sns.arn"
   type  = "SecureString"
-  value = var.omni_consignee_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-consignee-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -436,7 +436,7 @@ resource "aws_ssm_parameter" "omni-consignee-arn" {
 resource "aws_ssm_parameter" "omni-shipment-milestone-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-milestone/sns.arn"
   type  = "SecureString"
-  value = var.omni_shipment_milestone_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-milestone-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -449,7 +449,7 @@ resource "aws_ssm_parameter" "omni-shipment-milestone-arn" {
 resource "aws_ssm_parameter" "omni-shipment-apar-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-apar/sns.arn"
   type  = "SecureString"
-  value = var.omni_shipment_apar_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-apar-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -462,7 +462,7 @@ resource "aws_ssm_parameter" "omni-shipment-apar-arn" {
 resource "aws_ssm_parameter" "omni-apar-failure-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/apar-failure/sns.arn"
   type  = "SecureString"
-  value = var.omni_apar_failure_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-apar-failure-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -475,7 +475,7 @@ resource "aws_ssm_parameter" "omni-apar-failure-arn" {
 resource "aws_ssm_parameter" "omni-toyota-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/toyota/sqs.arn"
   type  = "SecureString"
-  value = var.omni_toyota_arn
+  value = "arn:aws:sqs:us-east-1:332281781429:omni-rt-toyota-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -488,7 +488,7 @@ resource "aws_ssm_parameter" "omni-toyota-arn" {
 resource "aws_ssm_parameter" "omni-toyota-url" {
   name  = "/omni-wt-rt-updates/${var.env}/toyota/sqs.url"
   type  = "SecureString"
-  value = var.omni_toyota_url
+  value = "https://sqs.us-east-1.amazonaws.com/332281781429/omni-rt-toyota-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -502,7 +502,7 @@ resource "aws_ssm_parameter" "omni-toyota-url" {
 resource "aws_ssm_parameter" "omni-toyota-dlq-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.arn"
   type  = "SecureString"
-  value = var.omni_toyota_dlq_arn
+  value = "arn:aws:sqs:us-east-1:332281781429:omni-rt-toyota-DLQ-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -515,7 +515,7 @@ resource "aws_ssm_parameter" "omni-toyota-dlq-arn" {
 resource "aws_ssm_parameter" "omni-toyota-dlq-url" {
   name  = "/omni-wt-rt-updates/${var.env}/toyota/DLQ.url"
   type  = "SecureString"
-  value = var.omni_toyota_dlq_url
+  value = "https://sqs.us-east-1.amazonaws.com/332281781429/omni-rt-toyota-DLQ-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -568,7 +568,7 @@ resource "aws_ssm_parameter" "shipment-desc-streamArn" {
 resource "aws_ssm_parameter" "shipment-desc-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-desc/sns.arn"
   type  = "SecureString"
-  value = var.shipment_desc_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-desc-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -581,7 +581,7 @@ resource "aws_ssm_parameter" "shipment-desc-sns-arn" {
 resource "aws_ssm_parameter" "instructions-sns-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/instructions/sns.arn"
   type  = "SecureString"
-  value = var.instructions_sns_arn
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-instructions-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -633,7 +633,7 @@ resource "aws_ssm_parameter" "instructions-streamArn" {
 resource "aws_ssm_parameter" "ref-orderNo-index" {
   name  = "/omni-wt-rt-updates/${var.env}/references/ddb.orderNoIndex"
   type  = "String"
-  value = var.ref_orderNo_index
+  value = "omni-wt-rt-ref-orderNo-index-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -646,7 +646,7 @@ resource "aws_ssm_parameter" "ref-orderNo-index" {
 resource "aws_ssm_parameter" "instructions-orderNo-index" {
   name  = "/omni-wt-rt-updates/${var.env}/instructions/ddb.orderNoIndex"
   type  = "String"
-  value = var.instructions_orderNo_index
+  value = "omni-wt-instructions-orderNo-index-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -698,7 +698,7 @@ resource "aws_ssm_parameter" "toyota_api_url" {
 resource "aws_ssm_parameter" "omni_toyota_ddb_tablename" {
   name  = "/omni-rt-toyota/${var.env}/ddb.tableName"
   type  = "SecureString"
-  value = var.omni_toyota_ddb_tablename
+  value = "omni-rt-toyota-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -724,7 +724,7 @@ resource "aws_ssm_parameter" "omni_toyota_ddb_tablename" {
 resource "aws_ssm_parameter" "omni_toyota_response_ddb_tableName" {
   name  = "/omni-rt-toyota/${var.env}/response/ddb.tableName"
   type  = "SecureString"
-  value = var.omni_toyota_response_ddb_tableName
+  value = "omni-rt-toyota-response-${var.env}"
 
   tags = {
     Application = "Real Time Updates"
@@ -772,3 +772,487 @@ resource "aws_ssm_parameter" "shipmentApar_filter_Vendor_Id" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "consol-stop-items-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-items/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-items.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-items-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-items/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-items.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-items-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-items/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-items.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-items-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-items/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-consol-stop-items-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+
+resource "aws_ssm_parameter" "consol-stop-headers-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-headers.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-headers-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-headers.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-headers-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-consol-stop-headers.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-headers-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-consol-stop-headers-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-confirmation-cost.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-confirmation-cost.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-confirmation-cost.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-confirmation-cost-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "confirmation-cost-orderNo-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/confirmation-cost/ddb.orderNoIndex"
+  type  = "String"
+  value = "omni-wt-confirmation-cost-orderNo-index-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "zip-codes-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/zip-codes/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-zip-codes.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "zip-codes-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/zip-codes/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-zip-codes.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "zip-codes-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/zip-codes/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-zip-codes.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "zip-codes-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/zip-codes/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-zip-codes-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-master-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-master/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-master.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-master-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-master/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-master.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-master-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-master/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-master.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-master-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-master/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-timezone-master-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-zip-cr-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-zip-cr.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-zip-cr-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-zip-cr.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-zip-cr-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-timezone-zip-cr.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "timezone-zip-cr-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/timezone-zip-cr/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-timezone-zip-cr-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "add-document-ddb-table-name" {
+  name      = "/omni-dw/${var.env}/addDocumentLog/table"
+  type      = "SecureString"
+  value     = aws_dynamodb_table.omni-add-document-logs.name
+  overwrite = true
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "tracking-notes-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-tracking-notes.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "tracking-notes-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-tracking-notes.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "tracking-notes-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-tracking-notes.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "tracking-notes-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-tracking-notes-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "tracking-notes-orderNo-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.orderNoIndex"
+  type  = "String"
+  value = "omni-tracking-notes-orderNo-index-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "p44-milestones-logs-table-name" {
+  name  = "/omni-p44-rt-updates/${var.env}/milestone-update/ddb.tableName"
+  type  = "SecureString"
+  value = "omni-dw-p44-tl-update-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "p44-mckesson-cust-nbrs" {
+  name  = "/omni-p44-rt-updates/${var.env}/mckesson-customer/numbers"
+  type  = "StringList"
+  value = join(",", var.p44_mckesson_cust_nbrs)
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "equipment-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/equipment/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-equipment.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "equipment-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/equipment/ddb.arn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-equipment.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "equipment-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/equipment/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-equipment.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "equipment-sns-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/equipment/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-equipment-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+

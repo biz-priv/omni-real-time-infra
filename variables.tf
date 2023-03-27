@@ -32,6 +32,11 @@ variable "kms_key_arn_for_dms_source" {
   nullable = false
 }
 
+variable "server_name_for_dms_source" {
+  type     = string
+  nullable = false
+}
+
 variable "dms_instance_storage" {
   type     = string
   nullable = false
@@ -101,94 +106,20 @@ variable "subnet_B_id" {
   nullable = false
 }
 
-variable "omni_shipment_header_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_references_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_shipper_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_consignee_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_shipment_milestone_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_shipment_apar_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_apar_failure_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_toyota_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_toyota_url" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_toyota_dlq_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "omni_toyota_dlq_url" {
-  type     = string
-  nullable = false
-}
-
-variable "shipment_desc_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "instructions_sns_arn" {
-  type     = string
-  nullable = false
-}
-
-variable "ref_orderNo_index" {
-  type     = string
-  nullable = false
-}
-variable "instructions_orderNo_index" {
-  type     = string
-  nullable = false
-}
-
 variable "omni_ivia_ddb_name" {
   type     = string
   nullable = false
 }
 
-# variable "omni_ivia_createShipment_url" {
-#   type     = string
-#   nullable = false
-# }
+variable "omni_ivia_createShipment_url" {
+  type     = string
+  nullable = false
+}
 
-# variable "omni_ivia_createShipment_token" {
-#   type     = string
-#   nullable = false
-# }
+variable "omni_ivia_createShipment_token" {
+  type     = string
+  nullable = false
+}
 
 variable "omni_ivia_createShipment_xmlUpdate_url" {
   type     = string
@@ -205,10 +136,10 @@ variable "omni_ivia_createShipment_xmlUpdate_password" {
   nullable = false
 }
 
-# variable "omni_ivia_createShipment_carrierId" {
-#   type     = string
-#   nullable = false
-# }
+variable "omni_ivia_createShipment_carrierId" {
+  type     = string
+  nullable = false
+}
 
 variable "omni_ivia_addMilestone_url" {
   type     = string
@@ -229,20 +160,11 @@ variable "toyota_api_url" {
   nullable = false
 }
 
-variable "omni_toyota_ddb_tablename" {
+variable "omni_toyota_ddb_streamArn" {
   type     = string
   nullable = false
 }
 
-# variable "omni_toyota_ddb_streamArn" {
-#   type     = string
-#   nullable = false
-# }
-
-variable "omni_toyota_response_ddb_tableName" {
-  type     = string
-  nullable = false
-}
 variable "omni_wt_rt_updates_ivia_sqs_arn" {
   type     = string
   nullable = false
@@ -253,10 +175,10 @@ variable "omni_iviaresponse_ddb_name" {
   nullable = false
 }
 
-# variable "omni_ivia_ddb_streamarn" {
-#   type     = string
-#   nullable = false
-# }
+variable "omni_ivia_ddb_streamarn" {
+  type     = string
+  nullable = false
+}
 
 variable "shipment_header_filter_billno" {
   type     = string
@@ -265,5 +187,10 @@ variable "shipment_header_filter_billno" {
 
 variable "shipmentApar_filter_Vendor_Id" {
   type     = string
+  nullable = false
+}
+
+variable "p44_mckesson_cust_nbrs" {
+  type     = list(string)
   nullable = false
 }

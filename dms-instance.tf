@@ -1,3 +1,4 @@
+# Create a new replication instance
 resource "aws_dms_replication_instance" "omni-wt-rt-updates-dms-instance" {
   allocated_storage            = var.dms_instance_storage
   apply_immediately            = true
@@ -12,14 +13,25 @@ resource "aws_dms_replication_instance" "omni-wt-rt-updates-dms-instance" {
   replication_instance_id      = "omni-wt-rt-updates-${var.env}"
   replication_subnet_group_id  = var.replication_subnet_group_id
 
+  lifecycle {
+    ignore_changes = [
+      replication_instance_class,
+      allocated_storage,
+      engine_version,
+    ]
+  }
+
   tags = {
     Application = "Real Time Updates"
-    CreatedBy = "BizCloudExperts"
+    CreatedBy   = "BizCloudExperts"
     Environment = var.env
-    STAGE = var.env
+    STAGE       = var.env
   }
 
   vpc_security_group_ids = [
     var.dms_security_group,
   ]
+
+
 }
+

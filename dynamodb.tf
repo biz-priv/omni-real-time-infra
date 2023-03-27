@@ -79,6 +79,16 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-apar" {
     name = "SeqNo"
     type = "S"
   }
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-ConsolNo-index-${var.env}"
+    hash_key        = "ConsolNo"
+    projection_type = "ALL"
+  }
 
   tags = {
     Application = "Real Time Updates"
@@ -132,6 +142,18 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-header" {
     type = "S"
   }
 
+  attribute {
+    name = "Housebill"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Housebill-index"
+    hash_key        = "Housebill"
+    projection_type = "ALL"
+  }
+
+
   tags = {
     Application = "Real Time Updates"
     CreatedBy   = "BizCloudExperts"
@@ -182,6 +204,17 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-desc" {
     type = "S"
   }
 
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-ConsolNo-index-${var.env}"
+    hash_key        = "ConsolNo"
+    projection_type = "ALL"
+  }
+
   tags = {
     Application = "Real Time Updates"
     CreatedBy   = "BizCloudExperts"
@@ -205,11 +238,276 @@ resource "aws_dynamodb_table" "omni-wt-rt-instructions" {
     name = "FK_OrderNo"
     type = "S"
   }
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
 
   global_secondary_index {
     name            = "omni-wt-instructions-orderNo-index-${var.env}"
     hash_key        = "FK_OrderNo"
     projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-ConsolNo-index-${var.env}"
+    hash_key        = "ConsolNo"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-consol-stop-items" {
+  name             = "omni-wt-rt-consol-stop-items-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  range_key        = "FK_ConsolStopId"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+  attribute {
+    name = "FK_ConsolStopId"
+    type = "S"
+  }
+  global_secondary_index {
+    name            = "FK_ConsolStopId-index"
+    hash_key        = "FK_ConsolStopId"
+    projection_type = "ALL"
+  }
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+
+resource "aws_dynamodb_table" "omni-wt-rt-consol-stop-headers" {
+  name             = "omni-wt-rt-consol-stop-headers-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_ConsolStopId"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_ConsolStopId"
+    type = "S"
+  }
+  attribute {
+    name = "FK_ConsolNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-FK_ConsolNo-index-${var.env}"
+    hash_key        = "FK_ConsolNo"
+    projection_type = "ALL"
+  }
+
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+
+resource "aws_dynamodb_table" "omni-wt-rt-confirmation-cost" {
+  name             = "omni-wt-rt-confirmation-cost-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_ConfirmationNo"
+  range_key        = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+  attribute {
+    name = "PK_ConfirmationNo"
+    type = "S"
+  }
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-wt-confirmation-cost-orderNo-index-${var.env}"
+    hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "omni-ivia-ConsolNo-index-${var.env}"
+    hash_key        = "ConsolNo"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-zip-codes" {
+  name             = "omni-wt-rt-zip-codes-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_SeqNo"
+  range_key        = "FK_AirportId"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_SeqNo"
+    type = "S"
+  }
+
+  attribute {
+    name = "FK_AirportId"
+    type = "S"
+  }
+
+  attribute {
+    name = "Zip"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Zip-index"
+    hash_key        = "Zip"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+
+resource "aws_dynamodb_table" "omni-wt-rt-timezone-master" {
+  name             = "omni-wt-rt-timezone-master-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_TimeZoneCode"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_TimeZoneCode"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-timezone-zip-cr" {
+  name             = "omni-wt-rt-timezone-zip-cr-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "ZipCode"
+  range_key        = "FK_TimeZoneCode"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "ZipCode"
+    type = "S"
+  }
+  attribute {
+    name = "FK_TimeZoneCode"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-add-document-logs" {
+  name         = "omni-add-document-logs-${var.env}"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "Id"
+
+  attribute {
+    name = "Id"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-tracking-notes" {
+  name             = "omni-wt-rt-tracking-notes-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_NoteNo"
+  range_key        = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_NoteNo"
+    type = "S"
+  }
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "omni-tracking-notes-orderNo-index-${var.env}"
+    hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-equipment" {
+  name             = "omni-wt-rt-equipment-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_EquipmentCode"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_EquipmentCode"
+    type = "S"
   }
 
   tags = {
