@@ -24,19 +24,6 @@ resource "aws_ssm_parameter" "omni-p44-shipment-location-updates-ddb-arn" {
   }
 }
 
-# resource "aws_ssm_parameter" "omni-p44-shipment-location-updates-ddb-stream_arn" {
-#   name  = "/omni-p44/location-updates/${var.env}/source/ddb.stream_arn"
-#   type  = "String"
-#   value = var.p44_shipment_location_updates_tableStreamArn
-
-#   tags = {
-#     Application = "Real Time Updates"
-#     CreatedBy   = "BizCloudExperts"
-#     Environment = var.env
-#     STAGE       = var.env
-#   }
-# }
-
 resource "aws_ssm_parameter" "omni-p44-shipment-status-ddb-index" {
   name  = "/omni-p44/location-updates/${var.env}/source/ddb.shipmentStatus_index"
   type  = "String"

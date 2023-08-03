@@ -195,11 +195,6 @@ variable "p44_shipment_location_updates_tableArn" {
   nullable = false
 }
 
-variable "p44_shipment_location_updates_tableStreamArn" {
-  type = string
-  nullable = false
-}
-
 variable "p44_shipment_status_indexValue" {
   type = string
   nullable = false
