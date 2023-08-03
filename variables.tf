@@ -184,3 +184,43 @@ variable "p44_mckesson_cust_nbrs" {
   type     = list(string)
   nullable = false
 }
+
+variable "p44_shipment_location_updates_tableName" {
+  type = string
+  nullable = false
+}
+
+variable "p44_shipment_location_updates_tableArn" {
+  type = string
+  nullable = false
+}
+
+variable "p44_shipment_location_updates_tableStreamArn" {
+  type = string
+  nullable = false
+}
+
+variable "p44_shipment_status_indexValue" {
+  type = string
+  nullable = false
+}
+
+variable "p44_location_sf_status_tableName" {
+  type = string
+  nullable = false
+}
+
+variable "p44_sf_status_tableName" {
+  type = string
+  nullable = false
+}
+
+variable "p44_process_location_updates_stateMachineArn" {
+  type = string
+  nullable = false
+}
+
+variable "p44_location_updates_sqsArn" {
+  type = string
+  nullable = false
+}
