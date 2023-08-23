@@ -219,3 +219,8 @@ variable "p44_location_updates_sqsArn" {
   type = string
   nullable = false
 }
+
+variable "omni_redshift_prodDataModel_password_unparsed" {
+  type     = string
+  nullable = false
+}
