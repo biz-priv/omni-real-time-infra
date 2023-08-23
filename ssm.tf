@@ -1256,3 +1256,15 @@ resource "aws_ssm_parameter" "equipment-sns-arn" {
   }
 }
 
+resource "aws_ssm_parameter" "omni-Redshift-prodDataModel-password-unparsed" {
+  name  = "/omni-dw/${var.env}/db/password.unparsed"
+  type  = "SecureString" 
+  value = var.omni_redshift_prodDataModel_password_unparsed
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
