@@ -17,6 +17,7 @@ resource "aws_s3_bucket_acl" "omni-wt-rt-updates-s3-bucket-acl" {
 resource "aws_s3_bucket_notification" "omni-wt-rt-updates-s3-bucket-notification" {
   bucket = aws_s3_bucket.omni-wt-rt-updates-s3-bucket.id
   count  = length(var.sqs_queue_name)
+  eventbridge = true
 
   queue {
     queue_arn     = aws_sqs_queue.omni_wt_rt_queue[0].arn

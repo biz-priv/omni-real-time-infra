@@ -517,3 +517,23 @@ resource "aws_dynamodb_table" "omni-wt-rt-equipment" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wt-rt-customers" {
+  name             = "omni-wt-rt-customers-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_CustNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_CustNo"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
