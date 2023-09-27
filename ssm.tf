@@ -1295,7 +1295,7 @@ resource "aws_ssm_parameter" "customers-table-name" {
   }
 }
 
-resource "aws_ssm_parameter" "scustomers-table-streamArn" {
+resource "aws_ssm_parameter" "customers-table-streamArn" {
   name  = "/omni-wt-rt-updates/${var.env}/customers/ddb.streamArn"
   type  = "String"
   value = aws_dynamodb_table.omni-wt-rt-customers.stream_arn
