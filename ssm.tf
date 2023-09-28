@@ -1270,7 +1270,7 @@ resource "aws_ssm_parameter" "omni-Redshift-prodDataModel-password-unparsed" {
 }
 
 resource "aws_ssm_parameter" "customers-table-arn" {
-  name  = "/omni-wt-rt-updates/${var.env}/customers/ddb.arn"
+  name  = "/omni-wt-rt-updates/${var.env}/customer/ddb.arn"
   type  = "String"
   value = aws_dynamodb_table.omni-wt-rt-customers.arn
 
@@ -1283,7 +1283,7 @@ resource "aws_ssm_parameter" "customers-table-arn" {
 }
 
 resource "aws_ssm_parameter" "customers-table-name" {
-  name  = "/omni-wt-rt-updates/${var.env}/customers/ddb.tableName"
+  name  = "/omni-wt-rt-updates/${var.env}/customer/ddb.tableName"
   type  = "String"
   value = aws_dynamodb_table.omni-wt-rt-customers.name
 
@@ -1296,7 +1296,7 @@ resource "aws_ssm_parameter" "customers-table-name" {
 }
 
 resource "aws_ssm_parameter" "customers-table-streamArn" {
-  name  = "/omni-wt-rt-updates/${var.env}/customers/ddb.streamArn"
+  name  = "/omni-wt-rt-updates/${var.env}/customer/ddb.streamArn"
   type  = "String"
   value = aws_dynamodb_table.omni-wt-rt-customers.stream_arn
 
