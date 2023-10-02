@@ -537,3 +537,24 @@ resource "aws_dynamodb_table" "omni-wt-rt-customers" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-dw-wd-shipment-posted" {
+  name             = "omni-dw-wd-shipment-posted-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "id"
+  stream_enabled   = false
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+  
+  attribute {
+    name = "id"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Western Digital"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+
+}
