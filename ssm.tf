@@ -1307,3 +1307,16 @@ resource "aws_ssm_parameter" "customers-table-streamArn" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-rt-toyota-last-shipment-date" {
+  name  = "/omni-rt-toyota/${var.env}/lastShipmentDate/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-rt-toyota-last-shipment-date.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

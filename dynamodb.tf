@@ -558,3 +558,34 @@ resource "aws_dynamodb_table" "omni-dw-wd-shipment-posted" {
   }
 
 }
+
+resource "aws_dynamodb_table" "omni-rt-toyota-last-shipment-date" {
+  name             = "omni-rt-toyota-last-shipment-date-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "Id"
+  stream_enabled   = false
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "Id"
+    type = "S"
+  }
+
+  attribute {
+    name = "ShipmentDate"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "ShipmentDate-index"
+    hash_key        = "ShipmentDate"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
