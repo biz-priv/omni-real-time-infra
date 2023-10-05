@@ -559,8 +559,8 @@ resource "aws_dynamodb_table" "omni-dw-wd-shipment-posted" {
 
 }
 
-resource "aws_dynamodb_table" "omni-rt-toyota-lastShipmentDate" {
-  name             = "omni-rt-toyota-lastShipmentDate-${var.env}"
+resource "aws_dynamodb_table" "omni-rt-toyota-last-shipment-date" {
+  name             = "omni-rt-toyota-last-shipment-date-${var.env}"
   billing_mode     = "PAY_PER_REQUEST"
   hash_key         = "Id"
   stream_enabled   = false

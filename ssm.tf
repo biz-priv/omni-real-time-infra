@@ -1308,10 +1308,10 @@ resource "aws_ssm_parameter" "customers-table-streamArn" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-rt-toyota-lastShipmentDate" {
+resource "aws_ssm_parameter" "omni-rt-toyota-last-shipment-date" {
   name  = "/omni-rt-toyota/${var.env}/lastShipmentDate/ddb.tableName"
   type  = "String"
-  value = aws_dynamodb_table.omni-rt-toyota-lastShipmentDate.name
+  value = aws_dynamodb_table.omni-rt-toyota-last-shipment-date.name
 
   tags = {
     Application = "Real Time Updates"
