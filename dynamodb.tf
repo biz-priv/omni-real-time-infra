@@ -147,9 +147,20 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-header" {
     type = "S"
   }
 
+  attribute {
+    name = "BillNo"
+    type = "S"
+  }
+
   global_secondary_index {
     name            = "Housebill-index"
     hash_key        = "Housebill"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "BillNo-index"
+    hash_key        = "BillNo"
     projection_type = "ALL"
   }
 
@@ -557,6 +568,77 @@ resource "aws_dynamodb_table" "omni-dw-wd-shipment-posted" {
     STAGE       = var.env
   }
 
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-shipment-file" {
+  name             = "omni-wt-rt-shipment-file-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-dw-api-services-pod-uploaded-docs-logs-table" {
+  name             = "omni-dw-api-services-pod-uploaded-docs-logs-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "pKey"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "pKey"
+    type = "S"
+  }
+
+  ttl {
+    attribute_name = "expiration"
+    enabled        = true
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-dw-api-services-pod-transactions-table" {
+  name             = "omni-dw-api-services-pod-transactions-table-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "orderNumber"
+  range_key        = "houseBillNumber"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "orderNumber"
+    type = "S"
+  }
+
+  attribute {
+    name = "houseBillNumber"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Omni DW API services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
 }
 
 resource "aws_dynamodb_table" "omni-rt-toyota-last-shipment-date" {
