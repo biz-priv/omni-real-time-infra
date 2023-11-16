@@ -1438,19 +1438,6 @@ resource "aws_ssm_parameter" "shippeo_pod_get_document_api_key" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-wt-rt-updates-athena-result-bucket-name" {
-  name  = "/omni-wt-rt-updates/${var.env}/athena/result/bucket.name"
-  type  = "String" 
-  value = var.athena_results_bucketName
-
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = var.created_by
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
-
 resource "aws_ssm_parameter" "shippeo_pod_token_expiration_days" {
   name  = "/omni-dw-api-services/${var.env}/shippeo-pod/token-expiration-days"
   type  = "String"
