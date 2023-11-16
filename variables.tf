@@ -319,3 +319,8 @@ variable "amazon_pod_doc_upload_websli_token" {
   type     = string
   nullable = false 
 }
+
+variable "created_by" {
+  type     = string
+  nullable = false 
+}

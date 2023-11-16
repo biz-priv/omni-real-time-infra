@@ -1328,7 +1328,7 @@ resource "aws_ssm_parameter" "shipment-file-dynamodb-name" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1341,7 +1341,7 @@ resource "aws_ssm_parameter" "omni-dw-api-services-pod-uploaded-docs-logs-table-
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1354,7 +1354,7 @@ resource "aws_ssm_parameter" "omni-dw-api-services-pod-transactions-table-name" 
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1367,7 +1367,7 @@ resource "aws_ssm_parameter" "shipment-pod-username" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1380,7 +1380,7 @@ resource "aws_ssm_parameter" "shipment-pod-password" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1393,7 +1393,7 @@ resource "aws_ssm_parameter" "shippeo_pod_get_document_url" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1406,7 +1406,7 @@ resource "aws_ssm_parameter" "shippeo_pod_upload_document_url" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1419,7 +1419,7 @@ resource "aws_ssm_parameter" "shippeo_pod_get_token_url" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1432,7 +1432,7 @@ resource "aws_ssm_parameter" "shippeo_pod_get_document_api_key" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1445,7 +1445,7 @@ resource "aws_ssm_parameter" "omni-wt-rt-updates-athena-result-bucket-name" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1458,7 +1458,7 @@ resource "aws_ssm_parameter" "shippeo_pod_token_expiration_days" {
 
   tags = {
     Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1471,7 +1471,7 @@ resource "aws_ssm_parameter" "amazon_pod_user_name" {
 
   tags = {
     Application = "omni-dw-api-services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1484,7 +1484,7 @@ resource "aws_ssm_parameter" "amazon_pod_password" {
 
   tags = {
     Application = "omni-dw-api-services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1497,7 +1497,7 @@ resource "aws_ssm_parameter" "amazon_pod_cognito_client_id" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1510,7 +1510,7 @@ resource "aws_ssm_parameter" "amazon_pod_cognito_identity_pool_id" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1523,7 +1523,7 @@ resource "aws_ssm_parameter" "amazon_pod_cognito_region" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1536,7 +1536,7 @@ resource "aws_ssm_parameter" "amazon_pod_cognito_user_pool_id" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1549,7 +1549,7 @@ resource "aws_ssm_parameter" "amazon_pod_hrpsl_host" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1562,7 +1562,7 @@ resource "aws_ssm_parameter" "amazon_pod_hrpsl_region" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1575,7 +1575,7 @@ resource "aws_ssm_parameter" "amazon_pod_hrpsl_service" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1588,7 +1588,7 @@ resource "aws_ssm_parameter" "amazon_pod_hrpsl_stage" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1601,7 +1601,7 @@ resource "aws_ssm_parameter" "shippeo_pod_doc_upload_websli_token" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
@@ -1614,7 +1614,7 @@ resource "aws_ssm_parameter" "amazon_pod_doc_upload_websli_token" {
 
   tags = {
     Application = "Omni Data Warehouse API Services"
-    CreatedBy   = "BizCloudExperts"
+    CreatedBy   = var.created_by
     Environment = var.env
     STAGE       = var.env
   }
