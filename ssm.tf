@@ -1479,7 +1479,7 @@ resource "aws_ssm_parameter" "amazon_pod_user_name" {
 
 resource "aws_ssm_parameter" "amazon_pod_password" {
   name  = "/omni-dw-api-services/${var.env}/amazon-pod/password"
-  type  = "String"
+  type  = "SecureString"
   value = var.amazon_pod_password
 
   tags = {
