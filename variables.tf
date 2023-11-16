@@ -224,3 +224,98 @@ variable "omni_redshift_prodDataModel_password_unparsed" {
   type     = string
   nullable = false
 }
+
+variable "omni_shippeo_pod_username" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_shippeo_pod_password" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_shippeo_pod_get_document_url" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_shippeo_pod_upload_document_url" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_shippeo_pod_get_token_url" {
+  type     = string
+  nullable = false
+}
+
+variable "omni_shippeo_pod_get_document_api_key" {
+  type     = string
+  nullable = false
+}
+
+variable "shippeo_pod_token_expiration_days" {
+  type     = string
+  nullable = false
+}
+
+variable "amazon_pod_user_name" {
+  type     = string
+  nullable = false
+}
+
+variable "amazon_pod_password" {
+  type     = string
+  nullable = false
+}
+
+variable "amazon_pod_cognito_client_id" {
+  type     = string
+  nullable = false 
+}
+
+variable "amazon_pod_cognito_identity_pool_id" {
+  type     = string
+  nullable = false 
+}
+
+variable "amazon_pod_cognito_region" {
+  type     = string
+  nullable = false 
+}
+
+variable "amazon_pod_cognito_user_pool_id" {
+  type     = string
+  nullable = false 
+}
+
+variable "amazon_pod_hrpsl_host" {
+  type     = string
+  nullable = false 
+}
+
+variable "amazon_pod_hrpsl_region" {
+  type     = string
+  nullable = false 
+}
+
+variable "amazon_pod_hrpsl_service" {
+  type     = string
+  nullable = false 
+}
+
+variable "amazon_pod_hrpsl_stage" {
+  type     = string
+  nullable = false 
+}
+
+variable "shippeo_pod_doc_upload_websli_token" {
+  type     = string
+  nullable = false 
+}
+
+variable "amazon_pod_doc_upload_websli_token" {
+  type     = string
+  nullable = false 
+}

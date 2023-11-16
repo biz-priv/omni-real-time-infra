@@ -1320,3 +1320,302 @@ resource "aws_ssm_parameter" "omni-rt-toyota-last-shipment-date" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "shipment-file-dynamodb-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-file/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-file.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-dw-api-services-pod-uploaded-docs-logs-table-name" {
+  name  = "/omni-dw-api-services/${var.env}/pod-uploaded-docs-logs/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-dw-api-services-pod-uploaded-docs-logs-table.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-dw-api-services-pod-transactions-table-name" {
+  name  = "/omni-dw-api-services/${var.env}/pod-transactions/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-dw-api-services-pod-transactions-table.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shipment-pod-username" {
+  name  = "/omni-dw-api-services/${var.env}/shippeo-pod/username"
+  type  = "SecureString"
+  value = var.omni_shippeo_pod_username
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shipment-pod-password" {
+  name  = "/omni-dw-api-services/${var.env}/shippeo-pod/password"
+  type  = "SecureString"
+  value = var.omni_shippeo_pod_password
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shippeo_pod_get_document_url" {
+  name  = "/omni-dw-api-services/${var.env}/shippeo-pod/get-document-url"
+  type  = "String"
+  value = var.omni_shippeo_pod_get_document_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shippeo_pod_upload_document_url" {
+  name  = "/omni-dw-api-services/${var.env}/shippeo-pod/upload-document-url"
+  type  = "String"
+  value = var.omni_shippeo_pod_upload_document_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shippeo_pod_get_token_url" {
+  name  = "/omni-dw-api-services/${var.env}/shippeo-pod/get-token-url"
+  type  = "String"
+  value = var.omni_shippeo_pod_get_token_url
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shippeo_pod_get_document_api_key" {
+  name  = "/omni-dw-api-services/${var.env}/shippeo-pod/get-document-api-key"
+  type  = "String"
+  value = var.omni_shippeo_pod_get_document_api_key
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-wt-rt-updates-athena-result-bucket-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/athena/result/bucket.name"
+  type  = "String" 
+  value = var.athena_results_bucketName
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shippeo_pod_token_expiration_days" {
+  name  = "/omni-dw-api-services/${var.env}/shippeo-pod/token-expiration-days"
+  type  = "String"
+  value = var.shippeo_pod_token_expiration_days
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_user_name" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/user-name"
+  type  = "String"
+  value = var.amazon_pod_user_name
+
+  tags = {
+    Application = "omni-dw-api-services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_password" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/password"
+  type  = "String"
+  value = var.amazon_pod_password
+
+  tags = {
+    Application = "omni-dw-api-services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_cognito_client_id" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/cognito-client-id"
+  type  = "String"
+  value = var.amazon_pod_cognito_client_id
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_cognito_identity_pool_id" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/cognito-identity-pool-id"
+  type  = "String"
+  value = var.amazon_pod_cognito_identity_pool_id
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_cognito_region" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/cognito-region"
+  type  = "String"
+  value = var.amazon_pod_cognito_region
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_cognito_user_pool_id" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/cognito-user-pool-id"
+  type  = "String"
+  value = var.amazon_pod_cognito_user_pool_id
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_hrpsl_host" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/hrpsl-host"
+  type  = "String"
+  value = var.amazon_pod_hrpsl_host
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_hrpsl_region" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/hrpsl-region"
+  type  = "String"
+  value = var.amazon_pod_hrpsl_region
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_hrpsl_service" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/hrpsl-service"
+  type  = "String"
+  value = var.amazon_pod_hrpsl_service
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_hrpsl_stage" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod/hrpsl-stage"
+  type  = "String"
+  value = var.amazon_pod_hrpsl_stage
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shippeo_pod_doc_upload_websli_token" {
+  name  = "/omni-dw-api-services/${var.env}/shippeo-pod-doc-upload/websli-token"
+  type  = "String"
+  value = var.shippeo_pod_doc_upload_websli_token
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "amazon_pod_doc_upload_websli_token" {
+  name  = "/omni-dw-api-services/${var.env}/amazon-pod-doc-upload/websli-token"
+  type  = "String"
+  value = var.amazon_pod_doc_upload_websli_token
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
