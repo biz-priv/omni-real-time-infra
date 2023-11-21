@@ -1606,3 +1606,16 @@ resource "aws_ssm_parameter" "amazon_pod_doc_upload_websli_token" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "pod_doc_upload_websli_url" {
+  name  = "/omni-dw-api-services/${var.env}/pod-doc-upload/websli-api-url"
+  type  = "String"
+  value = var.pod_doc_upload_websli_url
+
+  tags = {
+    Application = "Omni Data Warehouse API Services"
+    CreatedBy   = var.created_by
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
