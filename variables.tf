@@ -324,3 +324,8 @@ variable "created_by" {
   type     = string
   nullable = false 
 }
+
+variable "pod_doc_upload_websli_url" {
+  type     = string
+  nullable = false 
+}
