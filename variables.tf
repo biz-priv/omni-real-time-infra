@@ -220,11 +220,6 @@ variable "p44_location_updates_sqsArn" {
   nullable = false
 }
 
-variable "omni_redshift_prodDataModel_password_unparsed" {
-  type     = string
-  nullable = false
-}
-
 variable "omni_shippeo_pod_username" {
   type     = string
   nullable = false
@@ -261,11 +256,6 @@ variable "shippeo_pod_token_expiration_days" {
 }
 
 variable "amazon_pod_user_name" {
-  type     = string
-  nullable = false
-}
-
-variable "amazon_pod_password" {
   type     = string
   nullable = false
 }
@@ -328,4 +318,24 @@ variable "created_by" {
 variable "pod_doc_upload_websli_url" {
   type     = string
   nullable = false 
+}
+
+variable "wt_source_db_name" {
+  type     = string
+  nullable = false
+}
+
+variable "wt_source_db_serverName" {
+  type     = string
+  nullable = false
+}
+
+variable "wt_source_db_port" {
+  type     = number
+  nullable = false
+}
+
+variable "wt_source_db_userName" {
+  type     = string
+  nullable = false
 }

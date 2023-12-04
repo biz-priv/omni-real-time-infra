@@ -671,3 +671,24 @@ resource "aws_dynamodb_table" "omni-rt-toyota-last-shipment-date" {
     STAGE       = var.env
   }
 }
+
+
+resource "aws_dynamodb_table" "omni-dw-vendor-invoice-logs-table" {
+  name             = "omni-dw-vendor-invoice-logs-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "id"
+  stream_enabled   = false
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "id"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Omni DW API services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
