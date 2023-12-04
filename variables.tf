@@ -329,3 +329,28 @@ variable "pod_doc_upload_websli_url" {
   type     = string
   nullable = false 
 }
+
+variable "wt_source_db_name" {
+  type     = string
+  nullable = false
+}
+
+variable "wt_source_db_serverName" {
+  type     = string
+  nullable = false
+}
+
+variable "wt_source_db_port" {
+  type     = number
+  nullable = false
+}
+
+variable "wt_source_db_password" {
+  type     = string
+  nullable = false
+}
+
+variable "wt_source_db_userName" {
+  type     = string
+  nullable = false
+}

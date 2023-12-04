@@ -1619,3 +1619,81 @@ resource "aws_ssm_parameter" "pod_doc_upload_websli_url" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-dw-vendor-invoice-logs-table" {
+  name  = "/omni-dw/${var.env}/vendor-invoice-logs/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-dw-vendor-invoice-logs-table.name
+
+  tags = {
+    Application = "Omni DW API services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-WT-source-db-username" {
+  name  = "/omni-dw/${var.env}/worldTrak/source-db/userName"
+  type  = "String"
+  value = var.wt_source_db_userName
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-WT-source-db-password" {
+  name  = "/omni-dw/${var.env}/worldTrak/source-db/password"
+  type  = "String"
+  value = var.wt_source_db_password
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-WT-source-db-port" {
+  name  = "/omni-dw/${var.env}/worldTrak/source-db/port"
+  type  = "String"
+  value = var.wt_source_db_port
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-WT-source-db-serverName" {
+  name  = "/omni-dw/${var.env}/worldTrak/source-db/serverName"
+  type  = "String"
+  value = var.wt_source_db_serverName
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-WT-source-db-name" {
+  name  = "/omni-dw/${var.env}/worldTrak/source-db/name"
+  type  = "String"
+  value = var.wt_source_db_name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
