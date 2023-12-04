@@ -1256,19 +1256,6 @@ resource "aws_ssm_parameter" "equipment-sns-arn" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-Redshift-prodDataModel-password-unparsed" {
-  name  = "/omni-dw/${var.env}/db/password.unparsed"
-  type  = "SecureString" 
-  value = var.omni_redshift_prodDataModel_password_unparsed
-
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
-
 resource "aws_ssm_parameter" "customers-table-arn" {
   name  = "/omni-wt-rt-updates/${var.env}/customer/ddb.arn"
   type  = "String"
@@ -1464,19 +1451,6 @@ resource "aws_ssm_parameter" "amazon_pod_user_name" {
   }
 }
 
-resource "aws_ssm_parameter" "amazon_pod_password" {
-  name  = "/omni-dw-api-services/${var.env}/amazon-pod/password"
-  type  = "SecureString"
-  value = var.amazon_pod_password
-
-  tags = {
-    Application = "omni-dw-api-services"
-    CreatedBy   = var.created_by
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
-
 resource "aws_ssm_parameter" "amazon_pod_cognito_client_id" {
   name  = "/omni-dw-api-services/${var.env}/amazon-pod/cognito-client-id"
   type  = "String"
@@ -1637,19 +1611,6 @@ resource "aws_ssm_parameter" "omni-WT-source-db-username" {
   name  = "/omni-dw/${var.env}/worldTrak/source-db/userName"
   type  = "String"
   value = var.wt_source_db_userName
-
-  tags = {
-    Application = "Real Time Updates"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
-
-resource "aws_ssm_parameter" "omni-WT-source-db-password" {
-  name  = "/omni-dw/${var.env}/worldTrak/source-db/password"
-  type  = "String"
-  value = var.wt_source_db_password
 
   tags = {
     Application = "Real Time Updates"
