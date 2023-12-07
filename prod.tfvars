@@ -67,3 +67,4 @@ wt_source_db_name                             = "AIRTRAK"
 wt_source_db_serverName                       = "10.9.110.76"
 wt_source_db_port                             = 1433
 wt_source_db_userName                         = "omnidbadmin"
+add_milestone_url_loc                         = "https://worldtrak.omnilogistics.com/WTKServices/AirtrakShipment.asmx"
