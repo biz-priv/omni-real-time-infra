@@ -692,3 +692,105 @@ resource "aws_dynamodb_table" "omni-dw-vendor-invoice-logs-table" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wt-rt-import-mawb" {
+  name             = "omni-wt-rt-import-mawb-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-shipment-ocean-import" {
+  name             = "omni-wt-rt-shipment-ocean-import-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-shipment-air-import" {
+  name             = "omni-wt-rt-shipment-air-import-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wd-x1-logs" {
+  name             = "omni-wd-x1-logs-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "UUid"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "UUid"
+    type = "S"
+  }
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  attribute {
+    name = "DeliveryStatus"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "DeliveryStatus-index"
+    hash_key        = "DeliveryStatus"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "FK_OrderNo-index"
+    hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Omni WD X1"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
