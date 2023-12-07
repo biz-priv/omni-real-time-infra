@@ -156,6 +156,27 @@ resource "aws_s3_bucket_notification" "omni-wt-rt-updates-s3-bucket-notification
     filter_prefix = "dbo/${var.s3_notification_table_name[20]}"
   }
 
+  queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[21].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".csv"
+    filter_prefix = "dbo/${var.s3_notification_table_name[21]}"
+  }
+
+    queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[22].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".csv"
+    filter_prefix = "dbo/${var.s3_notification_table_name[22]}"
+  }
+
+    queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[23].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".csv"
+    filter_prefix = "dbo/${var.s3_notification_table_name[23]}"
+  }
+
   depends_on = [
     aws_sqs_queue.omni_wt_rt_queue
   ]
