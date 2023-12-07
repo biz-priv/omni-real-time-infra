@@ -339,3 +339,8 @@ variable "wt_source_db_userName" {
   type     = string
   nullable = false
 }
+
+variable "add_milestone_url_loc" {
+  type     = string
+  nullable = false
+}

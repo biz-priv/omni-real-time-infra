@@ -1658,3 +1658,29 @@ resource "aws_ssm_parameter" "omni-WT-source-db-name" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-dw-add-milestone-logs-table" {
+  name  = "/omni-dw/${var.env}/add-milestone-logs/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-dw-add-milestone-logs-table.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-ivia-add-milestone-url-LOC" {
+  name  = "/omni-ivia/${var.env}/addMilestone/loc.url"
+  type  = "String"
+  value = var.add_milestone_url_loc
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
