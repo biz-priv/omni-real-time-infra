@@ -344,3 +344,9 @@ variable "add_milestone_url_loc" {
   type     = string
   nullable = false
 }
+
+
+variable "omni_manuallyCreatedApiKeys_getDocument" {
+ type     = string
+ nullable = false
+}
