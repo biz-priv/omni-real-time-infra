@@ -1684,3 +1684,17 @@ resource "aws_ssm_parameter" "omni-ivia-add-milestone-url-LOC" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-manuallyCreatedApiKeys-getDocument" {
+ name  = "/omni-dw-api-sevices/${var.env}/getDocument/apiKeys"
+ type  = "String"
+ value = var.omni_manuallyCreatedApiKeys_getDocument
+
+
+ tags = {
+   Application = "Real Time Updates"
+   CreatedBy   = "BizCloudExperts"
+   Environment = var.env
+   STAGE       = var.env
+ }
+}
