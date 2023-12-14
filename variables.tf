@@ -350,3 +350,8 @@ variable "omni_manuallyCreatedApiKeys_getDocument" {
  type     = string
  nullable = false
 }
+
+variable "omni_tokenValidator_indexValue" {
+ type     = string
+ nullable = false
+}
