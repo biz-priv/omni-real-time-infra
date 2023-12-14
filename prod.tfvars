@@ -69,3 +69,4 @@ wt_source_db_port                             = 1433
 wt_source_db_userName                         = "omnidbadmin"
 add_milestone_url_loc                         = "https://worldtrak.omnilogistics.com/WTKServices/AirtrakShipment.asmx"
 omni_manuallyCreatedApiKeys_getDocument       = "wwa2Wo6JVc5Ar9vXgbfzC3ukiAbX9tnn3y5vAVe0,TMCFt2AWIv5VBq3FyypCxaEpeufO4EvJ4thg3u6m"
+omni_tokenValidator_indexValue                = "ApiKey-index"

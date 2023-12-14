@@ -1698,3 +1698,17 @@ resource "aws_ssm_parameter" "omni-manuallyCreatedApiKeys-getDocument" {
    STAGE       = var.env
  }
 }
+
+resource "aws_ssm_parameter" "omni-tokenValidator-index-value" {
+ name  = "/omni-dw/${var.env}/tokenValidator/apiKey/index.allColumns"
+ type  = "String"
+ value = var.omni_tokenValidator_indexValue
+
+
+ tags = {
+   Application = "Real Time Updates"
+   CreatedBy   = "BizCloudExperts"
+   Environment = var.env
+   STAGE       = var.env
+ }
+}
