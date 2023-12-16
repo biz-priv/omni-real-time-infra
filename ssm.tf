@@ -1742,20 +1742,6 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FWDA-user" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FWDA-password" {
-  
-  name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/FWDA-password"
-  type  = "SecureString"
-  value = var.ltl_batch_rating_FWDA_password
-                                                
-  tags = {
-    Application = "Omni DW API Services"
-    CreatedBy   = "BizCloudExperts"
-    Environment = var.env
-    STAGE       = var.env
-  }
-}
-
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FWDA-customerId" {
   
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/FWDA-customerId"

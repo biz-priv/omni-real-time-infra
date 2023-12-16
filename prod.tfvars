@@ -72,7 +72,6 @@ omni_manuallyCreatedApiKeys_getDocument       = "wwa2Wo6JVc5Ar9vXgbfzC3ukiAbX9tn
 omni_tokenValidator_indexValue                = "ApiKey-index"
 ltl_batch_rating_FWDA_url                     = "https://api.forwardair.com/ltlservices/v2/rest/waybills/quote"
 ltl_batch_rating_FWDA_user                    = "omniliah"
-ltl_batch_rating_FWDA_password                = "TVud61y6caRfSnjT"
 ltl_batch_rating_FWDA_customerId              = "OMNILIAH"
 ltl_batch_rating_EXLA_url                     = "https://www.estes-express.com/tools/rating/ratequote/v4.0/services/RateQuoteService"
 ltl_batch_rating_FEXF_url                     = "https://apis.fedex.com/rate/v1/freight/rates/quotes"

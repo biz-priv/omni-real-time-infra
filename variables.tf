@@ -366,11 +366,6 @@ variable "ltl_batch_rating_FWDA_user" {
   nullable = false
 }
 
-variable "ltl_batch_rating_FWDA_password" {
-  type     = string
-  nullable = false
-}
-
 variable "ltl_batch_rating_FWDA_customerId" {
   type     = string
   nullable = false
