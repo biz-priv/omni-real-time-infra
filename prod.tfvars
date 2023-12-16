@@ -90,4 +90,4 @@ ltl_batch_rating_XPOL_access_token            = "305ba928-4623-30bf-85f2-6f0657e
 ltl_batch_rating_XPOL_refresh_token           = "d2a22671-9dab-3660-8bca-3a148e302b15"
 ltl_batch_rating_XPOL_expires_in              = "36986"
 ltl_batch_rating_RDFS_url                     = "https://webservices.rrts.com/rating/ratequote.asmx"
-ltl_batch_rating_log_queue_url                = "https://sqs.prod.amazonaws.com/332281781429/omni-dw-backend-ltl-rating-log-insertion-queue-prod"
+ltl_batch_rating_log_queue_url                = "https://sqs.us-east-1.amazonaws.com/332281781429/omni-dw-backend-ltl-rating-log-insertion-queue-prod"
