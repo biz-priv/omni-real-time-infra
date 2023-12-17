@@ -355,3 +355,103 @@ variable "omni_tokenValidator_indexValue" {
  type     = string
  nullable = false
 }
+
+variable "ltl_batch_rating_FWDA_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_FWDA_user" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_FWDA_customerId" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_EXLA_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_FEXF_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_ODFL_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_ABFS_baseUrl" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_AVRT_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_DAFG_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_SEFN_baseUrl" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_PENS_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_SAIA_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_XPOL_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_XPOL_token_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_XPOL_authorization" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_XPOL_access_token" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_XPOL_refresh_token" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_XPOL_expires_in" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_RDFS_url" {
+  type     = string
+  nullable = false
+}
+
+variable "ltl_batch_rating_log_queue_url" {
+  type     = string
+  nullable = false
+}

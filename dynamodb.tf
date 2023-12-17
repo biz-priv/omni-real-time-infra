@@ -814,3 +814,34 @@ resource "aws_dynamodb_table" "omni-dw-add-milestone-logs-table" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-dw-api-services-ltl-rating-logs-table" {
+  name             = "omni-dw-api-services-ltl-rating-logs-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "pKey"
+  range_key        = "sKey"
+  stream_enabled   = false
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "pKey"
+    type = "S"
+  }
+
+  attribute {
+    name = "sKey"
+    type = "S"
+  }
+
+  ttl {
+    attribute_name = "expiration"
+    enabled        = true
+  }
+
+  tags = {
+    Application = "Omni DW API Services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
