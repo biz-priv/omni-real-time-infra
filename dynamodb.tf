@@ -163,7 +163,20 @@ resource "aws_dynamodb_table" "omni-wt-rt-shipment-header" {
     hash_key        = "BillNo"
     projection_type = "ALL"
   }
+  
+  global_secondary_index {
+    name            = "housebill-billNo-index"
+    hash_key        = "Housebill"
+    range_key       = "BillNo"
+    projection_type = "ALL"
+  }
 
+  global_secondary_index {
+    name            = "fileNumber-billNo-index"
+    hash_key        = "PK_OrderNo"
+    range_key       = "BillNo"
+    projection_type = "ALL"
+  }
 
   tags = {
     Application = "Real Time Updates"

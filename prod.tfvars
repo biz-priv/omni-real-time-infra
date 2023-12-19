@@ -90,3 +90,5 @@ ltl_batch_rating_XPOL_refresh_token           = "d2a22671-9dab-3660-8bca-3a148e3
 ltl_batch_rating_XPOL_expires_in              = "36986"
 ltl_batch_rating_RDFS_url                     = "https://webservices.rrts.com/rating/ratequote.asmx"
 ltl_batch_rating_log_queue_url                = "https://sqs.us-east-1.amazonaws.com/332281781429/omni-dw-backend-ltl-rating-log-insertion-queue-prod"
+default_websli_key                            = "fa75bbb8-9a10-4c64-80e8-e48d48f34088"
+websli_base_url                               = "https://websli.omnilogistics.com/wtProd/getwtdoc/v1/json"
