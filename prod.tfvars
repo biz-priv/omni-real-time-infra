@@ -90,3 +90,7 @@ ltl_batch_rating_XPOL_refresh_token           = "d2a22671-9dab-3660-8bca-3a148e3
 ltl_batch_rating_XPOL_expires_in              = "36986"
 ltl_batch_rating_RDFS_url                     = "https://webservices.rrts.com/rating/ratequote.asmx"
 ltl_batch_rating_log_queue_url                = "https://sqs.us-east-1.amazonaws.com/332281781429/omni-dw-backend-ltl-rating-log-insertion-queue-prod"
+wms_shipengine_file_prefix                    = "ShipEngine/TRXELPELP_WOU_PKC_"
+wms_shipengine_file_suffix                    = ".xml"
+wms_shipengine_api_endpoint                   = "https://api.shipengine.com/v1/labels"
+wms_shipengine_api_key                        = "TEST_9Zcka4EvjKLmHf6j9CqJASJJbSLsjvzFhL+m6Tae7Ko"

@@ -455,3 +455,23 @@ variable "ltl_batch_rating_log_queue_url" {
   type     = string
   nullable = false
 }
+
+variable "wms_shipengine_file_prefix" {
+  type     = string
+  nullable = false
+}
+
+variable "wms_shipengine_file_suffix" {
+  type     = string
+  nullable = false
+}
+
+variable "wms_shipengine_api_endpoint" {
+  type     = string
+  nullable = false
+}
+
+variable "wms_shipengine_api_key" {
+  type     = string
+  nullable = false
+}
