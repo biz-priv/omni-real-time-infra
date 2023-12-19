@@ -2005,3 +2005,29 @@ resource "aws_ssm_parameter" "omni-dw-api-services-ltl-rating-log-queue-url" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "get-document-default-websli-key" {
+ name  = "/omni-dw/${var.env}/get-document/websli-key.default"
+ type  = "String"
+ value = var.default_websli_key
+
+ tags = {
+   Application = "omni-dw"
+   CreatedBy   = "BizCloudExperts"
+   Environment = var.env
+   STAGE       = var.env
+ }
+}
+
+resource "aws_ssm_parameter" "websli-base-url" {
+ name  = "/omni-dw/${var.env}/websli/api/base.url"
+ type  = "String"
+ value = var.websli_base_url
+
+ tags = {
+   Application = "omni-dw"
+   CreatedBy   = "BizCloudExperts"
+   Environment = var.env
+   STAGE       = var.env
+ }
+}

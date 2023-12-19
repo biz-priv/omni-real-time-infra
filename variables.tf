@@ -455,3 +455,13 @@ variable "ltl_batch_rating_log_queue_url" {
   type     = string
   nullable = false
 }
+
+variable "default_websli_key" {
+ type     = string
+ nullable = false
+}
+
+variable "websli_base_url" {
+ type     = string
+ nullable = false
+}
