@@ -475,3 +475,13 @@ variable "wms_shipengine_api_key" {
   type     = string
   nullable = false
 }
+
+variable "default_websli_key" {
+ type     = string
+ nullable = false
+}
+
+variable "websli_base_url" {
+ type     = string
+ nullable = false
+}
