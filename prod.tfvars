@@ -93,6 +93,6 @@ ltl_batch_rating_log_queue_url                = "https://sqs.us-east-1.amazonaws
 wms_shipengine_file_prefix                    = "ShipEngine/TRXELPELP_WOU_PKC_"
 wms_shipengine_file_suffix                    = ".xml"
 wms_shipengine_api_endpoint                   = "https://api.shipengine.com/v1/labels"
-wms_shipengine_api_key                        = "TEST_9Zcka4EvjKLmHf6j9CqJASJJbSLsjvzFhL+m6Tae7Ko"
+wms_shipengine_api_key                        = "958pcaY12YFbpT4FBjisYEuS8P/iN6HYap9w+CCOZ8I"
 default_websli_key                            = "fa75bbb8-9a10-4c64-80e8-e48d48f34088"
 websli_base_url                               = "https://websli.omnilogistics.com/wtProd/getwtdoc/v1/json"
