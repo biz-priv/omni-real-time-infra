@@ -2006,6 +2006,57 @@ resource "aws_ssm_parameter" "omni-dw-api-services-ltl-rating-log-queue-url" {
   }
 }
 
+resource "aws_ssm_parameter" "wms-shipengine-file-prefix" {
+  name  = "/wms-shipengine/${var.env}/file/prefix"
+  type  = "String"
+  value = var.wms_shipengine_file_prefix
+
+  tags = {
+    Application = "omni-warehouse-management-datasync"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "wms-shipengine-file-suffix" {
+  name  = "/wms-shipengine/${var.env}/file/suffix"
+  type  = "String"
+  value = var.wms_shipengine_file_suffix
+
+  tags = {
+    Application = "omni-warehouse-management-datasync"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "wms-shipengine-api-endpoint" {
+  name  = "/wms-shipengine/${var.env}/api/endpoint"
+  type  = "String"
+  value = var.wms_shipengine_api_endpoint
+
+  tags = {
+    Application = "omni-warehouse-management-datasync"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "wms-shipengine-api-key" {
+  name  = "/wms-shipengine/${var.env}/api/key"
+  type  = "String"
+  value = var.wms_shipengine_api_key
+
+  tags = {
+    Application = "omni-warehouse-management-datasync"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}  
 resource "aws_ssm_parameter" "get-document-default-websli-key" {
  name  = "/omni-dw/${var.env}/get-document/websli-key.default"
  type  = "String"
