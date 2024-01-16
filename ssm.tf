@@ -2082,3 +2082,16 @@ resource "aws_ssm_parameter" "websli-base-url" {
    STAGE       = var.env
  }
 }
+
+resource "aws_ssm_parameter" "omni-support-alarm-email" {
+  name  = "/omni/support/${var.env}/alarm/email"
+  type  = "String"
+  value = var.omni-support-alarm-email
+
+  tags = {
+    Application = "omni"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

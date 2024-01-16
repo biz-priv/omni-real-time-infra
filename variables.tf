@@ -485,3 +485,8 @@ variable "websli_base_url" {
  type     = string
  nullable = false
 }
+
+variable "omni-support-alarm-email" {
+ type     = string
+ nullable = false
+}
