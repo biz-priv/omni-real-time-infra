@@ -2095,3 +2095,29 @@ resource "aws_ssm_parameter" "omni-support-alarm-email" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "rate-file-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/rate-file/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-rate-file.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "rate-file-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/rate-file/ddb.index"
+  type  = "SecureString"
+  value = element(aws_dynamodb_table.omni-wt-rt-rate-file.global_secondary_index[*].name, 0)
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

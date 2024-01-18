@@ -858,3 +858,40 @@ resource "aws_dynamodb_table" "omni-dw-api-services-ltl-rating-logs-table" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wt-rt-rate-file" {
+  name             = "omni-wt-rt-rate-file-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "SeqNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "SeqNo"
+    type = "S"
+  }
+
+  attribute {
+    name = "CVNo"
+    type = "S"
+  }
+
+  attribute {
+    name = "ChargeCode"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "CVNo-ChargeCode"
+    hash_key        = "CVNo"
+    range_key       = "ChargeCode"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
