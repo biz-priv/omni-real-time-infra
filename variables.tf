@@ -490,3 +490,8 @@ variable "omni-support-alarm-email" {
  type     = string
  nullable = false
 }
+
+variable "bill_paymment_url" {
+ type     = string
+ nullable = false
+}
