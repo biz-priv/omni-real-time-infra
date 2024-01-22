@@ -2121,3 +2121,16 @@ resource "aws_ssm_parameter" "rate-file-index" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-netsuite-restlet-bill-payment-url" {
+  name  = "/omni-netsuite-restlet/${var.env}/netsuiteBillPaymentUrl"
+  type  = "String"
+  value = var.bill_paymment_url
+
+  tags = {
+    Application = "omni-nesuite-restlet"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
