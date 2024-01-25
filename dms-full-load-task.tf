@@ -679,9 +679,7 @@ resource "aws_dms_replication_task" "omni-wt-rt-header-fullload-rateFile-dms-tas
     }
   )
   lifecycle {
-    ignore_changes = [
-      replication_task_settings,
-    ]
+    ignore_changes = all
   }
   # source_endpoint_arn      = aws_dms_endpoint.omni-wt-rt-updates-source-endpoint.endpoint_arn
   source_endpoint_arn = var.source_endpoint_arn
