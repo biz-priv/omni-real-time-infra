@@ -2134,3 +2134,16 @@ resource "aws_ssm_parameter" "omni-netsuite-restlet-bill-payment-url" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "p44-mckesson-cust-name" {
+  name  = "/omni-p44-rt-updates/${var.env}/mckesson-customer/name"
+  type  = "String"
+  value = var.p44_mckesson_cust_name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

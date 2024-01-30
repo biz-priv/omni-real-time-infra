@@ -495,3 +495,8 @@ variable "bill_paymment_url" {
  type     = string
  nullable = false
 }
+
+variable "p44_mckesson_cust_name" {
+  type     = string
+  nullable = false
+}
