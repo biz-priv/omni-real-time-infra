@@ -98,3 +98,4 @@ default_websli_key                            = "fa75bbb8-9a10-4c64-80e8-e48d48f
 websli_base_url                               = "https://websli.omnilogistics.com/wtProd/getwtdoc/v1/json"
 omni-support-alarm-email                      = "support@bizcloudexperts.com"
 bill_paymment_url                             = "https://1238234.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=1024&deploy=2"
+p44_mckesson_cust_name                        = "MCKESSON"
