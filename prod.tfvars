@@ -111,3 +111,4 @@ omni_coe_table_staging_table                  = "omni-coe-table-staging-table-pr
 omni_coe_table_entered_date                   = "2023-01-01"
 omni_coe_table_port                           = "5439"
 omni_coe_table_db_user                        = "bcesys_account"
+omni_coe_table_host_name                      = "10.9.130.79"
