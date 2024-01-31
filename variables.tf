@@ -525,3 +525,38 @@ variable "apis_auth" {
  type     = string
  nullable = false
 }
+
+variable "omni_coe_table_db_name" {
+ type     = string
+ nullable = false
+}
+
+variable "omni_coe_table_redshift_table" {
+ type     = string
+ nullable = false
+}
+
+variable "omni_coe_table_staging_table_status_index" {
+ type     = string
+ nullable = false
+}
+
+variable "omni_coe_table_staging_table" {
+ type     = string
+ nullable = false
+}
+
+variable "omni_coe_table_entered_date" {
+ type     = string
+ nullable = false
+}
+
+variable "omni_coe_table_port" {
+ type     = string
+ nullable = false
+}
+
+variable "omni_coe_table_db_user" {
+ type     = string
+ nullable = false
+}
