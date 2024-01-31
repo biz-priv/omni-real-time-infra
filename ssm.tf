@@ -63,6 +63,19 @@ resource "aws_ssm_parameter" "shipment-apar-name" {
   }
 }
 
+resource "aws_ssm_parameter" "shipment-apar-console-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-apar/ddb.ConsolNoIndex"
+  type  = "String"
+  value = "omni-ivia-ConsolNo-index-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "shipment-apar-streamArn" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-apar/ddb.streamArn"
   type  = "SecureString"
