@@ -560,3 +560,8 @@ variable "omni_coe_table_db_user" {
  type     = string
  nullable = false
 }
+
+variable "omni_coe_table_host_name" {
+ type     = string
+ nullable = false
+}

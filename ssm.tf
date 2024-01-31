@@ -2329,3 +2329,16 @@ resource "aws_ssm_parameter" "omni-coe-table-db-user" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-coe-table-host-name" {
+  name  = "/omni-coe-table/${var.env}/redshift/host"
+  type  = "String"
+  value = var.omni_coe_table_host_name
+
+  tags = {
+    Application = "omni-coe-table"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
