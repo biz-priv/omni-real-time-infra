@@ -507,10 +507,21 @@ resource "aws_dynamodb_table" "omni-wt-rt-tracking-notes" {
     name = "FK_OrderNo"
     type = "S"
   }
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
 
   global_secondary_index {
     name            = "omni-tracking-notes-orderNo-index-${var.env}"
     hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "omni-tracking-notes-console-index-${var.env}"
+    hash_key        = "ConsolNo"
+    range_key       = "FK_OrderNo"
     projection_type = "ALL"
   }
 

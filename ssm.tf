@@ -1178,6 +1178,19 @@ resource "aws_ssm_parameter" "tracking-notes-orderNo-index" {
   }
 }
 
+resource "aws_ssm_parameter" "tracking-notes-console-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.ConsolNoIndex"
+  type  = "String"
+  value = "omni-tracking-notes-console-index-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "p44-milestones-logs-table-name" {
   name  = "/omni-p44-rt-updates/${var.env}/milestone-update/ddb.tableName"
   type  = "SecureString"
@@ -2142,6 +2155,71 @@ resource "aws_ssm_parameter" "p44-mckesson-cust-name" {
 
   tags = {
     Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-create-shipment-get-location-url" {
+  name  = "/omni-204-create-shipment/${var.env}/get-location.url"
+  type  = "String"
+  value = var.get_location_url
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-create-shipment-create-location-url" {
+  name  = "/omni-204-create-shipment/${var.env}/create-location.url"
+  type  = "String"
+  value = var.create_location_url
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-create-shipment-create-orders-url" {
+  name  = "/omni-204-create-shipment/${var.env}/create-orders.url"
+  type  = "String"
+  value = var.create_orders_url
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-create-shipment-update-orders-url" {
+  name  = "/omni-204-create-shipment/${var.env}/update-orders.url"
+  type  = "String"
+  value = var.update_orders_url
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-create-shipment-apis-auth" {
+  name  = "/omni-204-create-shipment/${var.env}/apis.auth"
+  type  = "String"
+  value = var.apis_auth
+
+  tags = {
+    Application = "omni-204-create-shipment"
     CreatedBy   = "BizCloudExperts"
     Environment = var.env
     STAGE       = var.env
