@@ -1178,6 +1178,19 @@ resource "aws_ssm_parameter" "tracking-notes-orderNo-index" {
   }
 }
 
+resource "aws_ssm_parameter" "tracking-notes-console-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/tracking-notes/ddb.ConsolNoIndex"
+  type  = "String"
+  value = "omni-tracking-notes-console-index-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "p44-milestones-logs-table-name" {
   name  = "/omni-p44-rt-updates/${var.env}/milestone-update/ddb.tableName"
   type  = "SecureString"
