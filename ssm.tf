@@ -2238,3 +2238,94 @@ resource "aws_ssm_parameter" "omni-204-create-shipment-apis-auth" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-coe-table-db-name" {
+  name  = "/omni-coe-table/${var.env}/DB_DATABASE"
+  type  = "String"
+  value = var.omni_coe_table_db_name
+
+  tags = {
+    Application = "omni-coe-table"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-coe-table-redshift-table" {
+  name  = "/omni-coe-table/${var.env}/COE_REDSHIFT_TABLE"
+  type  = "String"
+  value = var.omni_coe_table_redshift_table
+
+  tags = {
+    Application = "omni-coe-table"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-coe-table-staging-table-status-index" {
+  name  = "/omni-coe-table/${var.env}/COE_TABLE_STAGING_TABLE_STATUS_INDEX"
+  type  = "String"
+  value = var.omni_coe_table_staging_table_status_index
+
+  tags = {
+    Application = "omni-coe-table"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-coe-table-staging-table" {
+  name  = "/omni-coe-table/${var.env}/COE_TABLE_STAGING_TABLE_NAME"
+  type  = "String"
+  value = var.omni_coe_table_staging_table
+
+  tags = {
+    Application = "omni-coe-table"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-coe-table-entered-date" {
+  name  = "/omni-coe-table/${var.env}/ENTERED_DATE"
+  type  = "String"
+  value = var.omni_coe_table_entered_date
+
+  tags = {
+    Application = "omni-coe-table"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-coe-table-db-port" {
+  name  = "/omni-coe-table/${var.env}/DB_PORT"
+  type  = "String"
+  value = var.omni_coe_table_port
+
+  tags = {
+    Application = "omni-coe-table"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-coe-table-db-user" {
+  name  = "/omni-coe-table/${var.env}/DB_USER"
+  type  = "String"
+  value = var.omni_coe_table_db_user
+
+  tags = {
+    Application = "omni-coe-table"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
