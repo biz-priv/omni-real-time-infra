@@ -104,7 +104,7 @@ create_location_url                           = "https://tms-lvlp.loadtracking.c
 create_orders_url                             = "https://tms-lvlp.loadtracking.com:6790/ws/api/orders/create"
 update_orders_url                             = "https://tms-lvlp.loadtracking.com:6790/ws/api/orders/update"
 apis_auth                                     = "Basic YXBpdXNlcjpsdmxwYXBpdXNlcg=="
-omni_coe_table_db_name                        = "wtstage"
+omni_coe_table_db_name                        = "prod_datamodel"
 omni_coe_table_redshift_table                 = "coe"
 omni_coe_table_staging_table_status_index     = "status-index"
 omni_coe_table_staging_table                  = "omni-coe-table-staging-table-prod"
