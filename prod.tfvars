@@ -99,3 +99,8 @@ websli_base_url                               = "https://websli.omnilogistics.co
 omni-support-alarm-email                      = "support@bizcloudexperts.com"
 bill_paymment_url                             = "https://1238234.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=1024&deploy=2"
 p44_mckesson_cust_name                        = "MCKESSON"
+get_location_url                              = "https://tms-lvlp.loadtracking.com:6790/ws/api/locations/search"
+create_location_url                           = "https://tms-lvlp.loadtracking.com:6790/ws/api/locations/create"
+create_orders_url                             = "https://tms-lvlp.loadtracking.com:6790/ws/api/orders/create"
+update_orders_url                             = "https://tms-lvlp.loadtracking.com:6790/ws/api/orders/update"
+apis_auth                                     = "Basic YXBpdXNlcjpsdmxwYXBpdXNlcg=="

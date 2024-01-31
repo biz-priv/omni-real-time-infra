@@ -500,3 +500,28 @@ variable "p44_mckesson_cust_name" {
   type     = string
   nullable = false
 }
+
+variable "get_location_url" {
+ type     = string
+ nullable = false
+}
+
+variable "create_location_url" {
+ type     = string
+ nullable = false
+}
+
+variable "create_orders_url" {
+ type     = string
+ nullable = false
+}
+
+variable "update_orders_url" {
+ type     = string
+ nullable = false
+}
+
+variable "apis_auth" {
+ type     = string
+ nullable = false
+}
