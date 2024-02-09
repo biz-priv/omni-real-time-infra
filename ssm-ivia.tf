@@ -140,3 +140,16 @@ resource "aws_ssm_parameter" "omni-rt-ivia-address-mapping-ddb-table-name" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-rt-ivia-error-notification-sns-arn" {
+  name  = "/omni-ivia/${var.env}/error-notification/sns/arn"
+  type  = "String"
+  value = aws_sns_topic.omni-ivia-updates-error-notification.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
