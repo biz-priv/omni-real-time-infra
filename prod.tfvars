@@ -112,3 +112,4 @@ omni_coe_table_entered_date                   = "2023-01-01"
 omni_coe_table_port                           = "5439"
 omni_coe_table_db_user                        = "bcesys_account"
 omni_coe_table_host_name                      = "10.9.130.79"
+omni_ivia_updates_emails                      = ["support@bizcloudexperts.com", "priyanka@bizcloudexperts.com", "omnidev@bizcloudexperts.com"]
