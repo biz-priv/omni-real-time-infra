@@ -570,3 +570,8 @@ variable "omni_ivia_updates_emails" {
   type    = list(string)
   nullable = false
 }
+
+variable "omni_dw_corsair_smtp_success_receiver" {
+ type     = string
+ nullable = false
+}

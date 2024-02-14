@@ -2342,3 +2342,16 @@ resource "aws_ssm_parameter" "omni-coe-table-host-name" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-dw-corsair-smtp-success-receiver" {
+  name  = "/omni-dw/corsair/${var.env}/smtp/success/receiver"
+  type  = "String"
+  value = var.omni_dw_corsair_smtp_success_receiver
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
