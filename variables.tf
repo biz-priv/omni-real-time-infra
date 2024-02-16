@@ -575,3 +575,8 @@ variable "omni_dw_corsair_smtp_success_receiver" {
  type     = string
  nullable = false
 }
+
+variable "omni_wd_total_count_per_loop" {
+ type     = string
+ nullable = false
+}
