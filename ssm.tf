@@ -2355,3 +2355,16 @@ resource "aws_ssm_parameter" "omni-dw-corsair-smtp-success-receiver" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-wd-total-count-per-loop" {
+  name  = "/omni-wd/${var.env}/total-count-per-loop"
+  type  = "String"
+  value = var.omni_wd_total_count_per_loop  
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
