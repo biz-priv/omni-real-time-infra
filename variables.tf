@@ -580,3 +580,8 @@ variable "omni_wd_total_count_per_loop" {
  type     = string
  nullable = false
 }
+
+variable "omni_reports_success_notification_email" {
+  type    = list(string)
+  nullable = false
+}

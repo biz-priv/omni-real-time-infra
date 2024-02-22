@@ -115,3 +115,4 @@ omni_coe_table_host_name                      = "10.9.130.79"
 omni_ivia_updates_emails                      = ["support@bizcloudexperts.com", "priyanka@bizcloudexperts.com", "omnidev@bizcloudexperts.com", "expedite@millhouse.com",  "dakins@omnilogistics.com", "kvallabhaneni@omnilogistics.com"]
 omni_dw_corsair_smtp_success_receiver         = "kiranv@bizcloudexperts.com,omnidev@bizcloudexperts.com"
 omni_wd_total_count_per_loop                  = "45"
+omni_reports_success_notification_email       = ["omnidev@bizcloudexperts.com"]
