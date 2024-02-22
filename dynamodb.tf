@@ -906,3 +906,23 @@ resource "aws_dynamodb_table" "omni-wt-rt-rate-file" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wd-x1-status" {
+  name             = "omni-wd-x1-payload-status-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Omni WD X1"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

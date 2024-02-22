@@ -65,3 +65,68 @@ resource "aws_ssm_parameter" "wd-logs-table-streamArn" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-wd-x1-status-table" {
+  name  = "/omni-wd-x1/${var.env}/payload-status/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wd-x1-status.name
+
+  tags = {
+    Application = "omni wd x1"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-wd-x1-status-table-streamArn" {
+  name  = "/omni-wd-x1/${var.env}/payload-status/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wd-x1-status.stream_arn
+
+  tags = {
+    Application = "omni wd x1"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-wt-rt-shipment-air-import-streamArn" {
+  name  = "/omni-wd-x1/${var.env}/air-import/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-air-import.stream_arn
+
+  tags = {
+    Application = "omni wd x1"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-wt-rt-shipment-ocean-import-streamArn" {
+  name  = "/omni-wd-x1/${var.env}/ocean-import/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-ocean-import.stream_arn
+
+  tags = {
+    Application = "omni wd x1"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-wt-rt-import-mawb-streamArn" {
+  name  = "/omni-wd-x1/${var.env}/import-mawb/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-import-mawb.stream_arn
+
+  tags = {
+    Application = "omni wd x1"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
