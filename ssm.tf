@@ -2368,3 +2368,16 @@ resource "aws_ssm_parameter" "omni-wd-total-count-per-loop" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-reports-success-notification-sns-arn"{
+  name = "/omni-reports/${var.env}/success-notification/sns/arn"
+  type = "String"
+  value = aws_sns_topic.omni-reports-success-notification.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
