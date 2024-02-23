@@ -2381,3 +2381,28 @@ resource "aws_ssm_parameter" "omni-reports-success-notification-sns-arn"{
     STAGE       = var.env
   }
 }
+
+
+resource "aws_ssm_parameter" "omni-hawaiian-airlines-report-email-to" {
+  name  = "/omni-hawaiian-airlines-report/${var.env}/report/email.to"
+  type  = "String"
+  value = var.omni_hawaiian_airlines_report_email_to
+
+  tags = {
+    Application = "omni-hawaiian-airlines-report"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-hawaiian-airlines-report-email-from" {
+  name  = "/omni-hawaiian-airlines-report/${var.env}/report/email.from"
+  type  = "String"
+  value = var.omni_hawaiian_airlines_report_email_from
+
+  tags = {
+    Application = "omni-hawaiian-airlines-report"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
