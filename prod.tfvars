@@ -116,3 +116,5 @@ omni_ivia_updates_emails                      = ["support@bizcloudexperts.com", 
 omni_dw_corsair_smtp_success_receiver         = "kiranv@bizcloudexperts.com,omnidev@bizcloudexperts.com"
 omni_wd_total_count_per_loop                  = "45"
 omni_reports_success_notification_email       = ["omnidev@bizcloudexperts.com"]
+omni_hawaiian_airlines_report_email_from      = "automatedreports@bizcloudexperts.com"
+omni_hawaiian_airlines_report_email_to        = "mwang@omnilogistics.com,dhall@omnilogistics.com,kvallabhaneni@omnilogistics.com,omnidev@bizcloudexperts.com"

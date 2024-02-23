@@ -585,3 +585,13 @@ variable "omni_reports_success_notification_email" {
   type    = list(string)
   nullable = false
 }
+
+variable "omni_hawaiian_airlines_report_email_to" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_hawaiian_airlines_report_email_from" {
+  type    = string
+  nullable = false
+}
