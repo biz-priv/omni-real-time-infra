@@ -2510,3 +2510,42 @@ resource "aws_ssm_parameter" "omni-204-create-shipment-status-console-index" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-204-order-status-table" {
+  name  = "/omni-204-create-shipment/${var.env}/status/ddb.name"
+  type  = "String"
+  value = aws_dynamodb_table.omni-204-order-status.name
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-order-status-stream" {
+  name  = "/omni-204-create-shipment/${var.env}/status/ddb.streamArn"
+  type  = "String"
+  value = aws_dynamodb_table.omni-204-order-status.stream_arn
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "consol-stop-headers-console-index" {
+  name  = "/omni-wt-rt-updates/${var.env}/consol-stop-headers/ddb.ConsolNoIndex"
+  type  = "String"
+  value = "omni-ivia-FK_ConsolNo-index-${var.env}"
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
