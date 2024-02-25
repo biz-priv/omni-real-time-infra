@@ -1012,7 +1012,7 @@ resource "aws_dynamodb_table" "omni-dw-backend-services-204-create-shipment-stat
   }
 
   tags = {
-    Application = "Real Time Updates"
+    Application = "204 create shipment"
     CreatedBy   = "BizCloudExperts"
     Environment = var.env
     STAGE       = var.env
