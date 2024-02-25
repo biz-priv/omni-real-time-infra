@@ -118,3 +118,4 @@ omni_wd_total_count_per_loop                  = "45"
 omni_reports_success_notification_email       = ["omnidev@bizcloudexperts.com"]
 omni_hawaiian_airlines_report_email_from      = "automatedreports@bizcloudexperts.com"
 omni_hawaiian_airlines_report_email_to        = "mwang@omnilogistics.com,dhall@omnilogistics.com,kvallabhaneni@omnilogistics.com,omnidev@bizcloudexperts.com"
+omni_live_filter_billno                       = ["2264", "2589", "16155", "22112", "22119", "52721", "53944"]

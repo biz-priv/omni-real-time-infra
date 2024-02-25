@@ -2406,3 +2406,107 @@ resource "aws_ssm_parameter" "omni-hawaiian-airlines-report-email-from" {
     Environment = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-wt-rt-users-table" {
+  name  = "/omni-wt-rt-updates/${var.env}/users/ddb.tableName"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-users.name
+
+  tags = {
+    Application = "omni wd x1"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni_live_filter_billnos" {
+  name  = "/omni-204-create-shipment/${var.env}/accepted/filterBillNo"
+  type  = "StringList"
+  value = join(",", var.omni_live_filter_billno)
+
+  tags = {
+    Application = "204 create shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-output-table" {
+  name  = "/omni-live-204/${var.env}/output/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.live-204-output-table.name
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-output-table-streamArn" {
+  name  = "/omni-live-204/${var.env}/output/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.live-204-output-table.stream_arn
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-dw-backend-services-204-create-shipment-status-table-status-index" {
+  name  = "/omni-204-create-shipment/${var.env}/status/ddb.StatusIndex"
+  type  = "String"
+  value = "Status-index"
+
+  tags = {
+    Application = "omni 204 create shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-create-shipment-status-table" {
+  name  = "/omni-live-204/${var.env}/consol-status/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.live-204-consol-status.name
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-create-shipment-status-table-streamArn" {
+  name  = "/omni-live-204/${var.env}/consol-status/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.live-204-consol-status.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-create-shipment-status-console-index" {
+  name  = "/omni-204-create-shipment/${var.env}/status/ddb.ConsolNoIndex"
+  type  = "String"
+  value = "ConsolNo-index"
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

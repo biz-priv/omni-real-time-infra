@@ -926,3 +926,126 @@ resource "aws_dynamodb_table" "omni-wd-x1-status" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wt-rt-users" {
+  name             = "omni-wt-rt-users-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_UserId"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_UserId"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "live-204-output-table" {
+  name             = "live-204-output-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "UUid"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "UUid"
+    type = "S"
+  }
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+    attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "OrderNo-index"
+    hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "ConsolNo-index"
+    hash_key        = "ConsolNo"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "204 create shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-dw-backend-services-204-create-shipment-status" {
+  name             = "live-204-order-status-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  attribute {
+    name = "Status"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Status-index"
+    hash_key        = "Status"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "live-204-consol-status" {
+  name             = "live-204-consol-status-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "ConsolNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "ConsolNo"
+    type = "S"
+  }
+
+  attribute {
+    name = "Status"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Status-index"
+    hash_key        = "Status"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "204 create shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
