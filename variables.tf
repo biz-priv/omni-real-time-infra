@@ -595,3 +595,8 @@ variable "omni_hawaiian_airlines_report_email_from" {
   type    = string
   nullable = false
 }
+
+variable "omni_live_filter_billno" {
+  type     = list(string)
+  nullable = false
+}
