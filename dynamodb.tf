@@ -988,7 +988,7 @@ resource "aws_dynamodb_table" "live-204-output-table" {
   }
 }
 
-resource "aws_dynamodb_table" "omni-dw-backend-services-204-create-shipment-status" {
+resource "aws_dynamodb_table" "omni-204-order-status" {
   name             = "live-204-order-status-${var.env}"
   billing_mode     = "PAY_PER_REQUEST"
   hash_key         = "FK_OrderNo"
