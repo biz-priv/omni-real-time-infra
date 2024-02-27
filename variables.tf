@@ -600,3 +600,8 @@ variable "omni_live_filter_billno" {
   type     = list(string)
   nullable = false
 }
+
+variable "omni_power_broker_emails" {
+  type    = list(string)
+  nullable = false
+}
