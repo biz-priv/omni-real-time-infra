@@ -2549,3 +2549,15 @@ resource "aws_ssm_parameter" "consol-stop-headers-console-index" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-rt-power-broker-error-notification-sns-arn" {
+  name  = "/omni-power-broker/${var.env}/error-notification/sns/arn"
+  type  = "String"
+  value = aws_sns_topic.omni-power-broker-error-notification.arn
+
+  tags = {
+    Application = "Omni Power Broker"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
