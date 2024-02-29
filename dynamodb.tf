@@ -1049,3 +1049,39 @@ resource "aws_dynamodb_table" "live-204-consol-status" {
     STAGE       = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-cw-to-wt-create-shipment-logs-table" {
+  name             = "omni-cw-to-wt-create-shipment-logs-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "Id"
+  stream_enabled   = false
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "Id"
+    type = "S"
+  }
+
+  attribute {
+    name = "Housebill"
+    type = "S"
+  }
+
+  attribute {
+    name = "FileNumber"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Houseibill-FileNumber-Index"
+    hash_key        = "Housebill"
+    range_key       = "FileNumber"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Omni DW Backend services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}

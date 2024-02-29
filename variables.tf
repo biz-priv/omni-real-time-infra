@@ -605,3 +605,63 @@ variable "omni_power_broker_emails" {
   type    = list(string)
   nullable = false
 }
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_FederalSignal_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_CiscoSystems_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_OmniCell_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_Arjo_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_CumminsAllison_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_RTC_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_WaterBox_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_CircleK_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_Arxium_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_create_shipment_s3_trigger_RoyalEnfield_prefix" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_create_shipment_response_url" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_create_shipment_response_url_authorizer" {
+  type    = string
+  nullable = false
+}

@@ -120,3 +120,15 @@ omni_hawaiian_airlines_report_email_from      = "automatedreports@bizcloudexpert
 omni_hawaiian_airlines_report_email_to        = "mwang@omnilogistics.com,dhall@omnilogistics.com,kvallabhaneni@omnilogistics.com,omnidev@bizcloudexperts.com"
 omni_live_filter_billno                       = ["2264", "2589", "16155", "22112", "22119", "52721", "53944"]
 omni_power_broker_emails                      = ["omnidev@bizcloudexperts.com", "kvallabhaneni@omnilogistics.com","brokerageops7@omnilogistics.com","support@bizcloudexperts.com" ]
+omni_cw_to_wt_create_shipment_s3_trigger_FederalSignal_prefix  = "CargoWiseOutbound/FederalSignal/"
+omni_cw_to_wt_create_shipment_s3_trigger_CiscoSystems_prefix   = "CargoWiseOutbound/CiscoSystems/"
+omni_cw_to_wt_create_shipment_s3_trigger_OmniCell_prefix       = "CargoWiseOutbound/OmniCell/"
+omni_cw_to_wt_create_shipment_s3_trigger_Arjo_prefix           = "CargoWiseOutbound/Arjo/"
+omni_cw_to_wt_create_shipment_s3_trigger_CumminsAllison_prefix = "CargoWiseOutbound/CumminsAllison/"
+omni_cw_to_wt_create_shipment_s3_trigger_RTC_prefix            = "CargoWiseOutbound/RTC/"
+omni_cw_to_wt_create_shipment_s3_trigger_WaterBox_prefix       = "CargoWiseOutbound/WaterBox/"
+omni_cw_to_wt_create_shipment_s3_trigger_CircleK_prefix        = "CargoWiseOutbound/CircleK/"
+omni_cw_to_wt_create_shipment_s3_trigger_Arxium_prefix         = "CargoWiseOutbound/Arxium/"
+omni_cw_to_wt_create_shipment_s3_trigger_RoyalEnfield_prefix   = "CargoWiseOutbound/RoyalEnfield/"
+omni_cw_create_shipment_response_url                           = "https://trxelpservices.wisegrid.net/eAdaptor"
+omni_cw_create_shipment_response_url_authorizer                = "Basic dGVpZGF0YTp0ZWlkYXRhJDEyMw=="
