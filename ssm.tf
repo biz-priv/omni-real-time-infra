@@ -2716,3 +2716,15 @@ resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-cw-endpoint-authoriz
     Environment = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-rt-cw-to-wt-notification-sns-arn" {
+  name  = "/omni-cw-to-wt/${var.env}/error-notification/sns/arn"
+  type  = "String"
+  value = aws_sns_topic.omni-cw-to-wt-error-notification.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}

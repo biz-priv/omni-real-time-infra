@@ -665,3 +665,8 @@ variable "omni_cw_create_shipment_response_url_authorizer" {
   type    = string
   nullable = false
 }
+
+variable "omni_cw_to_wt_emails" {
+  type    = list(string)
+  nullable = false
+}
