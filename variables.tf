@@ -670,3 +670,10 @@ variable "omni_cw_to_wt_emails" {
   type    = list(string)
   nullable = false
 }
+variable "omni_power_broker_emails_filter" {
+  type    = map(object({
+    email       = string
+    stationCode = list(string)
+  }))
+  nullable = false
+}
