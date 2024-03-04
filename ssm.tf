@@ -2728,3 +2728,16 @@ resource "aws_ssm_parameter" "omni-rt-cw-to-wt-notification-sns-arn" {
     Environment = var.env
   }
 }
+
+resource "aws_ssm_parameter" "customers-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/customers/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-customers.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
