@@ -2561,3 +2561,158 @@ resource "aws_ssm_parameter" "omni-rt-power-broker-error-notification-sns-arn" {
     Environment = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-logs-table" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-cw-to-wt-create-shipment-logs-table.name
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-FederalSignal-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/FederalSignal"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_FederalSignal_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-CiscoSystems-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/CiscoSystems"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_CiscoSystems_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-OmniCell-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/OmniCell"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_OmniCell_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-Arjo-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/Arjo"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_Arjo_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-CumminsAllison-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/CumminsAllison"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_CumminsAllison_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-RTC-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/RTC"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_RTC_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-WaterBox-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/WaterBox"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_WaterBox_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-CircleK-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/CircleK"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_CircleK_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-Arxium-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/Arxium"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_Arxium_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-RoyalEnfield-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/RoyalEnfield"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_RoyalEnfield_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-cw-endpoint" {
+  name  = "/omni-dw/${var.env}/createShipmentResponse/cw/url"
+  type  = "String"
+  value = var.omni_cw_create_shipment_response_url
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-cw-endpoint-authorizer" {
+  name  = "/omni-dw/${var.env}/createShipmentResponse/cw/url.authorizer"
+  type  = "String"
+  value = var.omni_cw_create_shipment_response_url_authorizer
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
