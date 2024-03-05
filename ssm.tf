@@ -2741,3 +2741,78 @@ resource "aws_ssm_parameter" "customers-name" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "dell-narvar-pod-doc-status-table-name" {
+  name  = "/dell-narvar-pod-doc/${var.env}/status-table/name"
+  type  = "String"
+  value = aws_dynamodb_table.dell-narvar-pod-doc-status.name
+
+  tags = {
+    Application = "Dell Narvar POD Doc"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "dell-narvar-pod-doc-status-streamArn" {
+  name  = "/dell-narvar-pod-doc/${var.env}/status-table/stream-arn"
+  type  = "String"
+  value = aws_dynamodb_table.dell-narvar-pod-doc-status.stream_arn
+
+  tags = {
+    Application = "Dell Narvar POD Doc"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "dell-narvar-pod-doc-status-status-index" {
+  name  = "/dell-narvar-pod-doc/${var.env}/status-table/status-index"
+  type  = "String"
+  value = "Status-index"
+
+  tags = {
+    Application = "Dell Narvar POD Doc"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "dell-narvar-pod-doc-bucket-name" {
+  name  = "/dell-narvar-pod-doc/${var.env}/bucket-name"
+  type  = "String"
+  value = aws_s3_bucket.dell-narvar-pod-doc.bucket
+
+  tags = {
+    Application = "Dell Narvar POD Doc"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "dell-narvar-pod-doc-websli-key" {
+  name  = "/dell-narvar-pod-doc/${var.env}/websli-key"
+  type  = "SecureString"
+  value = var.dell_narvar_pod_doc_websli_key
+
+  tags = {
+    Application = "Dell Narvar POD Doc"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "dell-narvar-pod-doc-subscription-arn" {
+  name  = "/dell-narvar-pod-doc/${var.env}/subscription-arn"
+  type  = "String"
+  value = var.dell_narvar_pod_doc_subscription_arn
+
+  tags = {
+    Application = "Dell Narvar POD Doc"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}

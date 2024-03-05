@@ -677,3 +677,13 @@ variable "omni_power_broker_emails_filter" {
   }))
   nullable = false
 }
+
+variable "dell_narvar_pod_doc_websli_key" {
+  type    = string
+  nullable = false
+}
+
+variable "dell_narvar_pod_doc_subscription_arn" {
+  type    = string
+  nullable = false
+}
