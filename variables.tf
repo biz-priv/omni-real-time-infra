@@ -670,10 +670,16 @@ variable "omni_cw_to_wt_emails" {
   type    = list(string)
   nullable = false
 }
+
 variable "omni_power_broker_emails_filter" {
-  type    = map(object({
-    email       = string
+  type = map(object({
+    email        = string
     stationCode = list(string)
   }))
+  description = "Map of station codes and associated emails"
+}
+
+variable "omni_live_lgb_filter_billnos" {
+  type     = list(string)
   nullable = false
 }
