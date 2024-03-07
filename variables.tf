@@ -685,3 +685,8 @@ variable "dell_narvar_pod_doc_subscription_arn" {
   type    = string
   nullable = false
 }
+
+variable "dell_narvar_pod_doc_websli_endpoint" {
+  type    = string
+  nullable = false
+}
