@@ -2742,6 +2742,19 @@ resource "aws_ssm_parameter" "customers-name" {
   }
 }
 
+resource "aws_ssm_parameter" "omni_live_lgb_filter_billnos" {
+  name  = "/omni-204-create-shipment/${var.env}/lgb-accepted/filterBillNo"
+  type  = "StringList"
+  value = join(",", var.omni_live_lgb_filter_billnos)
+
+  tags = {
+    Application = "204 create shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "dell-narvar-pod-doc-status-table-name" {
   name  = "/dell-narvar-pod-doc/${var.env}/status-table/name"
   type  = "String"
