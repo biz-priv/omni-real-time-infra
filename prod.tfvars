@@ -137,4 +137,4 @@ omni_cw_to_wt_emails                                           = ["support@bizcl
 
 dell_narvar_pod_doc_websli_key                = "325adf1943cf2b49063a606700ed35"
 dell_narvar_pod_doc_subscription_arn          = "arn:aws:sns:us-east-1:332281781429:ShipmentAndMilestone_fullPayload:e9bee9ad-1758-4222-806a-bffc6e1d4226"
-dell_narvar_pod_doc_websli_endpoint           = "https://websli.omnilogistics.com/wtTest/getwtdoc/v1/json"
+dell_narvar_pod_doc_websli_endpoint           = "https://websli.omnilogistics.com/wtProd/getwtdoc/v1/json"
