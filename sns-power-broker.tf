@@ -1,5 +1,5 @@
 resource "aws_sns_topic" "omni-power-broker-error-notification" {
-  name = "omni-power-broker-error-notification-${var.env}" 
+  name = "omni-power-broker-error-notification-${var.env}"
 }
 
 resource "aws_sns_topic_subscription" "omni_power_broker_emails" {
@@ -50,22 +50,24 @@ resource "aws_sns_topic_subscription" "omni_power_broker_emails" {
   })
 }
 
-resource "aws_sns_topic_subscription" "omni_power_broker_emails_filter" {
-  for_each  = var.omni_power_broker_emails_filter
-
-  topic_arn = aws_sns_topic.omni-power-broker-error-notification.arn
-  protocol  = "email"
-  endpoint  = each.value.email
-}
-
-# Iterate over the emails to determine which ones have duplicates and add filter policies
-resource "null_resource" "update_subscriptions" {
-  for_each = { for email, info in var.omni_power_broker_emails_filter : email => info if length([for e, i in var.omni_power_broker_emails_filter : e if i.email == info.email]) > 1 }
-
-  provisioner "local-exec" {
-    command = <<EOT
-aws sns set-subscription-attributes --subscription-arn ${aws_sns_topic_subscription.omni_power_broker_emails_filter[each.key].arn} --attribute-name FilterPolicy --attribute-value '{ "stationCode": ${jsonencode(each.value.stationCode)} }'
-EOT
+locals {
+  email_station_mapping = {
+    "brokerageops4@omnilogistics.com" : ["ACN", "IAH", "BNA", "AUS", "COE", "BOS", "IND", "MFE", "PDX"],
+    "brokerageops9@omnilogistics.com" : ["LAX", "LGB", "PHL"],
+    "brokerageops5@omnilogistics.com" : ["ORD", "SAT", "PIT", "OLH", "SAN", "SFO", "SLC"],
+    "liveops2@livelogisticscorp.com" : ["ATL", "BRO", "CMH", "CVG", "DAL", "DTW", "EXP", "GSP", "LRD", "MKE", "MSP", "PHX", "TAN", "YYZ", "DFW"],
+    "brokerageops6@omnilogistics.com" : ["ELP"],
+    "brokerageops7@omnilogistics.com" : ["OTR"]
   }
 }
 
+resource "aws_sns_topic_subscription" "subscription" {
+  count = length(keys(local.email_station_mapping))
+
+  topic_arn = aws_sns_topic.omni-power-broker-error-notification.arn
+  protocol  = "email"
+  endpoint  = keys(local.email_station_mapping)[count.index]
+  filter_policy = jsonencode({
+    stationCode = local.email_station_mapping[keys(local.email_station_mapping)[count.index]]
+  })
+}
