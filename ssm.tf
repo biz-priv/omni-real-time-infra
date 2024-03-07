@@ -1712,40 +1712,40 @@ resource "aws_ssm_parameter" "omni-ivia-add-milestone-url-LOC" {
 }
 
 resource "aws_ssm_parameter" "omni-manuallyCreatedApiKeys-getDocument" {
- name  = "/omni-dw-api-sevices/${var.env}/getDocument/apiKeys"
- type  = "String"
- value = var.omni_manuallyCreatedApiKeys_getDocument
+  name  = "/omni-dw-api-sevices/${var.env}/getDocument/apiKeys"
+  type  = "String"
+  value = var.omni_manuallyCreatedApiKeys_getDocument
 
 
- tags = {
-   Application = "Real Time Updates"
-   CreatedBy   = "BizCloudExperts"
-   Environment = var.env
-   STAGE       = var.env
- }
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
 }
 
 resource "aws_ssm_parameter" "omni-tokenValidator-index-value" {
- name  = "/omni-dw/${var.env}/tokenValidator/apiKey/index.allColumns"
- type  = "String"
- value = var.omni_tokenValidator_indexValue
+  name  = "/omni-dw/${var.env}/tokenValidator/apiKey/index.allColumns"
+  type  = "String"
+  value = var.omni_tokenValidator_indexValue
 
 
- tags = {
-   Application = "Real Time Updates"
-   CreatedBy   = "BizCloudExperts"
-   Environment = var.env
-   STAGE       = var.env
- }
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
 }
 
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FWDA-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/FWDA-url"
   type  = "String"
   value = var.ltl_batch_rating_FWDA_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1755,11 +1755,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FWDA-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FWDA-user" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/FWDA-user"
   type  = "String"
   value = var.ltl_batch_rating_FWDA_user
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1769,11 +1769,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FWDA-user" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FWDA-customerId" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/FWDA-customerId"
   type  = "String"
   value = var.ltl_batch_rating_FWDA_customerId
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1783,11 +1783,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FWDA-customerId" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-EXLA-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/EXLA-url"
   type  = "String"
   value = var.ltl_batch_rating_EXLA_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1797,11 +1797,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-EXLA-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FEXF-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/FEXF-url"
   type  = "String"
   value = var.ltl_batch_rating_FEXF_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1811,11 +1811,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-FEXF-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-ODFL-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/ODFL-url"
   type  = "String"
   value = var.ltl_batch_rating_ODFL_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1825,11 +1825,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-ODFL-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-ABFS-baseUrl" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/ABFS-baseUrl"
   type  = "String"
   value = var.ltl_batch_rating_ABFS_baseUrl
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1839,11 +1839,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-ABFS-baseUrl" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-AVRT-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/AVRT-url"
   type  = "String"
   value = var.ltl_batch_rating_AVRT_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1853,11 +1853,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-AVRT-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-DAFG-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/DAFG-url"
   type  = "String"
   value = var.ltl_batch_rating_DAFG_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1867,11 +1867,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-DAFG-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-SEFN-baseUrl" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/SEFN-baseUrl"
   type  = "String"
   value = var.ltl_batch_rating_SEFN_baseUrl
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1881,11 +1881,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-SEFN-baseUrl" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-PENS-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/PENS-url"
   type  = "String"
   value = var.ltl_batch_rating_PENS_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1895,11 +1895,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-PENS-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-SAIA-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/SAIA-url"
   type  = "String"
   value = var.ltl_batch_rating_SAIA_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1909,11 +1909,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-SAIA-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/XPOL-url"
   type  = "String"
   value = var.ltl_batch_rating_XPOL_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1923,11 +1923,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-token-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/XPOL-token-url"
   type  = "String"
   value = var.ltl_batch_rating_XPOL_token_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1937,11 +1937,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-token-url" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-authorization" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/XPOL-authorization"
   type  = "String"
   value = var.ltl_batch_rating_XPOL_authorization
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1951,11 +1951,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-authorization" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-access-token" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/XPOL-access-token"
   type  = "String"
   value = var.ltl_batch_rating_XPOL_access_token
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1965,11 +1965,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-access-token" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-refresh-token" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/XPOL-refresh-token"
   type  = "String"
   value = var.ltl_batch_rating_XPOL_refresh_token
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1979,11 +1979,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-refresh-token" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-expires-in" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/XPOL-expires-in"
   type  = "String"
   value = var.ltl_batch_rating_XPOL_expires_in
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -1993,11 +1993,11 @@ resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-XPOL-expires-in" {
 }
 
 resource "aws_ssm_parameter" "omni-dw-api-ltl-batch-rating-RDFS-url" {
-  
+
   name  = "/omni-dw-api-services/${var.env}/ltl-batch-rating/RDFS-url"
   type  = "String"
   value = var.ltl_batch_rating_RDFS_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -2010,7 +2010,7 @@ resource "aws_ssm_parameter" "omni-dw-api-services-ltl-rating-log-table-name" {
   name  = "/omni-dw-api-services/${var.env}/ltl-rating/log-table-name"
   type  = "String"
   value = aws_dynamodb_table.omni-dw-api-services-ltl-rating-logs-table.name
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -2023,7 +2023,7 @@ resource "aws_ssm_parameter" "omni-dw-api-services-ltl-rating-log-queue-url" {
   name  = "/omni-dw-api-services/${var.env}/ltl-rating/log-queue-url"
   type  = "String"
   value = var.ltl_batch_rating_log_queue_url
-                                                
+
   tags = {
     Application = "Omni DW API Services"
     CreatedBy   = "BizCloudExperts"
@@ -2082,31 +2082,31 @@ resource "aws_ssm_parameter" "wms-shipengine-api-key" {
     Environment = var.env
     STAGE       = var.env
   }
-}  
+}
 resource "aws_ssm_parameter" "get-document-default-websli-key" {
- name  = "/omni-dw/${var.env}/get-document/websli-key.default"
- type  = "String"
- value = var.default_websli_key
+  name  = "/omni-dw/${var.env}/get-document/websli-key.default"
+  type  = "String"
+  value = var.default_websli_key
 
- tags = {
-   Application = "omni-dw"
-   CreatedBy   = "BizCloudExperts"
-   Environment = var.env
-   STAGE       = var.env
- }
+  tags = {
+    Application = "omni-dw"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
 }
 
 resource "aws_ssm_parameter" "websli-base-url" {
- name  = "/omni-dw/${var.env}/websli/api/base.url"
- type  = "String"
- value = var.websli_base_url
+  name  = "/omni-dw/${var.env}/websli/api/base.url"
+  type  = "String"
+  value = var.websli_base_url
 
- tags = {
-   Application = "omni-dw"
-   CreatedBy   = "BizCloudExperts"
-   Environment = var.env
-   STAGE       = var.env
- }
+  tags = {
+    Application = "omni-dw"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
 }
 
 resource "aws_ssm_parameter" "omni-support-alarm-email" {
@@ -2359,7 +2359,7 @@ resource "aws_ssm_parameter" "omni-dw-corsair-smtp-success-receiver" {
 resource "aws_ssm_parameter" "omni-wd-total-count-per-loop" {
   name  = "/omni-wd/${var.env}/total-count-per-loop"
   type  = "String"
-  value = var.omni_wd_total_count_per_loop  
+  value = var.omni_wd_total_count_per_loop
 
   tags = {
     Application = "Real Time Updates"
@@ -2369,9 +2369,9 @@ resource "aws_ssm_parameter" "omni-wd-total-count-per-loop" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-reports-success-notification-sns-arn"{
-  name = "/omni-reports/${var.env}/success-notification/sns/arn"
-  type = "String"
+resource "aws_ssm_parameter" "omni-reports-success-notification-sns-arn" {
+  name  = "/omni-reports/${var.env}/success-notification/sns/arn"
+  type  = "String"
   value = aws_sns_topic.omni-reports-success-notification.arn
 
   tags = {
@@ -2839,5 +2839,17 @@ resource "aws_ssm_parameter" "omni-wt-rt-shipment-file-streamArn" {
     CreatedBy   = "BizCloudExperts"
     Environment = var.env
     STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "dell-narvar-pod-doc-websli-url" {
+  name  = "/dell-narvar-pod-doc/${var.env}/websli-url"
+  type  = "String"
+  value = var.dell_narvar_pod_doc_websli_endpoint
+
+  tags = {
+    Application = "Dell Narvar POD Doc"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
   }
 }
