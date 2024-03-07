@@ -199,3 +199,7 @@ resource "aws_s3_bucket" "dell-narvar-pod-doc" {
     STAGE       = var.env
   }
 }
+resource "aws_s3_bucket_acl" "dell-narvar-pod-doc-bucket-acl" {
+  bucket = aws_s3_bucket.dell-narvar-pod-doc.id
+  acl    = "private"
+}
