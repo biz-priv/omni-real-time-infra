@@ -2829,3 +2829,15 @@ resource "aws_ssm_parameter" "dell-narvar-pod-doc-subscription-arn" {
     Environment = var.env
   }
 }
+resource "aws_ssm_parameter" "omni-wt-rt-shipment-file-streamArn" {
+  name  = "/omni-wt-rt/${var.env}/shipment-file/stream-arn"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-file.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
