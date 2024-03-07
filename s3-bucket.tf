@@ -188,3 +188,18 @@ resource "aws_s3_bucket_notification" "omni-wt-rt-updates-s3-bucket-notification
     aws_sqs_queue.omni_wt_rt_queue
   ]
 }
+
+resource "aws_s3_bucket" "dell-narvar-pod-doc" {
+  bucket = "dell-narvar-pod-doc-${var.env}"
+
+  tags = {
+    Application = "Dell Narvar POD Doc"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+resource "aws_s3_bucket_acl" "dell-narvar-pod-doc-bucket-acl" {
+  bucket = aws_s3_bucket.dell-narvar-pod-doc.id
+  acl    = "private"
+}
