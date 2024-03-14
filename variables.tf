@@ -695,3 +695,33 @@ variable "dell_narvar_pod_doc_websli_endpoint" {
   type    = string
   nullable = false
 }
+
+variable "omni_fourkites_ltl_shipment_header_HudsonTeletransUps_billno" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_fourkites_ltl_shipment_header_PocLlcCoUps_billno" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_fourkites_ltl_shipment_header_PerkinsCoUps_billno" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_fourkites_ltl_shipment_header_WasteTechnologiesUps_billno" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_fourkites_ltl_shipment_header_SafeStepTubLlcUps_billno" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_fourkites_ltl_shipment_header_McGrawHill_billno" {
+  type    = string
+  nullable = false
+}

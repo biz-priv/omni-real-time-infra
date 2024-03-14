@@ -2865,3 +2865,75 @@ resource "aws_ssm_parameter" "dell-narvar-pod-doc-websli-url" {
     Environment = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-fourkites-ltl-shipment-header-HudsonTeletransUps-billno" {
+  name  = "/omni-fourkites-ltl/shipment-header/HudsonTeletransUps/billno/${var.env}"
+  type  = "String"
+  value = var.omni_fourkites_ltl_shipment_header_HudsonTeletransUps_billno
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-fourkites-ltl-shipment-header-PocLlcCoUps-billno" {
+  name  = "/omni-fourkites-ltl/shipment-header/PocLlcCoUps/billno/${var.env}"
+  type  = "String"
+  value = var.omni_fourkites_ltl_shipment_header_PocLlcCoUps_billno
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-fourkites-ltl-shipment-header-PerkinsCoUps-billno" {
+  name  = "/omni-fourkites-ltl/shipment-header/PerkinsCoUps/billno/${var.env}"
+  type  = "String"
+  value = var.omni_fourkites_ltl_shipment_header_PerkinsCoUps_billno
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-fourkites-ltl-shipment-header-WasteTechnologiesUps-billno" {
+  name  = "/omni-fourkites-ltl/shipment-header/WasteTechnologiesUps/billno/${var.env}"
+  type  = "String"
+  value = var.omni_fourkites_ltl_shipment_header_WasteTechnologiesUps_billno
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-fourkites-ltl-shipment-header-SafeStepTubLlcUps-billno" {
+  name  = "/omni-fourkites-ltl/shipment-header/SafeStepTubLlcUps/billno/${var.env}"
+  type  = "String"
+  value = var.omni_fourkites_ltl_shipment_header_SafeStepTubLlcUps_billno
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-fourkites-ltl-shipment-header-McGrawHill-billno" {
+  name  = "/omni-fourkites-ltl/shipment-header/McGrawHill/billno/${var.env}"
+  type  = "String"
+  value = var.omni_fourkites_ltl_shipment_header_McGrawHill_billno
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
