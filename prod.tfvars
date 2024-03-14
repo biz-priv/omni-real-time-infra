@@ -131,6 +131,7 @@ omni_cw_to_wt_create_shipment_s3_trigger_WaterBox_prefix       = "CargoWiseOutbo
 omni_cw_to_wt_create_shipment_s3_trigger_CircleK_prefix        = "CargoWiseOutbound/CircleK/"
 omni_cw_to_wt_create_shipment_s3_trigger_Arxium_prefix         = "CargoWiseOutbound/Arxium/"
 omni_cw_to_wt_create_shipment_s3_trigger_RoyalEnfield_prefix   = "CargoWiseOutbound/RoyalEnfield/"
+omni_cw_to_wt_create_shipment_s3_trigger_Ducati_prefix         = "CargoWiseOutbound/Ducati/"
 omni_cw_create_shipment_response_url                           = "https://trxelpservices.wisegrid.net/eAdaptor"
 omni_cw_create_shipment_response_url_authorizer                = "Basic dGVpZGF0YTp0ZWlkYXRhJDEyMw=="
 omni_cw_to_wt_emails                                           = ["support@bizcloudexperts.com", "omnidev@bizcloudexperts.com", "tgilbertson@omnilogistics.com", "jmcknight@omnilogistics.com", "bpfeiffer@omnilogistics.com", "clujan@omnilogistics.com", "asalaices@omnilogistics.com"]

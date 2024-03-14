@@ -2693,6 +2693,18 @@ resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-RoyalEnfi
   }
 }
 
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-s3-trigger-Ducati-prefix" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/s3-prefix/Ducati"
+  type  = "String"
+  value = var.omni_cw_to_wt_create_shipment_s3_trigger_Ducati_prefix
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-cw-endpoint" {
   name  = "/omni-dw/${var.env}/createShipmentResponse/cw/url"
   type  = "String"
