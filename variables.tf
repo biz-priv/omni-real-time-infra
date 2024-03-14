@@ -656,6 +656,11 @@ variable "omni_cw_to_wt_create_shipment_s3_trigger_RoyalEnfield_prefix" {
   nullable = false
 }
 
+variable "omni_cw_to_wt_create_shipment_s3_trigger_Ducati_prefix" {
+  type    = string
+  nullable = false
+}
+
 variable "omni_cw_create_shipment_response_url" {
   type    = string
   nullable = false
