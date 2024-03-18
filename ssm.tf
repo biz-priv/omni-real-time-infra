@@ -2937,3 +2937,16 @@ resource "aws_ssm_parameter" "omni-fourkites-ltl-shipment-header-McGrawHill-bill
     Environment = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni_live_comcast_filter_billnos" {
+  name  = "/omni-204-create-shipment/${var.env}/comcast/filterBillNo"
+  type  = "StringList"
+  value = join(",", var.omni_live_comcast_filter_billnos)
+
+  tags = {
+    Application = "204 create shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

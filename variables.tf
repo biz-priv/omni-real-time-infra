@@ -725,3 +725,8 @@ variable "omni_fourkites_ltl_shipment_header_McGrawHill_billno" {
   type    = string
   nullable = false
 }
+
+variable "omni_live_comcast_filter_billnos" {
+  type     = list(string)
+  nullable = false
+}
