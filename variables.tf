@@ -730,3 +730,8 @@ variable "omni_live_comcast_filter_billnos" {
   type     = list(string)
   nullable = false
 }
+
+variable "omni_dw_wt_soap_username" {
+  type    = string
+  nullable = false
+}
