@@ -1334,6 +1334,19 @@ resource "aws_ssm_parameter" "omni-rt-toyota-last-shipment-date" {
   }
 }
 
+resource "aws_ssm_parameter" "omni-dw-wt-soap-username" {
+  name  = "/omni-dw/${var.env}/wt/soap/username"
+  type  = "String"
+  value = var.omni_dw_wt_soap_username
+  overwrite = true
+  
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "shipment-file-dynamodb-name" {
   name  = "/omni-wt-rt-updates/${var.env}/shipment-file/ddb.tableName"
   type  = "String"
