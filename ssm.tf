@@ -1360,6 +1360,19 @@ resource "aws_ssm_parameter" "shipment-file-dynamodb-name" {
   }
 }
 
+resource "aws_ssm_parameter" "omni-shipment-file-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-file/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-file-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "omni-dw-api-services-pod-uploaded-docs-logs-table-name" {
   name  = "/omni-dw-api-services/${var.env}/pod-uploaded-docs-logs/ddb.tableName"
   type  = "String"
