@@ -146,4 +146,5 @@ omni_fourkites_ltl_shipment_header_WasteTechnologiesUps_billno  = "54325"
 omni_fourkites_ltl_shipment_header_SafeStepTubLlcUps_billno     = "53554"
 omni_fourkites_ltl_shipment_header_McGrawHill_billno            = "8763"
 omni_live_comcast_filter_billnos                                = ["1890", "1891"]
-omni_dw_wt_soap_username                      = "apiuser"
+omni_dw_wt_soap_username                                        = "apiuser"
+omni_netsuite_restlet_agw_email_list                            = "nsap@omnilogistics.com,omnidev@bizcloudexperts.com,bsugg@omnilogistics.com"
