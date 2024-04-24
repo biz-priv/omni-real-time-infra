@@ -2978,7 +2978,7 @@ resource "aws_ssm_parameter" "omni_live_comcast_filter_billnos" {
 }
 
 resource "aws_ssm_parameter" "omni-netsuite-restlet-agw-error-email" {
-  name  = "/omni-dw/${var.env}/netsuitAGW/errorEmail/to"
+  name  = "/omni-dw/${var.env}/netsuit/AGW/errorEmail/to"
   type  = "String"
   value = var.omni_netsuite_restlet_agw_email_list
 
