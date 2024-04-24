@@ -735,3 +735,8 @@ variable "omni_dw_wt_soap_username" {
   type    = string
   nullable = false
 }
+
+variable "omni_netsuite_restlet_agw_email_list" {
+  type    = string
+  nullable = false
+}

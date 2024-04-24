@@ -2976,3 +2976,15 @@ resource "aws_ssm_parameter" "omni_live_comcast_filter_billnos" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-netsuite-restlet-agw-error-email" {
+  name  = "/omni-dw/${var.env}/netsuit/AGW/errorEmail/to"
+  type  = "String"
+  value = var.omni_netsuite_restlet_agw_email_list
+
+  tags = {
+    Application = "omni-netsuite-restlet"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
