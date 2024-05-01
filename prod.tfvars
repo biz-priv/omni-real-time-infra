@@ -148,3 +148,4 @@ omni_fourkites_ltl_shipment_header_McGrawHill_billno            = "8763"
 omni_live_comcast_filter_billnos                                = ["1890", "1891"]
 omni_dw_wt_soap_username                                        = "apiuser"
 omni_netsuite_restlet_agw_email_list                            = "nsap@omnilogistics.com,omnidev@bizcloudexperts.com,bsugg@omnilogistics.com"
+dell_narvar_eventing_status_table_arn                           = "arn:aws:dynamodb:us-east-1:332281781429:table/shipment-and-milestone-event-status-prod/stream/2023-11-03T00:51:54.370"

@@ -2988,3 +2988,42 @@ resource "aws_ssm_parameter" "omni-netsuite-restlet-agw-error-email" {
     Environment = var.env
   }
 }
+
+resource "aws_ssm_parameter" "dell-narvar-eventing-status-table-arn" {
+  name  = "/dell-narvar-eventing/${var.env}/status-table/arn"
+  type  = "String"
+  value = var.dell_narvar_eventing_status_table_arn
+
+  tags = {
+    Application = "Dell Narvar POD Doc"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "dell-narvar-eventing-status-table-name" {
+  name  = "/dell-narvar-eventing/${var.env}/status-table/name"
+  type  = "String"
+  value = aws_dynamodb_table.dell-narvar-eventing-status-table.name
+
+  tags = {
+    Application = "Dell Narvar Eventing"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "dell-narvar-eventing-state-table-arn" {
+  name  = "/dell-narvar-eventing/${var.env}/status/ddb.arn"
+  type  = "String"
+  value = aws_dynamodb_table.dell-narvar-eventing-status-table.arn
+
+  tags = {
+    Application = "Dell Narvar Eventing"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

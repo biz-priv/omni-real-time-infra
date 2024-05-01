@@ -740,3 +740,8 @@ variable "omni_netsuite_restlet_agw_email_list" {
   type    = string
   nullable = false
 }
+
+variable "dell_narvar_eventing_status_table_arn" {
+  type    = string
+  nullable = false
+}

@@ -1115,3 +1115,33 @@ resource "aws_dynamodb_table" "dell-narvar-pod-doc-status" {
     Environment = var.env
   }
 }
+
+resource "aws_dynamodb_table" "dell-narvar-eventing-status-table" {
+  name             = "dell-narvar-eventing-status-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  attribute {
+    name = "Status"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Status-index"
+    hash_key        = "Status"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Dell Narvar Eventing"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
