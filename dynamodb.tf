@@ -1005,9 +1005,20 @@ resource "aws_dynamodb_table" "omni-204-order-status" {
     type = "S"
   }
 
+  attribute {
+    name = "Housebill"
+    type = "S"
+  }
+
   global_secondary_index {
     name            = "Status-index"
     hash_key        = "Status"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "Housebill-index"
+    hash_key        = "Housebill"
     projection_type = "ALL"
   }
 
@@ -1036,9 +1047,20 @@ resource "aws_dynamodb_table" "live-204-consol-status" {
     type = "S"
   }
 
+    attribute {
+    name = "Housebill"
+    type = "S"
+  }
+
   global_secondary_index {
     name            = "Status-index"
     hash_key        = "Status"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "Housebill-index"
+    hash_key        = "Housebill"
     projection_type = "ALL"
   }
 
