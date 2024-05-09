@@ -3018,7 +3018,7 @@ resource "aws_ssm_parameter" "dell-narvar-eventing-status-table-name" {
 resource "aws_ssm_parameter" "dell-narvar-eventing-state-table-arn" {
   name  = "/dell-narvar-eventing/${var.env}/status/ddb.arn"
   type  = "String"
-  value = aws_dynamodb_table.dell-narvar-eventing-status-table.arn
+  value = aws_dynamodb_table.dell-narvar-eventing-status-table.stream_arn
 
   tags = {
     Application = "Dell Narvar Eventing"
