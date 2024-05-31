@@ -488,6 +488,17 @@ resource "aws_dms_replication_task" "omni-wt-rt-header-fullload-dms-task" {
             "type" : "string",
             "length" : 50
           }
+        },
+        {
+          "rule-type" : "selection",
+          "rule-id" : "28",
+          "rule-name" : "28",
+          "object-locator" : {
+            "schema-name" : "dbo",
+            "table-name" : "tbl_shipmentmilestonedetail"
+          },
+          "rule-action" : "include",
+          "filters" : []
         }
       ]
   })

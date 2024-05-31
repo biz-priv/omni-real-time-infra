@@ -1167,3 +1167,153 @@ resource "aws_dynamodb_table" "dell-narvar-eventing-status-table" {
     Environment = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wt-rt-milestone" {
+  name             = "omni-wt-rt-milestone-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_SeqNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderStatusId"
+    type = "S"
+  }
+
+  attribute {
+    name = "FK_ServiceLevelId"
+    type = "S"
+  }
+
+  attribute {
+    name = "PK_SeqNo"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "FK_OrderStatusId-FK_ServiceLevelId"
+    hash_key        = "FK_OrderStatusId"
+    range_key       = "FK_ServiceLevelId"
+    projection_type = "ALL"
+  }
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-servicelevels" {
+  name             = "omni-wt-rt-servicelevels-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "PK_ServiceLevelId"
+  range_key        = "ServiceLevel"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "PK_ServiceLevelId"
+    type = "S"
+  }
+
+  attribute {
+    name = "ServiceLevel"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-wt-rt-shipment-milestone-detail" {
+  name             = "omni-wt-rt-shipment-milestone-detail-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  range_key        = "FK_OrderStatusId"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderStatusId"
+    type = "S"
+  }
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-dw-shipment-details-collector" {
+  name             = "omni-dw-shipment-details-collector-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "fileNumber"
+  range_key        = "customerIds"
+  stream_enabled   = false
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "houseBillNumber"
+    type = "S"
+  }
+
+  attribute {
+    name = "customerIds"
+    type = "S"
+  }
+
+  attribute {
+    name = "fileNumber"
+    type = "S"
+  }
+  
+  attribute {
+    name = "EventDateTime"
+    type = "S"
+  }
+
+  attribute {
+    name = "OrderDateTime"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "houseBillNumberIndex"
+    hash_key        = "customerIds"
+    range_key       = "houseBillNumber"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "EventDateIndex"
+    hash_key        = "customerIds"
+    range_key       = "EventDateTime"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "OrderDateIndex"
+    hash_key        = "customerIds"
+    range_key       = "OrderDateTime"
+    projection_type = "ALL"
+  }
+
+  tags = {
+    Application = "Omni DW API services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}

@@ -3027,3 +3027,55 @@ resource "aws_ssm_parameter" "dell-narvar-eventing-state-table-arn" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "milestone-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/milestone/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-milestone.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "servicelevels-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/servicelevels/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-servicelevels.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shipment-milestone-detail-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-milestone-detail/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-milestone-detail.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-dw-shipment-details-collector" {
+  name  = "/omni-dw/${var.env}/shipmentDetailsCollector/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-dw-shipment-details-collector.name
+
+  tags = {
+    Application = "Omni DW API services"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
