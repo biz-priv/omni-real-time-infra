@@ -46,6 +46,21 @@ resource "aws_sns_topic_subscription" "omni_power_broker_emails" {
       "PDX",
       "SAN",
       "SFO",
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06",
+      "T07",
+      "T08",
+      "T09",
+      "T10",
+      "T11",
+      "T12",
+      "T13",
+      "T90",
+      "T96",
     ]
   })
 }
