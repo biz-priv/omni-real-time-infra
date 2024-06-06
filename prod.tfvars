@@ -134,7 +134,7 @@ omni_cw_to_wt_create_shipment_s3_trigger_RoyalEnfield_prefix   = "CargoWiseOutbo
 omni_cw_to_wt_create_shipment_s3_trigger_Ducati_prefix         = "CargoWiseOutbound/Ducati/"
 omni_cw_create_shipment_response_url                           = "https://trxelpservices.wisegrid.net/eAdaptor"
 omni_cw_create_shipment_response_url_authorizer                = "Basic dGVpZGF0YTp0ZWlkYXRhJDEyMw=="
-omni_cw_to_wt_emails                                           = ["support@bizcloudexperts.com", "omnidev@bizcloudexperts.com", "tgilbertson@omnilogistics.com", "jmcknight@omnilogistics.com", "bpfeiffer@omnilogistics.com", "clujan@omnilogistics.com", "asalaices@omnilogistics.com"]
+omni_cw_to_wt_emails                                           = ["support@bizcloudexperts.com", "omnidev@bizcloudexperts.com", "tgilbertson@omnilogistics.com", "jmcknight@omnilogistics.com", "bpfeiffer@omnilogistics.com", "clujan@omnilogistics.com", "asalaices@omnilogistics.com", "wwaller@omnilogistics.com", "kvallabhaneni@omnilogistics.com"]
 
 dell_narvar_pod_doc_websli_key                = "325adf1943cf2b49063a606700ed35"
 dell_narvar_pod_doc_subscription_arn          = "arn:aws:sns:us-east-1:332281781429:ShipmentAndMilestone_fullPayload:e9bee9ad-1758-4222-806a-bffc6e1d4226"
