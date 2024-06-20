@@ -1076,7 +1076,7 @@ resource "aws_dynamodb_table" "omni-cw-to-wt-create-shipment-logs-table" {
   name             = "omni-cw-to-wt-create-shipment-logs-${var.env}"
   billing_mode     = "PAY_PER_REQUEST"
   hash_key         = "Id"
-  stream_enabled   = false
+  stream_enabled   = true
   stream_view_type = "NEW_AND_OLD_IMAGES"
 
   attribute {
@@ -1092,6 +1092,22 @@ resource "aws_dynamodb_table" "omni-cw-to-wt-create-shipment-logs-table" {
   attribute {
     name = "FileNumber"
     type = "S"
+  }
+
+  attribute {
+    name = "Status"
+    type = "S"
+  }
+
+  attribute {
+    name = "RetryCount"
+    type = "S"
+  }
+  global_secondary_index {
+    name            = "Status-RetryCount-Index"
+    hash_key        = "Status"
+    range_key       = "RetryCount"
+    projection_type = "ALL"
   }
 
   global_secondary_index {
