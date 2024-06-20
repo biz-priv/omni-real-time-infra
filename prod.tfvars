@@ -149,3 +149,6 @@ omni_live_comcast_filter_billnos                                = ["1890", "1891
 omni_dw_wt_soap_username                                        = "apiuser"
 omni_netsuite_restlet_agw_email_list                            = "nsap@omnilogistics.com,omnidev@bizcloudexperts.com,bsugg@omnilogistics.com"
 dell_narvar_eventing_status_table_arn                           = "arn:aws:dynamodb:us-east-1:332281781429:table/shipment-and-milestone-event-status-prod/stream/2023-11-03T00:51:54.370"
+omni_cw_to_wt_check_housebill_exists_api_url                    = "https://worldtrak.omnilogistics.com/WTKServices/AirtrakShipment.asmx"
+omni_cw_to_wt_check_housebill_exists_api_username               = "apiuser"
+omni_cw_to_wt_check_housebill_exists_api_password               = "Api081020!"

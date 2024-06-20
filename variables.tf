@@ -745,3 +745,18 @@ variable "dell_narvar_eventing_status_table_arn" {
   type    = string
   nullable = false
 }
+
+variable "omni_cw_to_wt_check_housebill_exists_api_url" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_check_housebill_exists_api_username" {
+  type    = string
+  nullable = false
+}
+
+variable "omni_cw_to_wt_check_housebill_exists_api_password" {
+  type    = string
+  nullable = false
+}

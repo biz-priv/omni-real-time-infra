@@ -3027,3 +3027,51 @@ resource "aws_ssm_parameter" "dell-narvar-eventing-state-table-arn" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-logs-table-streamArn" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-cw-to-wt-create-shipment-logs-table.stream_arn
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-check-housebill-exists-api-url" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/check-housebill-exists-api/url"
+  type  = "String"
+  value = var.omni_cw_to_wt_check_housebill_exists_api_url
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-check-housebill-exists-api-username" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/check-housebill-exists-api/username"
+  type  = "String"
+  value = var.omni_cw_to_wt_check_housebill_exists_api_username
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-check-housebill-exists-api-password" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/check-housebill-exists-api/password"
+  type  = "String"
+  value = var.omni_cw_to_wt_check_housebill_exists_api_password
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
