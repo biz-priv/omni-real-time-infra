@@ -760,3 +760,8 @@ variable "omni_cw_to_wt_check_housebill_exists_api_password" {
   type    = string
   nullable = false
 }
+
+variable "wt_password" {
+  type    = string
+  nullable = false
+}

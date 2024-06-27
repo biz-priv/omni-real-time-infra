@@ -3075,3 +3075,15 @@ resource "aws_ssm_parameter" "omni-cw-to-wt-check-housebill-exists-api-password"
     Environment = var.env
   }
 }
+
+resource "aws_ssm_parameter" "wt-api-password" {
+  name  = "/omni-dw/${var.env}/wt/password"
+  type  = "String"
+  value = var.wt_password
+
+  tags = {
+    Application = "omni-dw"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
