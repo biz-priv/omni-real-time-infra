@@ -152,3 +152,4 @@ dell_narvar_eventing_status_table_arn                           = "arn:aws:dynam
 omni_cw_to_wt_check_housebill_exists_api_url                    = "https://worldtrak.omnilogistics.com/WTKServices/AirtrakShipment.asmx"
 omni_cw_to_wt_check_housebill_exists_api_username               = "apiuser"
 omni_cw_to_wt_check_housebill_exists_api_password               = "Api081020!"
+wt_password                                                     = "Api081020!"
