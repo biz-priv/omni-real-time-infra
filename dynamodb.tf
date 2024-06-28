@@ -1183,3 +1183,28 @@ resource "aws_dynamodb_table" "dell-narvar-eventing-status-table" {
     Environment = var.env
   }
 }
+
+resource "aws_dynamodb_table" "omni-wt-rt-shipment-file-data" {
+  name             = "omni-wt-rt-shipment-file-data-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  range_key        = "PK_FileNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  attribute {
+    name = "PK_FileNo"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
