@@ -3139,3 +3139,29 @@ resource "aws_ssm_parameter" "omni-realtime-failed-records-table-name" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-204-omnidev-email" {
+  name  = "/omni-204-create-shipment/${var.env}/omni-dev/email"
+  type  = "String"
+  value = var.omnidev_email
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-204-no-reply-email" {
+  name  = "/omni-204-create-shipment/${var.env}/omni-no-reply/email"
+  type  = "String"
+  value = var.omni_noreply_email
+
+  tags = {
+    Application = "omni-204-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
