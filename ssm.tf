@@ -3127,10 +3127,10 @@ resource "aws_ssm_parameter" "omni-wt-rt-shipment-file-data-streamArn" {
   }
 }
 
-resource "aws_ssm_parameter" "omni-realtime-failed-records-table" {
+resource "aws_ssm_parameter" "omni-realtime-failed-records-table-name" {
   name  = "/omni-realtime/${var.env}/failed-records/ddb.tableName"
   type  = "String"
-  value = aws_dynamodb_table.omni-realtime-failed-records.name
+  value = aws_dynamodb_table.omni-realtime-failed-records-table.name
 
   tags = {
     Application = "Real Time Updates"
