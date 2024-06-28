@@ -3154,7 +3154,7 @@ resource "aws_ssm_parameter" "omni-realtime-omnidev-email" {
 }
 
 resource "aws_ssm_parameter" "omni-realtime-no-reply-email" {
-  name  = "/omni-realtime-create-shipment/${var.env}/omni-no-reply/email"
+  name  = "/omni-realtime/${var.env}/omni-no-reply/email"
   type  = "String"
   value = var.omni_noreply_email
 
