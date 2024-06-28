@@ -153,3 +153,5 @@ omni_cw_to_wt_check_housebill_exists_api_url                    = "https://world
 omni_cw_to_wt_check_housebill_exists_api_username               = "apiuser"
 omni_cw_to_wt_check_housebill_exists_api_password               = "Api081020!"
 wt_password                                                     = "Api081020!"
+omnidev_email                                                   = "omnidev@bizcloudexperts.com"
+omni_noreply_email                                              = "no-reply@omnilogistics.com"

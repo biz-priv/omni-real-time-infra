@@ -3126,3 +3126,16 @@ resource "aws_ssm_parameter" "omni-wt-rt-shipment-file-data-streamArn" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-realtime-failed-records-table-name" {
+  name  = "/omni-realtime/${var.env}/failed-records/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-realtime-failed-records-table.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
