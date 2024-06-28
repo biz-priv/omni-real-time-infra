@@ -3087,3 +3087,42 @@ resource "aws_ssm_parameter" "wt-api-password" {
     Environment = var.env
   }
 }
+
+resource "aws_ssm_parameter" "shipment-file-data-dynamodb-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-file-data/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-file-data.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-shipment-file-data-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-file-data/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-file-data-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-wt-rt-shipment-file-data-streamArn" {
+  name  = "/omni-wt-rt/${var.env}/shipment-file-data/stream-arn"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-file-data.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
