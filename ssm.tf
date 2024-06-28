@@ -3140,6 +3140,19 @@ resource "aws_ssm_parameter" "omni-realtime-failed-records-table-name" {
   }
 }
 
+resource "aws_ssm_parameter" "omni-realtime-failed-records-table-streamArn" {
+  name  = "/omni-realtime/${var.env}/failed-records/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-realtime-failed-records-table.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
 resource "aws_ssm_parameter" "omni-realtime-omnidev-email" {
   name  = "/omni-realtime/${var.env}/omni-dev/email"
   type  = "String"
