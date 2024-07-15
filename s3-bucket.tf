@@ -4,6 +4,7 @@ resource "aws_s3_bucket" "omni-wt-rt-updates-s3-bucket" {
   tags = {
     Application = "Real Time Updates"
     CreatedBy   = "BizCloudExperts"
+    Name        = "omni-wt-rt-updates-${var.env}"
     Environment = var.env
     STAGE       = var.env
   }
@@ -216,6 +217,7 @@ resource "aws_s3_bucket" "dell-narvar-pod-doc" {
   tags = {
     Application = "Dell Narvar POD Doc"
     CreatedBy   = "BizCloudExperts"
+    Name        = "dell-narvar-pod-doc-${var.env}"
     Environment = var.env
     STAGE       = var.env
   }

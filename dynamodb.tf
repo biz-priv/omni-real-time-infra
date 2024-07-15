@@ -1076,7 +1076,7 @@ resource "aws_dynamodb_table" "omni-cw-to-wt-create-shipment-logs-table" {
   name             = "omni-cw-to-wt-create-shipment-logs-${var.env}"
   billing_mode     = "PAY_PER_REQUEST"
   hash_key         = "Id"
-  stream_enabled   = false
+  stream_enabled   = true
   stream_view_type = "NEW_AND_OLD_IMAGES"
 
   attribute {
@@ -1092,6 +1092,22 @@ resource "aws_dynamodb_table" "omni-cw-to-wt-create-shipment-logs-table" {
   attribute {
     name = "FileNumber"
     type = "S"
+  }
+
+  attribute {
+    name = "Status"
+    type = "S"
+  }
+
+  attribute {
+    name = "RetryCount"
+    type = "S"
+  }
+  global_secondary_index {
+    name            = "Status-RetryCount-Index"
+    hash_key        = "Status"
+    range_key       = "RetryCount"
+    projection_type = "ALL"
   }
 
   global_secondary_index {
@@ -1168,6 +1184,61 @@ resource "aws_dynamodb_table" "dell-narvar-eventing-status-table" {
   }
 }
 
+resource "aws_dynamodb_table" "omni-wt-rt-shipment-file-data" {
+  name             = "omni-wt-rt-shipment-file-data-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "FK_OrderNo"
+  range_key        = "PK_FileNo"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "FK_OrderNo"
+    type = "S"
+  }
+
+  attribute {
+    name = "PK_FileNo"
+    type = "S"
+  }
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_dynamodb_table" "omni-realtime-failed-records-table" {
+  name             = "omni-realtime-failed-records-${var.env}"
+  billing_mode     = "PAY_PER_REQUEST"
+  hash_key         = "UUid"
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+
+  attribute {
+    name = "UUid"
+    type = "S"
+  }
+  attribute {
+    name = "Status"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "Status-index"
+    hash_key        = "Status"
+    projection_type = "ALL"
+  }  
+
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
 resource "aws_dynamodb_table" "omni-wt-rt-milestone" {
   name             = "omni-wt-rt-milestone-${var.env}"
   billing_mode     = "PAY_PER_REQUEST"

@@ -3079,3 +3079,154 @@ resource "aws_ssm_parameter" "omni-dw-shipment-details-collector" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-create-shipment-logs-table-streamArn" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/create-shipment/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-cw-to-wt-create-shipment-logs-table.stream_arn
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-check-housebill-exists-api-url" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/check-housebill-exists-api/url"
+  type  = "String"
+  value = var.omni_cw_to_wt_check_housebill_exists_api_url
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-check-housebill-exists-api-username" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/check-housebill-exists-api/username"
+  type  = "String"
+  value = var.omni_cw_to_wt_check_housebill_exists_api_username
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-cw-to-wt-check-housebill-exists-api-password" {
+  name  = "/omni-dw/${var.env}/cw-to-wt/check-housebill-exists-api/password"
+  type  = "String"
+  value = var.omni_cw_to_wt_check_housebill_exists_api_password
+
+  tags = {
+    Application = "omni-cw-to-wt-create-shipment"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "wt-api-password" {
+  name  = "/omni-dw/${var.env}/wt/password"
+  type  = "String"
+  value = var.wt_password
+
+  tags = {
+    Application = "omni-dw"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "shipment-file-data-dynamodb-name" {
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-file-data/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-file-data.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-shipment-file-data-arn" {
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-file-data/sns.arn"
+  type  = "SecureString"
+  value = "arn:aws:sns:us-east-1:332281781429:omni-wt-rt-shipment-file-data-${var.env}"
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-wt-rt-shipment-file-data-streamArn" {
+  name  = "/omni-wt-rt/${var.env}/shipment-file-data/stream-arn"
+  type  = "String"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-file-data.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-realtime-failed-records-table-name" {
+  name  = "/omni-realtime/${var.env}/failed-records/ddb.tableName"
+  type  = "String"
+  value = aws_dynamodb_table.omni-realtime-failed-records-table.name
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-realtime-failed-records-table-streamArn" {
+  name  = "/omni-realtime/${var.env}/failed-records/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-realtime-failed-records-table.stream_arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-realtime-omnidev-email" {
+  name  = "/omni-realtime/${var.env}/omni-dev/email"
+  type  = "String"
+  value = var.omnidev_email
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "omni-realtime-no-reply-email" {
+  name  = "/omni-realtime/${var.env}/omni-no-reply/email"
+  type  = "String"
+  value = var.omni_noreply_email
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
