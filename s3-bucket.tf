@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "omni-wt-rt-updates-s3-bucket" {
+resource "aws_s3_bucket" "omni-wt-rt-updates-s3-bucket" {  
   bucket = "omni-wt-rt-updates-${var.env}"
 
   tags = {
@@ -183,6 +183,27 @@ resource "aws_s3_bucket_notification" "omni-wt-rt-updates-s3-bucket-notification
     events        = ["s3:ObjectCreated:*"]
     filter_suffix = ".csv"
     filter_prefix = "dbo/${var.s3_notification_table_name[24]}"
+  }
+
+   queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[25].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".csv"
+    filter_prefix = "dbo/${var.s3_notification_table_name[25]}"
+  }
+
+  queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[26].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".csv"
+    filter_prefix = "dbo/${var.s3_notification_table_name[26]}"
+  }
+
+  queue {
+    queue_arn     = aws_sqs_queue.omni_wt_rt_queue[27].arn
+    events        = ["s3:ObjectCreated:*"]
+    filter_suffix = ".csv"
+    filter_prefix = "dbo/${var.s3_notification_table_name[27]}"
   }
 
   depends_on = [
