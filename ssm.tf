@@ -3230,3 +3230,27 @@ resource "aws_ssm_parameter" "omni-realtime-no-reply-email" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "shipment-milestone-detail-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/shipment-milestone-detail/ddb.streamArn"
+  type  = "SecureString"
+  value = aws_dynamodb_table.omni-wt-rt-shipment-milestone-detail.stream_arn
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
+
+resource "aws_ssm_parameter" "customer-entitlement-streamArn" {
+  name  = "/omni-wt-rt-updates/${var.env}/customer-entitlement/ddb.streamArn"
+  type  = "SecureString"
+  value = var.omni_customer_entitlement_ddb_streamArn
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
