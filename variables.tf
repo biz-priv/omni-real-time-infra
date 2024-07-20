@@ -774,3 +774,8 @@ variable "omni_noreply_email" {
   type    = string
   nullable = false
 }
+
+variable "omni_customer_entitlement_ddb_streamArn" {
+  type    = string
+  nullable = false
+}
