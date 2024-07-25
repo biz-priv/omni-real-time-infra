@@ -3254,3 +3254,16 @@ resource "aws_ssm_parameter" "customer-entitlement-streamArn" {
     STAGE       = var.env
   }
 }
+
+resource "aws_ssm_parameter" "omni-dw-shipment-location-updates-sns-arn" {
+  name  = "/omni-dw/${var.env}/shipment-location-updates/sns/arn"
+  type  = "String"
+  value = aws_sns_topic.omni-dw-shipment-location-updates.arn
+
+  tags = {
+    Application = "Real Time Updates"
+    CreatedBy   = "BizCloudExperts"
+    Environment = var.env
+    STAGE       = var.env
+  }
+}
