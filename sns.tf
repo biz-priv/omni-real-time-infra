@@ -8,3 +8,7 @@ resource "aws_sns_topic_subscription" "omni_reports_success_notification_email" 
   protocol  = "email"
   endpoint  = each.value
 }
+
+resource "aws_sns_topic" "omni-dw-shipment-location-updates" {
+  name = "omni-dw-shipment-location-updates-${var.env}"
+}
