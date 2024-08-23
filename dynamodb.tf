@@ -115,10 +115,27 @@ resource "aws_dynamodb_table" "omni-wt-rt-references" {
     type = "S"
   }
 
+  attribute {
+    name = "FK_RefTypeId"
+    type = "S"
+  }
+
+  attribute {
+    name = "ReferenceNo"
+    type = "S"
+  }
+
 
   global_secondary_index {
     name            = "omni-wt-rt-ref-orderNo-index-${var.env}"
     hash_key        = "FK_OrderNo"
+    projection_type = "ALL"
+  }
+
+  global_secondary_index {
+    name            = "ReferenceNo-FK_RefTypeId-index"
+    hash_key        = "ReferenceNo"
+    range_key       = "FK_RefTypeId"
     projection_type = "ALL"
   }
 
